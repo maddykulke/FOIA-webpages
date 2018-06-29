@@ -187,5 +187,5 @@ button {
 
 #repSubmitter:not(:checked) ~ #repRole { display: none; }
 
-#otherReq:not(:checked) ~ #otherSpecific { display: none; }
+#otherReq:not(:checked) ~ #reqType { display: none; }
 

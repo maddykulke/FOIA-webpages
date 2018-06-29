@@ -218,36 +218,30 @@
 <ul class="form-style-1" name = "section_d">
 <label class="block-label">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</label>
     <li>
-    <label>
-    <input type="checkbox" name="indivRequest" value="individualRequest" />
-    <span>At the request of the individual</span>
-    </label>
-    <label>
-    <input type="checkbox"  name="litiRequest" value="litigationRequest" />
-    <span>Litigation</span>
-    </label>
-    <label>
-    <input type="checkbox"  name="otherRequest" value="otherRequestType" id="otherReq"/>
-    <span>Other</span>
-    </label>
-
-<!--         <li> -->
-<!--         <div id="notBene"> -->
-
-
-
-
-<!--         <span id="reqType"> -->
-        <label class="block-label">Other Request Type</label>
-        <input required type="text" name="legalRole" class="field-long" placeholder="Other Request Type" id="otherSpecific"/>
-<!--         </span> -->
-<!--         </div> -->
-
-
-<!--     </li> -->
+        <div id="otherRequestType">
+        <label>
+            <input type="checkbox" name="indivRequest" value="individualRequest" />
+            <span>At the request of the individual</span>
+        </label>
+        <label>
+            <input type="checkbox"  name="litiRequest" value="litigationRequest" />
+            <span>Litigation</span>
+        </label>
+        <label>      
+            <input type="checkbox"  name="othRequest" value="otherRequest" id="otherReq"/>
+            <span class="disclosures-check">Other</span>
+        </label>
+                
+            <span id="reqType">
+<!--                 <label for="otherSpecific" class="block-label">Other Request Type</label> -->
+                <input type="text" name="reqTypeDetail" class="field-long" placeholder="Other Request Type" id="otherSpecifics"/>
+            </span>
+        </div>
     </li>
+    
 </ul>
 </fieldset>
+
 
 
 <fieldset>
