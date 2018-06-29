@@ -124,3 +124,25 @@ function limitBirthdate() {
     document.getElementsById("dob")[0].setAttribute('max', today);
 }
 
+
+function oneBoxMin(){
+ var chkd = document.authform.individualRequest.checked || document.authform.litigationRequest.checked||document.authform.otherRequestType.checked
+
+ if (chkd == true){
+
+ } else {
+    alert ("Please select an option for purpose of request.")
+ }
+
+}
+
+
+function acceptTerms(){
+  if(document.getElementById('agreeHIPAA').checked) { 
+    // return true; 
+
+  } else { 
+    alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy')
+  
+  }
+}
