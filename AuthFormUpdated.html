@@ -38,7 +38,7 @@
 
     <li>
          <label for="dob" class="block-label">Date of Birth * </label>
-         <input required placeholder="Date of Birth" name="dob" onfocus="(this.type='date')" id="dob"/ pattern="(^\d{2})\/(\d{2})\/(\d{4})" title="Please enter date of birth in mm/dd/yyyy format.">
+         <input required placeholder="Date of Birth" name="dob" onfocus="(this.type='date')" id="dob" title="Please enter date of birth in mm/dd/yyyy format.">
 
     </li>
     
@@ -50,14 +50,14 @@
 
     <li>
         <label><span class="block-label">Please enter beneficiary address information.</span></label>
-        <span><input required placeholder= "Street Address" type="text" name="street_number" class="field-long" pattern="(\d)+\s([a-zA-Z0-9\.\-\'\s])+" /></span>
+        <span><input required placeholder= "Street Address" type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" /></span>
 
         <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="appt_number" class="field-long" /></span>   
 
-        <input required placeholder = "City" type="text" name="city" pattern="([a-zA-Z0-9\.\-\'\s])+" />
+        <input required placeholder = "City" type="text" name="city" pattern="[A-z]+(\s)*" />
 
         <div class="autocomplete">
-        <input required id="beneState" type="text" name="State" placeholder="State" pattern="[A-Z]{2}" />
+        <input required id="beneState" type="text" name="State" placeholder="State"/>
         </div> 
 
         <input required placeholder = "Zip Code" type="text" name="zipcode" pattern="^\d{5}(-\d{4})?$" />
@@ -80,8 +80,6 @@
         <input type='file' name='repProof' multiple>
         </span>
         </div>
-
-
     </li>
     </div>
 
@@ -171,11 +169,11 @@
     </div>
 
     <li>
-        <span><input required placeholder= "Recipient 1 Street Address" type="text" name="recipient1_street_address" class="field-long" pattern="(\d)+\s([a-zA-Z0-9\.\-\'\s])+" /></span>
+        <span><input required placeholder= "Recipient 1 Street Address" type="text" name="recipient1_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*"/></span>
 
         <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient1_apt_number" class="field-long" /></span>
 
-        <input required placeholder = "City" type="text" name="recipient1_city"  pattern="([a-zA-Z0-9\.\-\'\s])+" />
+        <input required placeholder = "City" type="text" name="recipient1_city"  pattern="[A-z]+(\s)*" />
 
         <div class="autocomplete">
         <input required id="rec1State" type="text" name="recipient1_state" placeholder="State" pattern="[A-Z]{2}"/>
@@ -195,7 +193,7 @@
     <input type="text" name="recipient2_last_name" class="field-long" placeholder="Recipient 2 Last Name" />
     </li>
     <li>
-        <span><input placeholder= "Recipient 2 Street Address" type="text" name="recipient2_street_address" class="field-long" pattern="(\d)+\s([a-zA-Z0-9\.\-\'\s])+" /></span>
+        <span><input placeholder= "Recipient 2 Street Address" type="text" name="recipient2_street_address" class="field-long" pattern="^\d+\s[A-z]+\s[A-z]+(\s)*" /></span>
 
         <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient2_apt_number" class="field-long" /></span>
 
