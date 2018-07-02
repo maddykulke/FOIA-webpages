@@ -1,11 +1,11 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML5>
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="AuthStyleUpdated.css"> 
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-<script src="AuthScript.js"></script> 
 </head>
+<script src="AuthScript.js"></script>
 <body>
 
 
@@ -22,18 +22,18 @@
     
     <li>
     <label><span class="block-label">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
-    <label><span class="block-label">First Name * </span></label>
-    <input required type="text" name="beneficiary_first_name" class="required" placeholder="First Name" />
+    <label><span for= "beneficiary_first_name"class="block-label">First Name * </span></label>
+    <input required id = "beneficiary_first_name" name="beneficiary_first_name" pattern="[a-zA-Z]+" placeholder="First Name" />
     </li>
     
     <li>
     <label for="beneMiddleName" class="block-label">Middle Name * </label>
-    <input required type="text" name="beneficiary_middle_name" class="field-long" id="beneMiddleName" placeholder="Middle Name" />
+    <input required pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" placeholder="Middle Name" />
     </li>
 
     <li>
     <label for="beneLastName" class="block-label">Last Name *  </label>
-    <input required type="text" name="beneficiary_last_name" class="field-long" placeholder="Last Name" id="beneLastName"/>
+    <input required pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" placeholder="Last Name" id="beneLastName"/>
     </li>
 
     <li>
@@ -75,7 +75,7 @@
         <span id="repRole">
         <p class="disclosures">I understand that I am required to provide proof of authority to represent the individual via notarized power of attorney for a living individual, or via Letters Testamentary or Letters of Administration from the court for a deceased individual.</p>
         <label class="block-label">Legal Role of Representative</label>
-        <input required type="text" name="legalRole" class="field-long" placeholder="Legal Role of Representative" />
+        <input type="text" name="legalRole" class="field-long" placeholder="Legal Role of Representative" />
 
         <input type='file' name='repProof' multiple>
         </span>
@@ -104,10 +104,10 @@
         <span id="timeframeBlock">
         <label><span class="block-label">Please indicate timeframe start and end:</span></label>
         <label>Timeframe Start</label>
-        <input required placeholder="Start Date" name="releaseStart" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="release_start"/>
+        <input placeholder="Start Date" name="releaseStart" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="release_start"/>
 
         <label>Timeframe End</label>
-        <input required placeholder="End Date" name="releaseEnd" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="release_end"/>
+        <input placeholder="End Date" name="releaseEnd" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="release_end"/>
         </span>
 
         </div>
@@ -127,12 +127,12 @@
 
         <span id = expDateBlock>
         <label><span class="block-label">Please indicate future date when authorization will expire.</span></label>
-        <input placeholder= "Expriation Date" required name="expDate" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id=exp_date min="06/24/2018"/>
+        <input placeholder= "Expriation Date" name="expDate" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id=exp_date min="06/24/2018"/>
         </span>
 
         <span id=expEventBlock>
         <label><span class = "block-label">Please indicate the event upon which authorization will expire.</span></label>
-        <input required type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" />
+        <input type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" />
         </span>
 
         </div>
@@ -154,11 +154,11 @@
 <ul class="form-style-1" name = "section_c">
     <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
     <li>
-    <input required type="text" name="recipient1_first_name" class="field-long" placeholder="Recipient 1 First Name" />
+    <input type="text" name="recipient1_first_name" class="field-long" placeholder="Recipient 1 First Name" />
     </li>
 
     <li>
-    <input required type="text" name="recipient1_last_name" class="field-long" placeholder="Recipient 1 Last Name" />
+    <input type="text" name="recipient1_last_name" class="field-long" placeholder="Recipient 1 Last Name" />
     </li>
 
     <div id="addlContactInfo">
@@ -188,24 +188,24 @@
 
     <div id="recipient2" class = "hidden">
     <li>
-    <input required type="text" name="recipient2_first_name" class="field-long" placeholder="Recipient 2 First Name" />
+    <input type="text" name="recipient2_first_name" class="field-long" placeholder="Recipient 2 First Name" />
     </li>
 
     <li>
-    <input required type="text" name="recipient2_last_name" class="field-long" placeholder="Recipient 2 Last Name" />
+    <input type="text" name="recipient2_last_name" class="field-long" placeholder="Recipient 2 Last Name" />
     </li>
     <li>
-        <span><input required placeholder= "Recipient 2 Street Address" type="text" name="recipient2_street_address" class="field-long" pattern="(\d)+\s([a-zA-Z0-9\.\-\'\s])+" /></span>
+        <span><input placeholder= "Recipient 2 Street Address" type="text" name="recipient2_street_address" class="field-long" pattern="(\d)+\s([a-zA-Z0-9\.\-\'\s])+" /></span>
 
         <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient2_apt_number" class="field-long" /></span>
 
-        <input required placeholder = "City" type="text" name="recipient2_city"  pattern="([a-zA-Z0-9\.\-\'\s])+" />
+        <input placeholder = "City" type="text" name="recipient2_city"  pattern="([a-zA-Z0-9\.\-\'\s])+" />
 
         <div class="autocomplete">
-        <input required id="rec2State" type="text" name="recipient2_state" placeholder="State" pattern="[A-Z]{2}" />
+        <input id="rec2State" type="text" name="recipient2_state" placeholder="State" pattern="[A-Z]{2}" />
         </div> 
 
-        <input required placeholder = "Zip Code" type="text" name="recipient2_zipcode" pattern="^\d{5}(-\d{4})?$" />
+        <input placeholder = "Zip Code" type="text" name="recipient2_zipcode" pattern="^\d{5}(-\d{4})?$" />
     </li> 
     </div>
 
@@ -257,15 +257,31 @@
 
 </fieldset>
 
+
+<script type="text/javascript">
+
+var textFields = [beneficiary_first_name, beneMiddleName, beneLastName]
+var i;
+for (i = 0; i < textFields.length; i++) { 
+    customMessage(textFields[i], "Text only, please");
+}
+
+
+
+</script>
+
+
 <input type="submit" name="submit" value="submit" />
 
 </form>
 <script>
+  
 var stateFields = ["beneState", "rec1State", "rec2State"];
 for (var inp in stateFields) {
     autocomplete(document.getElementById(stateFields[inp]), states);
 }
 limitBirthdate();
+
 </script>
 
 </html>
