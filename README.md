@@ -5,3 +5,5 @@ We are two [Coding it Forward Civic Digital Fellows](https://codingitforward.com
 This repository includes prototypes of a web-based Medicare information release authorization form and proposed updates to [related webpages](https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/) supporting Medicare FOIA requests currently hosted by the Centers for Medicare and Medicaid Services. 
 
 Feedback, thoughts, and suggestions, are always welcome!
+
+[Link to web form prototype: Medicare Authorization to Disclose Personal Infromation ](AuthFormUpdated.html)
