@@ -9,7 +9,7 @@
 <body>
 
 
-<form name = "authform" autocomplete="off" method="get" action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+<form name = "authform" autocomplete="off" method="get" action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; };oneBoxMin();">
 
 <!-- *******************************************-->
 <!-----SECTION A: BENEFICIARY INFORMATION--------->
@@ -186,7 +186,7 @@
 
     <button id="newRecip" onclick="showDiv()">Add Second Recipient</button>
 
-    <div id="recipient2" class = "hidden">
+    <div id="recipient2">
     <li>
     <input type="text" name="recipient2_first_name" class="field-long" placeholder="Recipient 2 First Name" />
     </li>
@@ -218,17 +218,30 @@
 <ul class="form-style-1" name = "section_d">
 <label class="block-label">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</label>
     <li>
-    <label>
-    <input type="checkbox" name="indivRequest" value="individualRequest" />
-    <span>At the request of the individual</span>
-    </label>
-    <label>
-    <input type="checkbox"  name="litiRequest" value="litigationRequest" />
-    <span>Litigation</span>
-    </label>
+        <div id="otherRequestType">
+        <label>
+            <input type="checkbox" name="indivRequest" value="individualRequest" />
+            <span>At the request of the individual</span>
+        </label>
+        <label>
+            <input type="checkbox"  name="litiRequest" value="litigationRequest" />
+            <span>Litigation</span>
+        </label>
+        <label>      
+            <input type="checkbox"  name="othRequest" value="otherRequest" id="otherReq"/>
+            <span class="disclosures-check">Other</span>
+        </label>
+                
+            <span id="reqType">
+<!--                 <label for="otherSpecific" class="block-label">Other Request Type</label> -->
+                <input type="text" name="reqTypeDetail" class="field-long" placeholder="Other Request Type" id="otherSpecifics"/>
+            </span>
+        </div>
     </li>
+    
 </ul>
 </fieldset>
+
 
 
 <fieldset>
