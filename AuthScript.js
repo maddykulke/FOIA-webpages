@@ -106,9 +106,6 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
   } 
 }
 
-function require(id){
-  document.getElementById(id).innerHTML = "<input required/>";
-}
 
 function showDiv() {
 /**adapted from W3 Schools toggle example
