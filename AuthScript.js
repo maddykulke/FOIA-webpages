@@ -1,6 +1,7 @@
 
 var states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT'];
 
+
 function autocomplete(inp, arr) {
 /** adapted from w3 schools autocomplete example
 https://www.w3schools.com/howto/howto_js_autocomplete.asp
@@ -108,19 +109,32 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
 
 
 
+
 function showDiv(divID) {
     var hiddenDiv = document.getElementById(divID);
     event.stopPropagation();
     if ( window.getComputedStyle(x, null).getPropertyValue("display") === 'none') {
         hiddenDiv.style.display = 'block-inline';
     } else {
+
+
         hiddenDiv.style.display = 'none';
-    }
-}
+
 
 function limitBirthdate() {
     var today = new Date().toISOString().split('T')[0];
-    document.getElementsById("dob")[0].setAttribute('max', today);
+    document.getElementById("dob").setAttribute('max', today);
+}
+
+function customMessage(id, message){
+
+id.addEventListener("input", function (event) {
+  if (id.validity.patternMismatch) {
+    id.setCustomValidity(message);
+  } else {
+    id.setCustomValidity("");
+  }
+});
 }
 
 
