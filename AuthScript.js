@@ -107,15 +107,14 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
 
 
 
-function showDiv() {
-/**adapted from W3 Schools toggle example
-https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
-**/
-    var hiddenDiv = document.getElementById("recipient2");
-    if (hiddenDiv.style.display === none) {
-        hiddenDiv.style.display = "block-inline";
+
+function showDiv(divID) {
+    var hiddenDiv = document.getElementById(divID);
+    event.stopPropagation();
+    if ( window.getComputedStyle(x, null).getPropertyValue("display") === 'none') {
+        hiddenDiv.style.display = 'block-inline';
     } else {
-        hiddenDiv.style.display = none;
+        hiddenDiv.style.display = 'none';
     }
 }
 
@@ -142,7 +141,7 @@ function acceptTerms(){
     // return true; 
 
   } else { 
-    alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy')
-  
+    alert('Please indicate that you have read and agree to the authorization terms.')
   }
+
 }

@@ -9,7 +9,7 @@
 <body>
 
 
-<form name = "authform" autocomplete="off" method="get" action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; };oneBoxMin();">
+<form name = "authform" autocomplete="off" method="get" action="#" onsubmit="oneBoxMin();">
 
 <!-- *******************************************-->
 <!-----SECTION A: BENEFICIARY INFORMATION--------->
@@ -184,7 +184,7 @@
         <input required placeholder = "Zip Code" type="text" name="recipient1_zipcode" pattern="^\d{5}(-\d{4})?$" />
     </li>
 
-    <button id="newRecip" onclick="showDiv()">Add Second Recipient</button>
+    <button id="newRecip" onclick="showDiv('recipient2')">Add Second Recipient</button>
 
     <div id="recipient2">
     <li>
@@ -270,7 +270,7 @@
 
 </fieldset>
 
-<input type="submit" name="submit" value="submit" />
+<input type="submit" name="submit" value="submit" onClick="acceptTerms()"/>
 
 </form>
 <script>
