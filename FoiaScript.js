@@ -15,3 +15,16 @@ https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
     }
      
 }
+
+function showDiv(id) {
+
+	var div = document.getElementById(id);
+
+	div.style.display = "block";
+}
+
+function hideDiv(id){
+	var div = document.getElementById(id);
+	div.style.display = "none";
+
+}
