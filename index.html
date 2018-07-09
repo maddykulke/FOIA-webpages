@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size:16px;}
+body {font-size:16px}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
@@ -39,6 +39,7 @@ body {font-size:16px;}
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
   <span>CMS.gov</span>
+  
 </header>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -46,21 +47,25 @@ body {font-size:16px;}
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-jumbo"><b>File a FOIA Request</b></h1>
+    <h1 class="w3-large center-div"><b>File a FOIA Request:</b></h1>
     <hr style="width:50px; border:5px steelblue" class="w3-round">
   </div>
 
+
+
    <!-- Instructions -->
+<div id = "instructions" class = "center-div">
 <h4>I am making a FOIA request for...</h4>
 
-<button id="myOwnRecordsButton" onclick= "showDiv('myOwnRecords'), showDiv('fileSubmission'), hideDiv('notOwnRecords')">My own medical records</button>
-<button id="notOwnRecordsButton" onclick= "showDiv('notOwnRecords'), hideDiv('myOwnRecords')">Someone else's records</button>
+<button class = "w3-btn"  id="myOwnRecordsButton" onclick=  "showDiv('myOwnRecords'), showDiv('medAuthForm'),showDiv('fileSubmission'),hideDiv('notOwnRecords')">My own medical records</button>
+
+<button id="notOwnRecordsButton" class= "w3-btn" onclick= "showDiv('notOwnRecords'), hideDiv('myOwnRecords')">Someone else's records</button>
 
 <div id="notOwnRecords" class= "hidden"> 
 <h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
-<button id="isDeceasedButton" onclick= "showDiv('fileSubmission'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes</button>
+<button id="isDeceasedButton" class= "w3-button" onclick= "showDiv('medAuthForm'), showDiv('fileSubmission'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes</button>
 
-<button id="isDeceasedButton" onclick= "showDiv('fileSubmission'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
+<button id="isDeceasedButton" class = "w3-button" onclick= "showDiv('fileSubmission'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
 
 </div> 
 <div id= "myOwnRecords"class="hidden"> <a href="FOIARequestLetter.pdf"> Use this Template to write A FOIA request letter for your own medical records</a></div>
@@ -73,7 +78,7 @@ body {font-size:16px;}
 </div>
 
 
-<div id = "fileSubmission" style= 'display: none'>
+<div id = "fileSubmission" class= "hidden">
   <form>
         <label for="avatar">And upload the file here:</label><br>
         <input type="file"
@@ -85,11 +90,10 @@ body {font-size:16px;}
 
  
 
-<div id = "medAuthForm">
+<div id = "medAuthForm" class= "hidden">
 <a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a>
 </div>
-<div id = "fs" style= 'display: none'>
-  <h1 >I AM SHOWING</h1>
+
 </div>
 
 <script>
