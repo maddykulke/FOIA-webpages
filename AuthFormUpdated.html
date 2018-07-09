@@ -2,9 +2,9 @@
 <!DOCTYPE HTML5>
 <html lang="en">
 <head>
-
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="AuthStyleUpdated.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <script src="AuthScript.js"></script>
 <body>
@@ -152,40 +152,42 @@
 <legend>Section C: Information Release Contact</legend>
 <ul class="form-style-1" name = "section_c">
     <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
+    
     <li>
-    <input type="text" name="recipient1_first_name" class="field-long" placeholder="Recipient 1 First Name" />
+    <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient 1 First Name" />
     </li>
 
     <li>
-    <input type="text" name="recipient1_last_name" class="field-long" placeholder="Recipient 1 Last Name" />
+    <input required type="text" name="recipient_last_name" class="field-long" placeholder="Recipient Last Name" />
     </li>
 
     <div id="addlContactInfo">
     <li>
-    <input type="text" name="recipient1_phone" class="field-long" placeholder="Recipient 1 Phone Number" />
+    <input type="text" name="recipient_phone" class="field-long" placeholder="Recipient Phone Number" />
     </li>
     <li>
-    <input type="text" name="recipient1_email" class="field-long" placeholder="Recipient 1 Email Address" />
+    <input type="text" name="recipient_email" class="field-long" placeholder="Recipient Email Address" />
     </li>
     </div>
 
     <li>
-        <span><input required placeholder= "Recipient 1 Street Address" type="text" name="recipient1_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*"/></span>
+        <span><input required placeholder= "Recipient Street Address" type="text" name="recipient_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*"/></span>
 
-        <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient1_apt_number" class="field-long" /></span>
+        <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient_apt_number" class="field-long" /></span>
 
-        <input required placeholder = "City" type="text" name="recipient1_city"  pattern="[A-z]+(\s)*" />
+        <input required placeholder = "City" type="text" name="recipient_city"  pattern="[A-z]+(\s)*" />
 
         <div class="autocomplete">
-        <input required id="rec1State" type="text" name="recipient1_state" placeholder="State" pattern="[A-Z]{2}"/>
+        <input required id="recState" type="text" name="recipient_state" placeholder="State" pattern="[A-Z]{2}"/>
         </div> 
 
-        <input required placeholder = "Zip Code" type="text" name="recipient1_zipcode" pattern="^\d{5}(-\d{4})?$" />
+        <input required placeholder = "Zip Code" type="text" name="recipient_zipcode" pattern="^\d{5}(-\d{4})?$" />
     </li>
+    
 
-    <button id="newRecip" onclick="showDiv('recipient2')">Add Second Recipient</button>
+    <button id="newRecip" onclick="dynamicAdd()">Add Second Recipient</button>
 
-    <div id="recipient2">
+    <!-- <div id="recipient2">
     <li>
     <input type="text" name="recipient2_first_name" class="field-long" placeholder="Recipient 2 First Name" />
     </li>
@@ -206,7 +208,7 @@
 
         <input placeholder = "Zip Code" type="text" name="recipient2_zipcode" pattern="^\d{5}(-\d{4})?$" />
     </li> 
-    </div>
+    </div> -->
 
 
 </ul>

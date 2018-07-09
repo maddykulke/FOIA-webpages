@@ -3,6 +3,7 @@
   background-color: #D5DCE6;
 
 }
+
 .form-style-1 {
     text-align: left;
     color: #09508B;
@@ -177,6 +178,15 @@ button {
   margin-top: 2em;
 }
 
+#recipient2 { 
+  display: none; 
+}
+
+
+#reqType { 
+  display: none; 
+}
+
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 
 #expChoice2:not(:checked) ~ #expDateBlock { display: none; }
@@ -187,5 +197,5 @@ button {
 
 #repSubmitter:not(:checked) ~ #repRole { display: none; }
 
-#otherReq:not(:checked) ~ #reqType { display: none; }
+
 
