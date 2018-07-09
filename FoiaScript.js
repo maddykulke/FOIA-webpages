@@ -1,4 +1,5 @@
-function showDiv(id) {
+
+function showAndHideDiv(id) {
 /**adapted from W3 Schools toggle example
 https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 **/
@@ -13,25 +14,17 @@ https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 
     }
      
+}
 
+function showDiv(id) {
 
+	var div = document.getElementById(id);
 
-/**
-    var hiddenDiv = document.getElementById("FoiaRequestLetter");
-    hiddenDiv.style.display = "block";
-    console.log(hiddenDiv.style)
-    
-  */  
+	div.style.display = "block";
+}
 
-    /*
-    if (hiddenDiv.style.display === "none") {
-    	console.log("display is none")
-        hiddenDiv.style.display = "block-inline";
-        console.log("display is now visible")
+function hideDiv(id){
+	var div = document.getElementById(id);
+	div.style.display = "none";
 
-    } else {
-        hiddenDiv.style.display = "none";
-        console.log("else")
-    }
-    */ 
 }
