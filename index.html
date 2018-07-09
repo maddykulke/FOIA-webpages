@@ -52,52 +52,44 @@ body {font-size:16px;}
 
    <!-- Instructions -->
 <h4>I am making a FOIA request for...</h4>
-<button id="myOwnRecordsButton" onclick= "showDiv('myOwnRecords'), hideDiv('s')">My own medical records</button>
-<button id="notOwnRecordsButton" onclick= "showDiv('s'), hideDiv('myOwnRecords')">Someone else's records</button>
 
-<div id="s" class= "hidden"> 
+<button id="myOwnRecordsButton" onclick= "showDiv('myOwnRecords'), showDiv('fileSubmission'), hideDiv('notOwnRecords')">My own medical records</button>
+<button id="notOwnRecordsButton" onclick= "showDiv('notOwnRecords'), hideDiv('myOwnRecords')">Someone else's records</button>
+
+<div id="notOwnRecords" class= "hidden"> 
 <h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
-<button id="isDeceasedButton" onclick= "showDiv('deceasedRecords'), hideDiv('aliveRecords')"
-, hideDiv('aliveRecords')">Yes</button>
-<button id="isDeceasedButton" onclick= "showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
-</div>
+<button id="isDeceasedButton" onclick= "showDiv('fileSubmission'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes</button>
+
+<button id="isDeceasedButton" onclick= "showDiv('fileSubmission'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
+
+</div> 
 <div id= "myOwnRecords"class="hidden"> <a href="FOIARequestLetter.pdf"> Use this Template to write A FOIA request letter for your own medical records</a></div>
 
-<div id= "deceasedRecords"class="hidden"> <a href="FOIARequestLetterDeceasedBene.pdf"> Request Letter for deceased person</a>
-  <a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a></div>
+<div id= "deceasedRecords"class="hidden"> <a href="FOIARequestLetterDeceasedBene.pdf"> Use this template to write a FOIA equest Letter for deceased person</a></div>
 
 <div id="aliveRecords" class= "hidden"> <a href= "FOIARequestLetterLivingBene.pdf">Use this template to write a FOIA request Letter for a living beneficiary </a></div>
 <div id="notOwnRecords" class= "hidden"> 
 <h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
-<button id="isDeceasedButton" onclick= "showDiv('deceasedRecords'), hideDiv('aliveRecords')"
-, hideDiv('aliveRecords')">Yes</button>
-<button id="isDeceasedButton" onclick= "showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
 </div>
 
-<div id = "fileSubmission" type="hidden">
+
+<div id = "fileSubmission" style= 'display: none'>
   <form>
-    <div>
         <label for="avatar">And upload the file here:</label><br>
         <input type="file"
                id="avatar" name="avatar"
                accept="image/png, image/jpeg" />
-    </div>
     <input type="submit">
-</form>
+</form> 
 </div>
 
+ 
 
-
-
-<div id= "deceasedRecords"class="hidden"> <a href="FOIARequestLetterDeceasedBene.pdf"> Request Letter for deceased person</a>
-  <a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a></div>
-
-
-
-<div id="aliveRecords" class= "hidden"> <a href= "FOIARequestLetterLivingBene.pdf">Use this template to write a FOIA request Letter for a living beneficiary </a></div>
-
-
+<div id = "medAuthForm">
 <a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a>
+</div>
+<div id = "fs" style= 'display: none'>
+  <h1 >I AM SHOWING</h1>
 </div>
 
 <script>
