@@ -10,7 +10,7 @@
 <body>
 <h1><a href="index.html">Back to instructions</a></h1>
 
-<form name = "authform" autocomplete="off" method="get" action="#" onsubmit="oneBoxMin();">
+<form name = "authform" autocomplete="off" method="get" action="#"">
 
 <!-- *******************************************-->
 <!-----SECTION A: BENEFICIARY INFORMATION--------->
@@ -23,52 +23,56 @@
     
     <li>
     <label><span class="block-label">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
-    <label><span for= "beneficiary_first_name"class="block-label">First Name * </span></label>
-    <input required id = "beneficiary_first_name" name="beneficiary_first_name" pattern="[a-zA-Z]+" placeholder="First Name" />
+    <label class="block-label"><span for= "beneficiary_first_name" >First Name * </span></label>
+    <input required type="text" id = "beneficiary_first_name" name="beneficiary_first_name" pattern="[a-zA-Z]+" />
     </li>
     
     <li>
     <label for="beneMiddleName" class="block-label">Middle Name * </label>
-    <input required pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" placeholder="Middle Name" />
+    <input required type="text" pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" />
     </li>
 
     <li>
     <label for="beneLastName" class="block-label">Last Name *  </label>
-    <input required pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" placeholder="Last Name" id="beneLastName"/>
+    <input required type="text" pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" id="beneLastName"/>
     </li>
 
     <li>
-         <label for="dob" class="block-label">Date of Birth * </label>
-         <input required placeholder="Date of Birth" name="dob" onfocus="(this.type='date')" id="dob" title="Please enter date of birth in mm/dd/yyyy format.">
+         <label for="dob" class="block-label" class="block-label">Date of Birth * </label>
+         <input required type="date" name="dob" onfocus="(this.type='date')" id="birthdate" title="Please enter date of birth in mm/dd/yyyy format.">
 
     </li>
     
-    <li><label for="medicareID">Medicare Identification Number * </label>
+    <li>
+        <label for="medicareID">Medicare Identification Number * </label>
         <p class="field-description">Medicare Identification Number should be between 6 and 11 characters long and comprised of solely numbers and uppercase letters.</p>
-        <input required placeholder= "Medicare Identification Number" type="text" name="id_num" id="medicareID" pattern="([A-Z0-9]){6,11}" title="Medicare Identification Number should be between 6 and 11 characters long and comprised of solely numbers and uppercase letters."/>
+        <input required type="text" name="id_num" id="medicareID" pattern="([A-Z0-9]){6,11}" title="Medicare Identification Number should be between 6 and 11 characters long and comprised of solely numbers and uppercase letters."/>
     </li>
     
 
     <li>
         <label><span class="block-label">Please enter beneficiary address information.</span></label>
-        <span><input required placeholder= "Street Address" type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" /></span>
+        <label for="beneStreetAddress" class="block-label">Street Address * </label>
+        <span><input type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" id="beneStreetAddress"/></span>
 
-        <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="appt_number" class="field-long" /></span>   
+        <label for="beneAddress2" class="block-label">Street Address Line 2</label>
+        <span><input id="beneAddress2" type="text" placeholder= "Apt, Bldg, Suite No."  name="apt_number" class="field-long" /></span>   
 
-        <input required placeholder = "City" type="text" name="city" pattern="[A-z]+(\s)*" />
+        <label for="beneCity" class="block-label">City </label>
+        <input type="text" name="city" pattern="[A-z]+(\s)*" id="beneCity"/>
 
+        <label for="beneState" class="block-label">State </label>
         <div class="autocomplete">
-        <input required id="beneState" type="text" name="State" placeholder="State"/>
+        <input id="beneState" type="text" name="State"/>
         </div> 
 
-        <input required placeholder = "Zip Code" type="text" name="zipcode" pattern="^\d{5}(-\d{4})?$" />
+        <label for="beneZip" class="block-label">Zip Code </label>
+        <input type="text" name="zipcode" pattern="^\d{5}(-\d{4})?$" id="beneZip"/>
     </li>
 
     <li>
         <div id="notBene">
- <!--        <label for="repSubmitter" class="block-label"></span></label>
-            <input type="checkbox" name="submitterType" value="submittedByRep" id="repSubmitter"/>I am completing this form on behalf of the beneficiary specified above. -->
-
+        <label for="repSubmitter" class="block-label"></span></label>
     
          <input type="checkbox" name="submitterType" value="submittedByRep" id="repSubmitter" /><span class="disclosures-check">I am completing this form on behalf of the beneficiary specified above. </span>
 
@@ -78,7 +82,28 @@
         <label class="block-label">Legal Role of Representative</label>
         <input type="text" name="legalRole" class="field-long" placeholder="Legal Role of Representative" />
 
-        <input type='file' name='repProof' multiple>
+        <input required type='file' name='repProof' multiple>
+        </span>
+        </div>
+    </li>
+
+    <li>
+        <div id="certification">
+        <label for="certifyRecords" class="block-label"></span></label>
+    
+         <input type="checkbox" name="reccordCertification" value="submittedByRep" id="certifyRecords" /><span class="disclosures-check">I am requesting that records produced in response to this request be certified, as they are to be admitted into evidence in a case proceeding. </span>
+
+
+        <span id="certDetails">
+        <p class="disclosures">I understand that my request for certification may not be approved, in circumstances including but not limited to cases in which the United States Governement or HHS is a party.</p>
+        <label for="caseJuris" class="block-label">Case Jurisdiction</label>
+        <input type="text" name="caseJurisdiction" id="caseJuris" class="field-long" placeholder="Case Jurisdiction" />
+
+        <label for="caseNumber" class="block-label">Case Number</label>
+        <input type="text" name="caseNum" class="field-long" id="caseNumber" placeholder="Case Number"/>
+
+        <label for="caseName" class="block-label">Case Name</label>
+        <input type="text" name="caseName" class="field-long" id="caseName" placeholder="Case Name"/>
         </span>
         </div>
     </li>
@@ -153,41 +178,44 @@
 <ul class="form-style-1" name = "section_c">
     <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
     
-    <li>
-    <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient 1 First Name" />
-    </li>
+    <div id="recipInfo">
+        <li>
+            <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient 1 First Name" />
+        </li>
 
-    <li>
-    <input required type="text" name="recipient_last_name" class="field-long" placeholder="Recipient Last Name" />
-    </li>
+        <li>
+            <input required type="text" name="recipient_last_name" class="field-long" placeholder="Recipient Last Name" />
+        </li>
 
-    <div id="addlContactInfo">
-    <li>
-    <input type="text" name="recipient_phone" class="field-long" placeholder="Recipient Phone Number" />
-    </li>
-    <li>
-    <input type="text" name="recipient_email" class="field-long" placeholder="Recipient Email Address" />
-    </li>
+        <div id="addlContactInfo">
+            <li>
+                <input type="text" name="recipient_phone" class="field-long" placeholder="Recipient Phone Number" />
+            </li>
+            <li>
+                <input type="text" name="recipient_email" class="field-long" placeholder="Recipient Email Address" />
+            </li>
+        </div>
+
+        <li>
+            <span><input required placeholder= "Recipient Street Address" type="text" name="recipient_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*"/></span>
+
+            <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient_apt_number" class="field-long" /></span>
+
+            <input required placeholder = "City" type="text" name="recipient_city"  pattern="[A-z]+(\s)*" />
+
+            <div class="autocomplete">
+                <input required id="recState" type="text" name="recipient_state" placeholder="State" pattern="[A-Z]{2}"/>
+            </div> 
+
+            <input required placeholder = "Zip Code" type="text" name="recipient_zipcode" pattern="^\d{5}(-\d{4})?$" />
+        </li>
+
     </div>
 
-    <li>
-        <span><input required placeholder= "Recipient Street Address" type="text" name="recipient_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*"/></span>
+        <input type="button" id="newRecip" value="Add Additional Recipient" />
+   
 
-        <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient_apt_number" class="field-long" /></span>
-
-        <input required placeholder = "City" type="text" name="recipient_city"  pattern="[A-z]+(\s)*" />
-
-        <div class="autocomplete">
-        <input required id="recState" type="text" name="recipient_state" placeholder="State" pattern="[A-Z]{2}"/>
-        </div> 
-
-        <input required placeholder = "Zip Code" type="text" name="recipient_zipcode" pattern="^\d{5}(-\d{4})?$" />
-    </li>
-    
-
-    <button id="newRecip" onclick="dynamicAdd()">Add Second Recipient</button>
-
-    <!-- <div id="recipient2">
+<!--     <div id="recipient2">
     <li>
     <input type="text" name="recipient2_first_name" class="field-long" placeholder="Recipient 2 First Name" />
     </li>
@@ -228,16 +256,23 @@
             <input type="checkbox"  name="litiRequest" value="litigationRequest" />
             <span>Litigation</span>
         </label>
-        <label>      
-            <input type="checkbox"  name="othRequest" value="otherRequest" id="otherReq"/>
-            <span class="disclosures-check">Other</span>
-        </label>
-                
-            <span id="reqType">
-<!--                 <label for="otherSpecific" class="block-label">Other Request Type</label> -->
-                <input type="text" name="reqTypeDetail" class="field-long" placeholder="Other Request Type" id="otherSpecifics"/>
-            </span>
+    </li>
+    <li>
+        <div id="otherReason">
+        <label for="repSubmitter" class="block-label">Other</label>
+    
+         <input type="checkbox" name="othRequest" value="otherRequest" id="otherReq" />
+
+
+        <span id="reqType">
+       
+        <label for="otherSpecific" class="block-label">Other Request Type</label>
+        <input type="text" name="reqTypeDetail" id="otherSpecifics" class="field-long" placeholder="Lther Request Type" />
+
+        <input required type='file' name='repProof' multiple>
+        </span>
         </div>
+       
     </li>
     
 </ul>
@@ -272,7 +307,7 @@
 </fieldset>
 
 
-<input type="submit" name="submit" value="submit" onClick="acceptTerms()"/>
+<input type="submit" name="submit" value="submit" onClick="acceptTerms();oneBoxMin();"/>
 
 
 <script type="text/javascript">
@@ -290,12 +325,16 @@ for (i = 0; i < textFields.length; i++) {
 
 </form>
 <script>
-  
-var stateFields = ["beneState", "rec1State", "rec2State"];
+dynamicAdd();
+
+var maxToday = ["birthdate", "release_start"];
+var minTomm = ["expDate"];
+limitCurrentDates(maxToday);
+limitFuturedate(minTomm);
+var stateFields = ["beneState", "recState"];
 for (var inp in stateFields) {
     autocomplete(document.getElementById(stateFields[inp]), states);
 }
-limitBirthdate();
 
 </script>
 
