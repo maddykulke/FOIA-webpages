@@ -61,22 +61,8 @@ body {font-size:16px}
 
 <button id="notOwnRecordsButton" class= "w3-btn" onclick= "showDiv('notOwnRecords'), hideDiv('myOwnRecords')">Someone else's records</button>
 
-<div id="notOwnRecords" class= "hidden"> 
-<h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
-<button id="isDeceasedButton" class= "w3-button" onclick= "showDiv('medAuthForm'), showDiv('fileSubmission'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes</button>
-
-<button id="isDeceasedButton" class = "w3-button" onclick= "showDiv('fileSubmission'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
-
-</div> 
-<div id= "myOwnRecords"class="hidden"> <a href="FOIARequestLetter.pdf"> Use this Template to write A FOIA request letter for your own medical records</a></div>
-
-<div id= "deceasedRecords"class="hidden"> <a href="FOIARequestLetterDeceasedBene.pdf"> Use this template to write a FOIA equest Letter for deceased person</a></div>
-
-<div id="aliveRecords" class= "hidden"> <a href= "FOIARequestLetterLivingBene.pdf">Use this template to write a FOIA request Letter for a living beneficiary </a></div>
-<div id="notOwnRecords" class= "hidden"> 
-<h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
-</div>
-
+<div id= "myOwnRecords"class="hidden"> 
+<ol><li><a href="FOIARequestLetter.pdf"> Use this Template to write A FOIA request letter for your own medical records</a>
 
 <div id = "fileSubmission" class= "hidden">
   <form>
@@ -87,15 +73,52 @@ body {font-size:16px}
     <input type="submit">
 </form> 
 </div>
+</li>
+<br>
+<li><div id = "medAuthForm" class= "hidden">
+<a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a>
+</div></li>
+</ol>
+</div>
 
- 
 
-<div id = "medAuthForm" class= "hidden">
+
+<div id="notOwnRecords" class= "hidden"> 
+<h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
+
+<button id="isDeceasedButton" class= "w3-button" onclick= "showDiv('list'), showDiv('medAuthForm2'), showDiv('fileSubmission2'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes</button>
+
+<button id="isDeceasedButton" class = "w3-button" onclick= "showDiv('list'), showDiv('fileSubmission2'), showDiv('medAuthForm2'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
+<div id= "list" class= hidden>
+<ol>
+<li>
+<div id= "deceasedRecords"class="hidden"> 
+  <a href="FOIARequestLetterDeceasedBene.pdf"> Use this template to write a FOIA equest Letter for deceased person</a></div>
+
+<div id="aliveRecords" class= "hidden"> 
+  <a href= "FOIARequestLetterLivingBene.pdf">Use this template to write a FOIA request Letter for a living beneficiary </a></div>
+
+<div id = "fileSubmission2" class= "hidden">
+  <form>
+        <label for="avatar">And upload the file here:</label><br>
+        <input type="file"
+               id="avatar" name="avatar"
+               accept="image/png, image/jpeg" />
+    <input type="submit">
+</form>
+</div>
+</li>
+<br>
+<li>
+<div id = "medAuthForm2" class= "hidden">
 <a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a>
 </div>
-
+</li>
+</ol>
 </div>
-
+</div>
+</div> 
+</div>
 <script>
 // Script to open and close sidebar
 function w3_open() {
