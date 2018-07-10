@@ -268,6 +268,17 @@ function dynamicAdd(){
             return str + " " + counter;
         }
       
+        var rem = document.createElement("input");
+        rem.type = "button";
+        rem.name = "removeRecip" + String(counter);
+        rem.value = "Remove Recipient";
+        
+        rem.addEventListener("click", function(){
+          this.parentNode.remove();
+        }, false);
+        
+        out.appendChild(rem);
+
         return out;
     }
 
