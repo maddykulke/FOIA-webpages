@@ -179,28 +179,79 @@ function acceptTerms(){
 
 
 
-function dynamicAdd(){
-    // Attribution: Dynamically adding duplicate (unique ID) form Div elements using javascript on 
-    // jsfiddle.net -  https://jsfiddle.net/phusick/Rceua/
+// function dynamicAdd(){
+//     // Attribution: Dynamically adding duplicate (unique ID) form Div elements using javascript on 
+//     // jsfiddle.net -  https://jsfiddle.net/phusick/Rceua/
 
+//     var button = document.getElementById("newRecip");
+    
+//     button.addEventListener("click", function() {
+//     var sourceNode = document.getElementById("recipInfo");
+//     var node = duplicateNode(sourceNode, ["id", "name", "placeholder"]);
+        
+//     sourceNode.parentNode.parentNode.appendChild(node);
+//     }, false);
+    
+//     var counter = 0;
+//     function duplicateNode(/*DOMNode*/sourceNode, /*Array*/attributesToBump) {
+//         counter++;
+//         var out = sourceNode.cloneNode(true);
+//         if (out.hasAttribute("id")) { 
+//           out["id"] = bump(out["id"]); 
+//         }
+
+//         var nodes = out.getElementsByTagName("*");
+        
+//         for (var i = 0, len1 = nodes.length; i < len1; i++) {
+//             var node = nodes[i];
+//             for (var j = 0, len2 = attributesToBump.length; j < len2; j++) {
+//                 var attribute = attributesToBump[j];
+//                 if (node.hasAttribute(attribute)) {
+//                     node[attribute] = bump(node[attribute]);
+//                 }
+//             }
+//         }
+        
+//         function bump(str) {
+//             return str + " " + counter;
+//         }
+      
+        
+//         var rem = document.createElement("input");
+//         rem.type = "button";
+//         rem.name = "removeRecip" + str(counter);
+//         rem.value = "Remove Recipient";
+//         rem.addEventListener("click", removeDiv(), false);
+//         out.appendChild(rem);
+
+//         function removeDiv(){
+//             this.parentNode.parentNode.remove();
+//         }
+
+//         return out;
+//     }
+
+    
+// }
+
+
+function dynamicAdd(){
+    
     var button = document.getElementById("newRecip");
     
     button.addEventListener("click", function() {
         var sourceNode = document.getElementById("recipInfo");
         var node = duplicateNode(sourceNode, ["id", "name", "placeholder"]);
         
-        sourceNode.parentNode.parentNode.appendChild(node);
+        sourceNode.parentNode.appendChild(node);
     }, false);
 
     
     var counter = 0;
-    function duplicateNode(/*DOMNode*/sourceNode, /*Array*/attributesToBump) {
+    function duplicateNode(/*DOMNode*/sourceNode, /*Arra y*/attributesToBump) {
         counter++;
         var out = sourceNode.cloneNode(true);
-        if (out.hasAttribute("id")) { 
-          out["id"] = bump(out["id"]); 
-        }
-
+        if (out.hasAttribute("id")) { out["id"] = bump(out["id"]); }
         var nodes = out.getElementsByTagName("*");
         
         for (var i = 0, len1 = nodes.length; i < len1; i++) {
@@ -213,31 +264,17 @@ function dynamicAdd(){
             }
         }
         
-        function bump(str) {
+        function bump(/*String*/str) {
             return str + " " + counter;
         }
       
-        
-        var rem = document.createElement("input");
-        rem.type = "button";
-        rem.name = "removeRecip" + str(counter);
-        rem.value = "Remove Recipient";
-        rem.addEventListener("click", removeDiv(), false);
-        out.appendChild(rem);
-
-        function removeDiv(){
-            this.parentNode.parentNode.remove();
-        }
-
         return out;
     }
 
-    
-}
+};
 
 
 
-datePickerId.max = new Date().toISOString().split("T")[0];
 
 
 

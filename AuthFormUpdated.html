@@ -180,7 +180,7 @@
     
     <div id="recipInfo">
         <li>
-            <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient 1 First Name" />
+            <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient First Name" />
         </li>
 
         <li>
@@ -212,7 +212,7 @@
 
     </div>
 
-        <input type="button" id="newRecip" value="Add Additional Recipient" />
+        <input type="button" id="newRecip" value="Add Additional Recipient"/>
    
 
 <!--     <div id="recipient2">
@@ -310,21 +310,8 @@
 <input type="submit" name="submit" value="submit" onClick="acceptTerms();oneBoxMin();"/>
 
 
-<script type="text/javascript">
-
-var textFields = [beneficiary_first_name, beneMiddleName, beneLastName]
-var i;
-for (i = 0; i < textFields.length; i++) { 
-    customMessage(textFields[i], "Text only, please");
-}
-
-
-
-</script>
-
-
 </form>
-<script>
+<script type="text/javascript">
 dynamicAdd();
 
 var maxToday = ["birthdate", "release_start"];
@@ -336,6 +323,12 @@ for (var inp in stateFields) {
     autocomplete(document.getElementById(stateFields[inp]), states);
 }
 
+
+var textFields = [beneficiary_first_name, beneMiddleName, beneLastName]
+var i;
+for (i = 0; i < textFields.length; i++) { 
+    customMessage(textFields[i], "Text only, please");
+}
 </script>
 
 </html>
