@@ -84,7 +84,7 @@ div.hidden {
 .disclosures-check {
   font-weight: bold;
   color:#6C6464;
-  margin: 0.5em 0 5em 0; 
+  margin: 1em 0 1em 0; 
 }
 
 /*.required input {
@@ -106,15 +106,6 @@ input[type="date"] {
     color: #6C6464;
 }
 
-
-input[type="date"]:before {
-    content: attr(placeholder) !important;
-    margin-right: 0.3em;
-  }
-  input[type="date"]:focus:before,
-  input[type="date"]:valid:before {
-    content: "";
-  }
 
 input[type=checkbox] {
   background-color: #f1f1f1;
@@ -205,14 +196,6 @@ input[type=button] {
   margin-top: 2em;
 }
 
-#recipient2 { 
-  display: none; 
-}
-
-
-#reqType { 
-  display: none; 
-}
 
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 

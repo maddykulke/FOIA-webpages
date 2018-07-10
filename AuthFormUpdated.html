@@ -128,7 +128,6 @@
         <input required type="radio" id="recordChoiceSpecific" name="release_info" value="specific_event_provider"/>
         <label for="recordChoiceSpecific">Records related to a specific event or healthcare provider</label>
         
-
         <span id="timeframeBlock">
         <label><span class="block-label">Please indicate timeframe start and end:</span></label>
         <label>Timeframe Start</label>
@@ -187,7 +186,7 @@
 <ul class="form-style-1" name = "section_c">
     <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
     
-    <input type="checkbox" name="beneRecipient" value="releaseToBene" id="beneRecip" /><label class="block-label">Release claim records to beneficiary at mailing address above.</label>
+    <input type="checkbox" name="beneRecipient" value="releaseToBene" id="beneRecip" /><label class="disclosures-check">Release claim records to beneficiary at mailing address above.</label>
 
     <div id="recipInfo">
         <li>
@@ -243,21 +242,15 @@
             <input type="checkbox"  name="litiRequest" value="litigationRequest" />
             <span>Litigation</span>
         </label>
-    </li>
-    <li>
-        <div id="otherReason">
-        <label for="repSubmitter" class="block-label">Other</label>
-    
-         <input type="checkbox" name="othRequest" value="otherRequest" id="otherReq" />
-
+        
+        <input type="checkbox" name="othRequest" value="otherRequest" id="otherReq" />
+        <label for="otherReq">Other</label>
 
         <span id="reqType">
-       
         <label for="otherSpecific" class="block-label">Other Request Type</label>
         <input type="text" name="reqTypeDetail" id="otherSpecifics" class="field-long" placeholder="Lther Request Type" />
-
-        <input required type='file' name='repProof' multiple>
         </span>
+
         </div>
        
     </li>
