@@ -84,7 +84,7 @@ div.hidden {
 .disclosures-check {
   font-weight: bold;
   color:#6C6464;
-  margin-top: 2em; 
+  margin: 0.5em 0 5em 0; 
 }
 
 /*.required input {
@@ -227,5 +227,7 @@ input[type=button] {
 #certifyRecords:not(:checked) ~ #certDetails { display: none; }
 
 #otherReq:not(:checked) ~ #reqType { display: none; }
+
+#recordChoiceSpecific:not(:checked) ~ #recordEventBlock { display: none; }
 
 

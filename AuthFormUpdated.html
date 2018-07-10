@@ -52,7 +52,7 @@
 
     <li>
         <label><span class="block-label">Please enter beneficiary address information.</span></label>
-        <label for="beneStreetAddress" class="block-label">Street Address * </label>
+        <label for="beneStreetAddress" class="block-label">Street Address </label>
         <span><input type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" id="beneStreetAddress"/></span>
 
         <label for="beneAddress2" class="block-label">Street Address Line 2</label>
@@ -71,7 +71,7 @@
     </li>
 
     <li>
-        <div id="notBene">
+ <!--        <div id="notBene"> -->
         <label for="repSubmitter" class="block-label"></span></label>
     
          <input type="checkbox" name="submitterType" value="submittedByRep" id="repSubmitter" /><span class="disclosures-check">I am completing this form on behalf of the beneficiary specified above. </span>
@@ -84,11 +84,11 @@
 
         <input required type='file' name='repProof' multiple>
         </span>
-        </div>
+<!--         </div> -->
     </li>
 
     <li>
-        <div id="certification">
+<!--         <div id="certification"> -->
         <label for="certifyRecords" class="block-label"></span></label>
     
          <input type="checkbox" name="reccordCertification" value="submittedByRep" id="certifyRecords" /><span class="disclosures-check">I am requesting that records produced in response to this request be certified, as they are to be admitted into evidence in a case proceeding. </span>
@@ -105,7 +105,7 @@
         <label for="caseName" class="block-label">Case Name</label>
         <input type="text" name="caseName" class="field-long" id="caseName" placeholder="Case Name"/>
         </span>
-        </div>
+<!--         </div> -->
     </li>
     </div>
 
@@ -124,7 +124,11 @@
 
         <input required type="radio" id="recordChoiceTF" name="release_info" value="timeframe_only"/>
         <label for="recordChoice2">Timeframe of claim records</label>
+
+        <input required type="radio" id="recordChoiceSpecific" name="release_info" value="specific_event_provider"/>
+        <label for="recordChoiceSpecific">Records related to a specific event or healthcare provider</label>
         
+
         <span id="timeframeBlock">
         <label><span class="block-label">Please indicate timeframe start and end:</span></label>
         <label>Timeframe Start</label>
@@ -132,6 +136,11 @@
 
         <label>Timeframe End</label>
         <input placeholder="End Date" name="releaseEnd" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="release_end"/>
+        </span>
+
+        <span id="recordEventBlock">
+        <label for="recordChoice3" class="block-label">Please indicate the event or provider you would like records released for:</label>
+        <input type="text" name="expirationEvent" class="field-long" placeholder="Specific Event or Provider" id="recordDetails"/>
         </span>
 
         </div>
@@ -178,6 +187,8 @@
 <ul class="form-style-1" name = "section_c">
     <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
     
+    <input type="checkbox" name="beneRecipient" value="releaseToBene" id="beneRecip" /><label class="block-label">Release claim records to beneficiary at mailing address above.</label>
+
     <div id="recipInfo">
         <li>
             <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient First Name" />
@@ -214,30 +225,6 @@
 
         <input type="button" id="newRecip" value="Add Additional Recipient"/>
    
-
-<!--     <div id="recipient2">
-    <li>
-    <input type="text" name="recipient2_first_name" class="field-long" placeholder="Recipient 2 First Name" />
-    </li>
-
-    <li>
-    <input type="text" name="recipient2_last_name" class="field-long" placeholder="Recipient 2 Last Name" />
-    </li>
-    <li>
-        <span><input placeholder= "Recipient 2 Street Address" type="text" name="recipient2_street_address" class="field-long" pattern="^\d+\s[A-z]+\s[A-z]+(\s)*" /></span>
-
-        <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient2_apt_number" class="field-long" /></span>
-
-        <input placeholder = "City" type="text" name="recipient2_city"  pattern="([a-zA-Z0-9\.\-\'\s])+" />
-
-        <div class="autocomplete">
-        <input id="rec2State" type="text" name="recipient2_state" placeholder="State" pattern="[A-Z]{2}" />
-        </div> 
-
-        <input placeholder = "Zip Code" type="text" name="recipient2_zipcode" pattern="^\d{5}(-\d{4})?$" />
-    </li> 
-    </div> -->
-
 
 </ul>
 </fieldset>
