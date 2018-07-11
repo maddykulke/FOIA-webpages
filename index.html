@@ -47,7 +47,7 @@ body {font-size:16px}
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h1 class="w3-large center-div"><b>File a FOIA Request:</b></h1>
+    <h3 class="w3-large center-div"><b>File a FOIA Request:</b></h3>
     <hr style="width:50px; border:5px steelblue" class="w3-round">
   </div>
 
@@ -55,28 +55,28 @@ body {font-size:16px}
 
    <!-- Instructions -->
 <div id = "instructions" class = "center-div">
-<h4>I am making a FOIA request for...</h4>
+<h3>I am making a FOIA request for...</h3>
 
 <button class = "w3-btn"  id="myOwnRecordsButton" onclick=  "showDiv('myOwnRecords'), showDiv('medAuthForm'),showDiv('fileSubmission'),hideDiv('notOwnRecords')">My own medical records</button>
 
 <button id="notOwnRecordsButton" class= "w3-btn" onclick= "showDiv('notOwnRecords'), hideDiv('myOwnRecords')">Someone else's records</button>
 
 <div id= "myOwnRecords"class="hidden"> 
-<ol><li><a href="FOIARequestLetter.pdf"> Use this Template to write A FOIA request letter for your own medical records</a>
-
+<ol><li>Write A FOIA request letter for your own medical records using this <a href="FOIARequestLetter.pdf"> pdf template</a>.</li>
 <div id = "fileSubmission" class= "hidden">
+  <br>
   <form>
-        <label for="avatar">And upload the file here:</label><br>
+        <label for="avatar">upload the file here:</label><br>
         <input type="file"
                id="avatar" name="avatar"
                accept="image/png, image/jpeg" />
-    <input type="submit">
+    <input type="submit" "w3-btn">
 </form> 
 </div>
 </li>
 <br>
 <li><div id = "medAuthForm" class= "hidden">
-<a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a>
+Complete the <a href="AuthFormUpdated.html">Medicare Authorization Form</a>.
 </div></li>
 </ol>
 </div>
@@ -84,23 +84,24 @@ body {font-size:16px}
 
 
 <div id="notOwnRecords" class= "hidden"> 
-<h1 class="w3-medium"><b>Are you filing a request for the records of someone who is deceased?</b></h1>
+<h4><b>Are you filing a request for the records of a deceased beneficiary?</b></h4>
 
-<button id="isDeceasedButton" class= "w3-button" onclick= "showDiv('list'), showDiv('medAuthForm2'), showDiv('fileSubmission2'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes</button>
+<button id="isDeceasedButton" class= "w3-btn" onclick= "showDiv('list'), showDiv('medAuthForm2'), showDiv('fileSubmission2'), showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes, beneficiary is deceased</button>
 
-<button id="isDeceasedButton" class = "w3-button" onclick= "showDiv('list'), showDiv('fileSubmission2'), showDiv('medAuthForm2'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No</button>
+<button id="isDeceasedButton" class = "w3-btn" onclick= "showDiv('list'), showDiv('fileSubmission2'), showDiv('medAuthForm2'), showDiv('aliveRecords'), hideDiv('deceasedRecords')">No, beneficiary is alive</button>
 <div id= "list" class= hidden>
 <ol>
 <li>
 <div id= "deceasedRecords"class="hidden"> 
-  <a href="FOIARequestLetterDeceasedBene.pdf"> Use this template to write a FOIA equest Letter for deceased person</a></div>
+   Write a FOIA request letter for a deceased beneficiary using this <a href="FOIARequestLetterDeceasedBene.pdf">pdf template</a>.</div>
 
 <div id="aliveRecords" class= "hidden"> 
-  <a href= "FOIARequestLetterLivingBene.pdf">Use this template to write a FOIA request Letter for a living beneficiary </a></div>
-
+   Write a FOIA request Letter for a living beneficiary following this <a href= "FOIARequestLetterLivingBene.pdf">pdf template</a>.</div>
+<br>
 <div id = "fileSubmission2" class= "hidden">
+  <br>
   <form>
-        <label for="avatar">And upload the file here:</label><br>
+        <label for="avatar">upload the file here:</label><br>
         <input type="file"
                id="avatar" name="avatar"
                accept="image/png, image/jpeg" />
@@ -111,7 +112,7 @@ body {font-size:16px}
 <br>
 <li>
 <div id = "medAuthForm2" class= "hidden">
-<a href="AuthFormUpdated.html">Complete the Medicare Authorization Form </a>
+Complete the <a href="AuthFormUpdated.html">Medicare Authorization Form </a>
 </div>
 </li>
 </ol>
