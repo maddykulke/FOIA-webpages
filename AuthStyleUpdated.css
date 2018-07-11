@@ -69,7 +69,7 @@ input {
     line-height: 2;
     font-weight: bold;
     color:#6C6464;
-    margin-bottom: 0.5em;
+    margin: 0 0 0.5em 0;
     font-family: inherit;
 }
 
@@ -196,14 +196,15 @@ input[type=button] {
   margin-top: 2em;
 }
 
+#beneRecip{
+  margin-bottom: 1.5em;
+}
 
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 
 #expChoice2:not(:checked) ~ #expDateBlock { display: none; }
 
 #expChoice3:not(:checked) ~ #expEventBlock { display: none; }
-
-#newRecip:not(:clicked) ~ #recipient2 { display: none; }
 
 #repSubmitter:not(:checked) ~ #repRole { display: none; }
 

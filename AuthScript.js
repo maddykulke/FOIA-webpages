@@ -1,39 +1,45 @@
 
-var states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT'];
 
 
-function autocomplete(inp, arr) {
-/** adapted from w3 schools autocomplete example
+
+function autocomplete(inp) {
+/** Adapted from w3 schools autocomplete example
 https://www.w3schools.com/howto/howto_js_autocomplete.asp
 **/ 
-  
+  var states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC',
+   'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 
+   'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 
+   'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 
+   'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 
+   'UT', 'VT', 'WV', 'WY'];
+
   /*the autocomplete function takes two arguments,
   the text field element and an array of possible autocompleted values:*/
   var currentFocus;
   /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
+      var val = this.value;
       /*close any already open lists of autocompleted values*/
       closeAllLists();
       if (!val) { return false;}
       currentFocus = -1;
       /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
+      var a = document.createElement("div");
       a.setAttribute("id", this.id + "autocomplete-list");
       a.setAttribute("class", "autocomplete-items");
       /*append the DIV element as a child of the autocomplete container:*/
       this.parentNode.appendChild(a);
       /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
+      for (var i = 0; i < states.length; i++) {
         /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+        if (states[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
           /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
+          var b = document.createElement("div");
           /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
+          b.innerHTML = "<strong>" + states[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += states[i].substr(val.length);
           /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          b.innerHTML += "<input type='hidden' value='" + states[i] + "'>";
           /*execute a function when someone clicks on the item value (DIV element):*/
               b.addEventListener("click", function(e) {
               /*insert the value for the autocomplete text field:*/
@@ -108,19 +114,15 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
 
 
 
-
-
-function showDiv(divID) {
-    var hiddenDiv = document.getElementById(divID);
-    event.stopPropagation();
-    if ( window.getComputedStyle(x, null).getPropertyValue("display") === 'none') {
-        hiddenDiv.style.display = 'block-inline';
-    } else {
-
-
-        hiddenDiv.style.display = 'none';
-    }
-}
+// function showDiv(divID) {
+//     var hiddenDiv = document.getElementById(divID);
+//     event.stopPropagation();
+//     if ( window.getComputedStyle(x, null).getPropertyValue("display") === 'none') {
+//         hiddenDiv.style.display = 'block-inline';
+//     } else {
+//         hiddenDiv.style.display = 'none';
+//     }
+// }
 
 
 function limitCurrentDates(dateArray) {
@@ -151,17 +153,17 @@ function customMessage(id, message){
   } else {
     id.setCustomValidity("");
   }
-});
+}, false);
 }
 
 
 function oneBoxMin(){
- var chkd = document.authform.individualRequest.checked || document.authform.litigationRequest.checked||document.authform.otherRequestType.checked
+ var chkd = document.authform.individualRequest.checked || document.authform.litigationRequest.checked||document.authform.otherRequestType.checked;
 
  if (chkd == true){
 
  } else {
-    alert ("Please select an option for purpose of request.")
+    alert ("Please select an option for purpose of request.");
  }
 
 }
@@ -187,36 +189,49 @@ function dynamicAdd(){
     
     button.addEventListener("click", function() {
         var sourceNode = document.getElementById("recipInfo");
-        var node = duplicateNode(sourceNode, ["id", "name", "placeholder"]);
+        var node = duplicateNode(sourceNode, ["id", "name", "placeholder", "value"]);
         
         sourceNode.parentNode.appendChild(node);
     }, false);
 
     
-    var counter = 0;
+    var counter = 1;
     function duplicateNode(/*DOMNode*/sourceNode, /*Array*/attributesToBump) {
         counter++;
         var out = sourceNode.cloneNode(true);
-        if (out.hasAttribute("id")) { out["id"] = bump(out["id"]); }
+        if (out.hasAttribute("id")) { 
+          out["id"] = bump(out["id"]); 
+        }
         var nodes = out.getElementsByTagName("*");
-        
+        alert(nodes.join(""));
+        nodes = nodes.filter(function(item) { 
+                  return ! item.id.endsWith("autocomplete-list");
+              });
+
         for (var i = 0, len1 = nodes.length; i < len1; i++) {
             var node = nodes[i];
+            node.value = "";
+
             for (var j = 0, len2 = attributesToBump.length; j < len2; j++) {
                 var attribute = attributesToBump[j];
                 if (node.hasAttribute(attribute)) {
+                  if (attribute == "placeholder") {
+                    node[attribute] = bump(node[attribute], " ");
+                  } else {
                     node[attribute] = bump(node[attribute]);
+                  }
                 }
             }
         }
         
-        function bump(/*String*/str) {
-            return str + " " + counter;
+        function bump(/*String*/str, separator = "") {
+            return str + separator + counter;
         }
       
         var rem = document.createElement("input");
         rem.type = "button";
-        rem.name = "removeRecip" + String(counter);
+        rem.id = "removeButton" + (counter - 1);
+        rem.name = "removeRecip" + counter;
         rem.value = "Remove Recipient";
         
         rem.addEventListener("click", function(){
@@ -228,7 +243,62 @@ function dynamicAdd(){
         return out;
     }
 
-};
+}
+
+
+
+
+
+function sameRecip() {
+  var fillTrigger = document.getElementById("beneRecip");
+
+  fillTrigger.addEventListener("click", function(){
+    var beneInfo = ["beneFirstName", "beneLastName", "beneStreetAddress", 
+    "beneAddress2", "beneCity", "beneState", "beneZip"];
+
+    var recipInfo = ["recipFirstName", "recipLastName", "recipAddress", "recipApt", 
+    "recipCity", "recipState", "recipZip"];
+
+    if(fillTrigger.checked == true) {
+
+      for (var i = 0; i < beneInfo.length; i++) {
+        document.getElementById(recipInfo[i]).value = document.getElementById(beneInfo[i]).value;
+      } 
+    } else {
+        for (var i = 0; i < recipInfo.length; i++) {
+          document.getElementById(recipInfo[i]).value = "";
+          }
+      }
+  }, false);
+}
+
+
+function collectStates(div) {
+  var eles = [];
+  var inputs = div.getElementsByTagName("input");
+  for(var i = 0; i < inputs.length; i++) {
+      if(inputs[i].name.indexOf('q1_') == 0) {
+          eles.push(inputs[i]);
+      }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
