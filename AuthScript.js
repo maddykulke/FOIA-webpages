@@ -82,7 +82,7 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
     closeAllLists(e.target);
   });
   inp.addEventListener("keyup", function(e) {
-    e.preventDefault
+    e.preventDefault();
   });
   function addActive(x) {
     /*a function to classify an item as "active":*/
@@ -111,6 +111,7 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
     }
   } 
 }
+
 
 
 
@@ -189,7 +190,7 @@ function dynamicAdd(){
     
     button.addEventListener("click", function() {
         var sourceNode = document.getElementById("recipInfo");
-        var node = duplicateNode(sourceNode, ["id", "name", "placeholder", "value"]);
+        var node = duplicateNode(sourceNode, ["id", "name", "placeholder"]);
         
         sourceNode.parentNode.appendChild(node);
     }, false);
@@ -202,19 +203,26 @@ function dynamicAdd(){
         if (out.hasAttribute("id")) { 
           out["id"] = bump(out["id"]); 
         }
+
         var nodes = out.getElementsByTagName("*");
-        alert(nodes.join(""));
-        nodes = nodes.filter(function(item) { 
-                  return ! item.id.endsWith("autocomplete-list");
-              });
 
         for (var i = 0, len1 = nodes.length; i < len1; i++) {
+            console.log(i, nodes[i].class, nodes[i].name);
             var node = nodes[i];
             node.value = "";
+            if (node.id.endsWith("autocomplete-list")) {
+              nodes[i].parentNode.removeChild(nodes[i]);
+              continue;
+            }
+
+            if (nodes[i] == undefined) {
+              continue;
+            }
 
             for (var j = 0, len2 = attributesToBump.length; j < len2; j++) {
                 var attribute = attributesToBump[j];
                 if (node.hasAttribute(attribute)) {
+                  
                   if (attribute == "placeholder") {
                     node[attribute] = bump(node[attribute], " ");
                   } else {

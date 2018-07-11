@@ -22,7 +22,7 @@
 <ul class="form-style-1" name = "section_a">
     
     <li>
-        <label><span class="block-label">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
+        <label><span class="field-description">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
         <label class="block-label"><span for= "beneficiary_first_name" >First Name * </span></label>
         <input required type="text" id = "beneFirstName" name="beneficiary_first_name" pattern="[a-zA-Z]+" />
     </li>
@@ -51,19 +51,18 @@
     
 
     <li>
-        <label><span class="block-label">Please enter beneficiary address information.</span></label>
+        <label><span class="field-description">Please enter beneficiary address information.</span></label>
         <label for="beneStreetAddress" class="block-label">Street Address </label>
         <span><input type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" id="beneStreetAddress"/></span>
 
         <label for="beneAddress2" class="block-label">Street Address Line 2</label>
         <span><input id="beneAddress2" type="text" placeholder= "Apt, Bldg, Suite No."  name="apt_number" class="field-long" /></span>   
 
-        <label for="beneCity" class="block-label">City </label>
-        <input type="text" name="city" pattern="[A-z]+(\s)*" id="beneCity"/>
+        <label for="beneCity" class="block-label">City, State </label>
+        <input type="text" name="city" pattern="[A-z]+(\s)*" id="beneCity"/> <strong>,</strong> 
 
-        
         <div class="autocomplete">
-            <label for="beneState" >State </label>
+            
             <input id="beneState" type="text" name="State"/>
         </div> 
 
@@ -201,34 +200,44 @@
 
     <div id="recipInfo">
         <li>
-            <input required type="text" name="recipient_first_name" class="field-long" placeholder="Recipient First Name" id="recipFirstName"/>
+            <label for="recipFirstName" class="block-label">Recipient First Name</label>
+            <input required type="text" name="recipient_first_name" class="field-long"  id="recipFirstName"/>
         </li>
 
         <li>
-            <input required type="text" name="recipient_last_name" class="field-long" placeholder="Recipient Last Name" id="recipLastName"/>
+            <label for="recipLastName" class="block-label">Recipient Last Name</label>
+            <input required type="text" name="recipient_last_name" class="field-long" id="recipLastName"/>
         </li>
 
         <div id="addlContactInfo">
             <li>
-                <input type="text" name="recipient_phone" class="field-long" placeholder="Recipient Phone Number" id="recipPhone"/>
+                <label for="recipPhone" class="block-label">Recipient Phone Number</label>
+                <input type="text" name="recipient_phone" class="field-long" placeholder="999-999-9999" id="recipPhone"/>
             </li>
             <li>
-                <input type="text" name="recipient_email" class="field-long" placeholder="Recipient Email Address" id="recipEmail"/>
+                <label for="recipEmail" class="block-label">Recipient Email Address</label>
+                <input type="text" name="recipient_email" class="field-long" id="recipEmail"/>
             </li>
         </div>
 
         <li>
-            <span><input required placeholder= "Recipient Street Address" type="text" name="recipient_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*" id="recipAddress"/></span>
+            <label for="recipAddress" class="block-label">Recipient Street Address</label>
+            <span><input required type="text" name="recipient_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*" id="recipAddress"/></span>
 
+            <label for="recipApt" class="block-label">Recipient Address Line 2</label>
             <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient_apt_number" class="field-long" id="recipApt"/></span>
 
-            <input required placeholder = "City" type="text" name="recipient_city"  pattern="[A-z]+(\s)*" id="recipCity"/>
+
+            <label for="recipCity" class="block-label">Recipient City, State</label>
+            <input required  type="text" name="recipient_city"  pattern="[A-z]+(\s)*" id="recipCity"/><strong>   ,   </strong> 
 
             <div class="autocomplete">
-                <input required type="text" name="recipient_state" placeholder="State" pattern="[A-Z]{2}" id="recipState"/>
+<!--                <label for="recipState" class="block-label">Recipient State</label> -->
+                <input required type="text" name="recipient_state"  pattern="[A-Z]{2}" id="recipState"/>
             </div> 
 
-            <input required placeholder = "Zip Code" type="text" name="recipient_zipcode" pattern="^\d{5}(-\d{4})?$" id="recipZip"/>
+            <label for="recipZip" class="block-label">Recipient Zip Code</label>
+            <input required type="text" name="recipient_zipcode" pattern="^\d{5}(-\d{4})?$" id="recipZip"/>
         </li>
 
     </div>
@@ -250,14 +259,10 @@
 <label class="block-label">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</label>
     <li>
         <div id="otherRequestType">
-        <label>
-            <input type="checkbox" name="indivRequest" value="individualRequest" />
-            <span>At the request of the individual</span>
-        </label>
-        <label>
-            <input type="checkbox"  name="litiRequest" value="litigationRequest" />
-            <span>Litigation</span>
-        </label>
+            <input type="checkbox" name="indivRequest" value="individualRequest" id="inidvidual"/>
+            <label for="inidvidual" >At the request of the individual</label>
+            <input type="checkbox"  name="litiRequest" value="litigationRequest" id="litigation"/>
+            <label for="litigation">Litigation</label>
         
         <input type="checkbox" name="othRequest" value="otherRequest" id="otherReq" />
         <label for="otherReq">Other</label>
