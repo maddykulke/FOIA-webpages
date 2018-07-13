@@ -6,6 +6,6 @@ This repository includes prototypes of a web-based Medicare information release 
 
 Feedback, thoughts, and suggestions, are always welcome!
 
-[home](https://maddykulke.github.io/FOIA-webpages/) <br/>
-[Link to web form prototype: Medicare Authorization to Disclose Personal Infromation ](AuthFormUpdated.html)
+[home page for FOIA webpages](https://maddykulke.github.io/FOIA-webpages/) <br/>
+
 
