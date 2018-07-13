@@ -212,7 +212,7 @@
         <div id="addlContactInfo">
             <li>
                 <label for="recipPhone" class="block-label">Recipient Phone Number</label>
-                <input type="text" name="recipient_phone" class="field-long" placeholder="999-999-9999" id="recipPhone"/>
+                <input type="text" name="recipient_phone" class="field-long" placeholder="999-999-999" pattern="^(\d-)?\d{3}-\d{3}-\d{4}$" title="Phone number must be entered in xxx-xxx-xxxx format."id="recipPhone"/>
             </li>
             <li>
                 <label for="recipEmail" class="block-label">Recipient Email Address</label>
