@@ -1,4 +1,6 @@
 
+
+
 function showAndHideDiv(id) {
 /**adapted from W3 Schools toggle example
 https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
@@ -28,3 +30,22 @@ function hideDiv(id){
 	div.style.display = "none";
 
 }
+
+
+$(document).ready(function(input) {
+    $.getJSON('regions.json', function(data) {
+        var regions, states = data.items;
+        var userRegion = states[input];
+        var regionAddress = regions[userRegion]["Address"];
+        var regionPhone = regions[userRegion]["Phone"];
+        var regionFax = regions[userRegion]["Fax"];
+        var regionEmail = regions[userRegion]["Email"];
+
+        var stateList = Object.keys(states);
+        console.log(stateList.join(" "));
+        $("stateDropdown").select(stateList);
+
+    });
+});
+
+
