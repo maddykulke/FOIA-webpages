@@ -130,9 +130,6 @@
             <input required type="radio" id="recordChoiceTF" name="release_info" value="timeframe_only"/>
             <label for="recordChoice2">Timeframe of claim records</label>
 
-            <input required type="radio" id="recordChoiceSpecific" name="release_info" value="specific_event_provider"/>
-            <label for="recordChoiceSpecific">Records related to a specific event or healthcare provider</label>
-            
             <span id="timeframeBlock">
                 <label><span class="block-label">Please indicate timeframe start and end:</span></label>
                 <label>Timeframe Start</label>
@@ -142,24 +139,19 @@
                 <input placeholder="End Date" name="releaseEnd" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="releaseEnd"/>
             </span>
 
-            <span id="recordEventBlock">
-                <label for="recordChoice3" class="block-label">Please indicate the event or provider you would like records released for:</label>
-                <input type="text" name="expirationEvent" class="field-long" placeholder="Specific Event or Provider" id="recordDetails"/>
-            </span>
-
         </div>
 
     </li>
     
     <li>
-        <label class="block-label">Please indicate when this authorization release will expire. *</label>
+        <label class="block-label">Please indicate when this authorization of information release will expire. *</label>
         <div>
         <input required type="radio" id="expChoice1" name="expiration_type" value="oneTime"/>
         <label for="expChoice1">One-time disclosure</label>
         <input required type="radio" id="expChoice2" name="expiration_type" value="expByDate"/>
-        <label for="expChoice2">Through a speficied date</label>
+        <label for="expChoice2">After a speficied date</label>
         <input required type="radio" id="expChoice3" name="expiration_type" value="expByEvent"/>
-        <label for="expChoice3">Until a speficied event</label>
+        <label for="expChoice3">After a speficied event (i.e., end of litigation)</label>
 
         <span id = expDateBlock>
         <label for="exp_date" class="block-label">Please indicate future date when authorization will expire.</label>

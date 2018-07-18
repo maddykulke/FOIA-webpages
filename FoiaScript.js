@@ -33,8 +33,10 @@ function hideDiv(id){
 
 
 $(document).ready(function(input) {
-    $.getJSON('regions.json', function(data) {
-        var regions, states = data.items;
+    $.getJSON("http://github.com/maddykulke/FOIA-webpages/blob/master/regions.json", function(data) {
+        var regions, states = Object.values(data);
+        console.log(regions);
+        console.log(states);
         var userRegion = states[input];
         var regionAddress = regions[userRegion]["Address"];
         var regionPhone = regions[userRegion]["Phone"];
@@ -44,6 +46,16 @@ $(document).ready(function(input) {
         var stateList = Object.keys(states);
         console.log(stateList.join(" "));
         $("stateDropdown").select(stateList);
+
+            if ( $('#stateDropdown:not(:has(option))') ){
+            
+              $("#stateDropdown").click(function(){  
+                  $.each(states, function(key, value){         
+                      $("#stateDropdown").append($("<option></option>").attr(
+                          "value", key).text(key));
+                       });
+                  });
+            }
 
     });
 });
