@@ -33,7 +33,7 @@ function hideDiv(id){
 
 
 $(document).ready(function(input) {
-    $.getJSON("http://github.com/maddykulke/FOIA-webpages/blob/master/regions.json", function(data) {
+    $.getJSON("regions.json", function(data) {
         var regions, states = Object.values(data);
         console.log(regions);
         console.log(states);
