@@ -1,0 +1,102 @@
+<!-- modified from: https://www.w3schools.com/css/css_rwd_templates.asp -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<title>File a FOIA request</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Freedom of Information Act<br>(FOIA)</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
+    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
+    </a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FOIA Reading Room</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Annual Reports</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hospital Appeals Settlements</a>
+  </div>
+</nav>
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>CMS.gov</span>
+  
+</header>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h3 class="w3-large center-div"><b>File a FOIA Request:</b></h3>
+    <hr style="width:50px; border:5px steelblue" class="w3-round">
+  </div>
+
+   <!-- page 1: What type of medicare beneficiary claims are you requesting? -->
+
+<div id = "typeOfClaim" class = "center-div">
+    <h5> What type of medicare beneficiary claims are you requesting? </h5>
+    <h6> Does the beneficiary have a Medicare card? </h6>
+    <button id="hasCardBtn" class="w3-btn">Yes</button><button id="noCardBtn" class="w3-btn">No</button>
+    <div id="noCard" class = "hidden">
+        <h5> <b>Not Entrolled in Medicare</b></h5>
+        <p>If the beneficiary does not have a Medicare card they are not enrolled and therefore records are not maintained by CMS. <b>Contact the correct insurer</b>. </p>
+    </div>
+    <div id= "check" class ="hidden">
+    <img id= "checkGreen" src="check.png" class='gallerythumbnail'>
+    </div>
+    <h6> Does the beneficiary have Medicare Advantage? </h6>
+    <button id="hasAdvantageBtn" class="w3-btn">Yes</button><button id="noAdvantageBtn" class="w3-btn">No</button>
+    <div id= "hasAdvantage" class = "hidden"> 
+        <h5> <b>Medicare advantage</b></h5>
+        <p>CMS does not maintain Medicare Advantage claims records.
+        You will need to submit your request directly to the specic private insurance company. (e.g. HMO, PPO, etc.)</p>
+    </div>
+    <div id = "dest1" class ="hidden"></div>
+    <h6> Does the beneficiary have Medicaid? </h6>
+    <button id="hasMedicaidBtn" class="w3-btn">Yes</button><button id="noMedicaidBtn" class="w3-btn">No</button>
+    <div id= "hasMedicaid" class = "hidden"> 
+        <h5> <b>Medicaid</b></h5>
+        <p>CMS does not maintain Medicaid claims records. You will need to submit your request directly to the state agency. State contact information:
+</p>
+    </div>
+    <div id = "dest2" class ="hidden" ></div>
+</div>
+<br>
+<button id = "toPageOne" class = "center-div w3-btn" >Fill out a FOIA request for Medicare Claims</button>
+
+
+
+<script src ="FoiaScript.js"></script>
+
+<script>
+onload=dupDiv;
+</script>
+
+</body>
+</html>
