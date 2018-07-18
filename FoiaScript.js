@@ -43,10 +43,6 @@ $(document).ready(function(input) {
         var regionFax = regions[userRegion]["Fax"];
         var regionEmail = regions[userRegion]["Email"];
 
-        var stateList = Object.keys(states);
-        console.log(stateList.join(" "));
-        $("stateDropdown").select(stateList);
-
             if ( $('#stateDropdown:not(:has(option))') ){
             
               $("#stateDropdown").click(function(){  
