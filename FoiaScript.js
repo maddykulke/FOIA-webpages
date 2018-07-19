@@ -37,7 +37,7 @@ $(document).ready(function() {
     
     $.getJSON( "regions.json")
     .done(function( data ) {
-    console.log( "JSON Data: " + data.regions["Region 1"].Address );
+    console.log( "JSON Data: " + data.regions.Region1.Address );
   })
   .fail(function( jqxhr, textStatus, error ) {
     var err = textStatus + ", " + error;
