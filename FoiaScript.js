@@ -33,27 +33,37 @@ function hideDiv(id){
 
 
 $(document).ready(function() {
-    $.getJSON("https://github.com/maddykulke/FOIA-webpages/blob/master/regions.json", function(data) {
-        var regions, states = Object.values(data);
-        console.log(regions);
-        console.log(states);
-        var userRegion = states[input];
-        var regionAddress = regions[userRegion]["Address"];
-        var regionPhone = regions[userRegion]["Phone"];
-        var regionFax = regions[userRegion]["Fax"];
-        var regionEmail = regions[userRegion]["Email"];
-
-            if ( $('#stateDropdown:not(:has(option))') ){
-            
-              $("#stateDropdown").click(function(){  
-                  $.each(states, function(key, value){         
-                      $("#stateDropdown").append($("<option></option>").attr(
-                          "value", key).text(key));
-                       });
-                  });
-            }
-
+    // $.getJSON("regions.json"), function(data) {
+    
+    $.getJSON( "regions.json")
+    .done(function( data ) {
+    console.log( "JSON Data: " + data.regions["Region 1"].Address );
+  })
+  .fail(function( jqxhr, textStatus, error ) {
+    var err = textStatus + ", " + error;
+    console.log( "Request Failed: " + err );
     });
+        // var regions, states = data.regions;
+        // var states = data.states;
+        // console.log(regions);
+        // console.log(states);
+        // var userRegion = states[input];
+        // var regionAddress = regions[userRegion]["Address"];
+        // var regionPhone = regions[userRegion]["Phone"];
+        // var regionFax = regions[userRegion]["Fax"];
+        // var regionEmail = regions[userRegion]["Email"];
+
+        //     if ( $('#stateDropdown:not(:has(option))') ){
+            
+        //       $("#stateDropdown").click(function(){  
+        //           $.each(states, function(key, value){         
+        //               $("#stateDropdown").append($("<option></option>").attr(
+        //                   "value", key).text(key));
+        //                });
+        //           });
+        //     }
+
+    // });
 });
 
 
