@@ -1,69 +1,69 @@
 {
     "Regions": {
-        "Region 1": {
+        "Region1": {
             "Office Location": "Boston, MA",
-            "Address": "CMS, Boston Regional Office JFK Federal Building, Rm. 2325 Boston, MA 02203",
+            "Address": "CMS, Boston Regional Office, JFK Federal Building, Rm. 2325 Boston, MA 02203",
             "Phone": "(617) 565-1185",
             "Fax": "(443) 380-5002",
             "Email": null
         },
-        "Region 2": {
+        "Region2": {
             "Office Location": "New York, NY",
-            "Address": "CMS, New York Regional\n 26 Federal Plaza, Room 3812\n New York, NY 10278",
+            "Address": "CMS, New York Regional, 26 Federal Plaza, Room 3812, New York, NY 10278",
             "Phone": "(212) 616-2229",
             "Fax": "(443) 380-8855",
             "Email": "02FOIARF@cms.hhs.gov"
         },
-        "Region 3": {
+        "Region3": {
             "Office Location": "Philadelphia, PA",
-            "Address": "CMS, Philadelphia Regional Office\n 801 Market Street\n Suite 9400\n Philadelphia, PA 19107-3134",
+            "Address": "CMS, Philadelphia Regional Office, 801 Market Street Suite 9400\n Philadelphia, PA 19107-3134",
             "Phone": "(215) 861-4347",
             "Fax": "(215) 861-4240",
             "Email": "RO3FOIA@cms.hhs.gov"
         },
-        "Region 4": {
+        "Region4": {
             "Office Location": "Atlanta, GA",
             "Address": "CMS, Atlanta Regional Office\n Atlanta Federal Center, 4th Floor\n 61 Forsyth Street, SW Suite 4T20\n Atlanta, GA 30303-8909",
             "Phone": "(404) 562-1738",
             "Fax": "(443) 380-8945",
             "Email": "04FOIARF@cms.hhs.gov"
         },
-        "Region 5": {
+        "Region5": {
             "Office Location": "Chicago, IL",
             "Address": "CMS, Chicago Regional Office\n 233 N. Michigan Avenue, Suite 600\n Chicago, IL 60601",
             "Phone": "(312) 886-5344",
             "Fax": "(312) 353-0252",
             "Email": "05orafoia@cms.hhs.gov"
         },
-        "Region 6": {
+        "Region6": {
             "Office Location": "Dallas, TX",
             "Address": "CMS, Dallas Regional Office\n 1301 Young Street, Rm. 714\n Dallas, TX 75202",
             "Phone": "(214) 767-6428",
             "Fax": "(443) 380-8860",
         "Email": null
         },
-        "Region 7": {
+        "Region7": {
             "Office Location": "Kansas City, MO",
             "Address": "CMS, Kansas City Regional Office\n 601 East 12th Street\n Kansas City, MO 64106",
             "Phone": "(816) 426-5233",
             "Fax": "(443) 380-8861",
             "Email": "07FOIARF@cms.hhs.gov"
         },
-        "Region 8": {
+        "Region8": {
             "Office Location": "Denver, CO",
             "Address": "CMS, Denver Regional Office\n 1961 Stout Street, Room 008-148\n Denver, CO 80294",
             "Phone": "(303) 844-7118",
             "Fax": "(443) 380-5222",
             "Email": "R8FOIA@cms.hhs.gov"
         },
-        "Region 9": {
+        "Region9": {
             "Office Location": "San Francisco, CA",
             "Address": "CMS, San Francisco Regional Office\n 90 7th Street, Suite 5-300\n San Francisco, CA 94103",
             "Phone": "(415) 744-3502",
             "Fax": "(443) 380-8863",
             "Email": "SFCMSFOIA@cms.hhs.gov"
         },
-        "Region 10": {
+        "Region10": {
             "Office Location": "Seattle, WA",
             "Address": "CMS, Seattle Regional Office\n 701 5th Avenue, Suite 1600, M/S 100\n Seattle, WA 98104",
             "Phone": "(206) 615-2308",
@@ -72,60 +72,60 @@
         }
     },
     "States": {
-        "Connecticut": "Region 1",
-        "Maine": "Region 1", 
-        "Massachusetts": "Region 1", 
-        "New Hampshire": "Region 1", 
-        "Rhode Island": "Region 1", 
-        "Vermont": "Region 1",
-        "New Jersey": "Region 2", 
-        "New York": "Region 2", 
-        "Puerto Rico": "Region 2", 
-        "Virgin Islands": "Region 2",
-        "Delaware": "Region 3", 
-        "District of Columbia": "Region 3", 
-        "Maryland": "Region 3", 
-        "Pennsylvania": "Region 3", 
-        "Virginia": "Region 3", 
-        "West Virginia": "Region 3",
-        "Alabama": "Region 4", 
-        "Florida": "Region 4", 
-        "Georgia": "Region 4", 
-        "Kentucky": "Region 4", 
-        "Mississippi": "Region 4", 
-        "North Carolina": "Region 4", 
-        "South Carolina": "Region 4", 
-        "Tennessee": "Region 4",
-        "Illinois": "Region 5",
-        "Indiana": "Region 5",
-        "Michigan": "Region 5",
-        "Minnesota": "Region 5",
-        "Ohio": "Region 5",
-        "Wisconsin": "Region 5",
-        "Arkansas": "Region 6",
-        "Louisiana": "Region 6",
-        "New Mexico": "Region 6",
-        "Oklahoma": "Region 6",
-        "Texas": "Region 6",
-        "Iowa": "Region 7",
-        "Kansas": "Region 7",
-        "Missouri": "Region 7",
-        "Nebraska": "Region 7",
-        "Colorado": "Region 8",
-        "Montana": "Region 8",
-        "North Dakota": "Region 8",
-        "South Dakota": "Region 8",
-        "Utah": "Region 8",
-        "Wyoming": "Region 8",
-        "American Samoa": "Region 9",
-        "Arizona": "Region 9",
-        "California": "Region 9",
-        "Guam": "Region 9",
-        "Hawaii": "Region 9",
-        "Nevada": "Region 9",
-        "Alaska": "Region 10",
-        "Idaho": "Region 10",
-        "Oregon": "Region 10",
-        "Washington": "Region 10"
+        "Connecticut": "Region1",
+        "Maine": "Region1", 
+        "Massachusetts": "Region1", 
+        "New Hampshire": "Region1", 
+        "Rhode Island": "Region1", 
+        "Vermont": "Region1",
+        "New Jersey": "Region2", 
+        "New York": "Region2", 
+        "Puerto Rico": "Region2", 
+        "Virgin Islands": "Region2",
+        "Delaware": "Region3", 
+        "District of Columbia": "Region3", 
+        "Maryland": "Region3", 
+        "Pennsylvania": "Region3", 
+        "Virginia": "Region3", 
+        "West Virginia": "Region3",
+        "Alabama": "Region4", 
+        "Florida": "Region4", 
+        "Georgia": "Region4", 
+        "Kentucky": "Region4", 
+        "Mississippi": "Region4", 
+        "North Carolina": "Region4", 
+        "South Carolina": "Region4", 
+        "Tennessee": "Region4",
+        "Illinois": "Region5",
+        "Indiana": "Region5",
+        "Michigan": "Region5",
+        "Minnesota": "Region5",
+        "Ohio": "Region5",
+        "Wisconsin": "Region5",
+        "Arkansas": "Region6",
+        "Louisiana": "Region6",
+        "New Mexico": "Region6",
+        "Oklahoma": "Region6",
+        "Texas": "Region6",
+        "Iowa": "Region7",
+        "Kansas": "Region7",
+        "Missouri": "Region7",
+        "Nebraska": "Region7",
+        "Colorado": "Region8",
+        "Montana": "Region8",
+        "North Dakota": "Region8",
+        "South Dakota": "Region8",
+        "Utah": "Region8",
+        "Wyoming": "Region8",
+        "American Samoa": "Region9",
+        "Arizona": "Region9",
+        "California": "Region9",
+        "Guam": "Region9",
+        "Hawaii": "Region9",
+        "Nevada": "Region9",
+        "Alaska": "Region10",
+        "Idaho": "Region10",
+        "Oregon": "Region10",
+        "Washington": "Region10"
     }
 }
