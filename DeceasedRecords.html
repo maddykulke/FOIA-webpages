@@ -1,0 +1,387 @@
+<!DOCTYPE HTML5>
+<html lang = "en">
+<title>File a FOIA request</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel= "stylesheet" href="stylesheet.css">
+  <script src="FoiaScript2.js"></script>
+  <script src="AuthScript.js"></script>
+
+  <title>File a FOIA request</title>
+</head>
+
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+
+
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Freedom of Information Act<br>(FOIA)</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
+    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
+    </a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FOIA Reading Room</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Annual Reports</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hospital Appeals Settlements</a>
+  </div>
+</nav>
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>CMS.gov</span>
+  
+</header>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <hr style="width:50px; border:5px steelblue" class="w3-round">
+  </div>
+
+
+
+
+
+<form name="authform" autocomplete="off" method="POST" action="#">
+    
+<fieldset>
+<legend>Section A: Beneficiary Information</legend>
+
+<ul class="form-style-1" name = "section_a">
+    
+    <li>
+        <label><span class="field-description">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
+        <label class="block-label"><span for= "beneficiary_first_name" >First Name * </span></label>
+        <input required type="text" id = "beneFirstName" name="beneficiary_first_name" pattern="[a-zA-Z]+" />
+    </li>
+    
+    <li>
+        <label for="beneMiddleName" class="block-label">Middle Name * </label>
+        <input required type="text" pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" />
+    </li>
+
+    <li>
+        <label for="beneLastName" class="block-label">Last Name *  </label>
+        <input required type="text" pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" id="beneLastName"/>
+    </li>
+
+    <li>
+         <label for="dob" class="block-label" class="block-label">Date of Birth * </label>
+         <input required name="dob" onfocus="(this.type='date')" id="birthdate" title="Please enter date of birth in mm/dd/yyyy format.">
+
+    </li>
+    
+    <li>
+        <label for="medicareID">Medicare Identification Number * </label>
+        <p class="field-description">Medicare Identification Number should be between 6 and 11 characters long and comprised of solely numbers and uppercase letters.</p>
+        <input required type="text" name="id_num" id="medicareID" pattern="([A-Z0-9]){6,11}" title="Medicare Identification Number should be between 6 and 11 characters long and comprised of solely numbers and uppercase letters."/>
+    </li>
+    
+
+    <li>
+        <label><span class="field-description">Please enter beneficiary address information.</span></label>
+        <label for="beneStreetAddress" class="block-label">Street Address </label>
+        <span><input type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" id="beneStreetAddress"/></span>
+
+        <label for="beneAddress2" class="block-label">Street Address Line 2</label>
+        <span><input id="beneAddress2" type="text" placeholder= "Apt, Bldg, Suite No."  name="apt_number" class="field-long" /></span>   
+
+        <label for="beneCity" class="block-label">City, State </label>
+        <input type="text" name="city" pattern="[A-z]+(\s)*" id="beneCity"/> <strong>,</strong> 
+
+        <div class="autocomplete">
+            
+            <input id="beneState" type="text" name="State"/>
+        </div> 
+
+        <label for="beneZip" class="block-label">Zip Code </label>
+        <input type="text" name="zipcode" pattern="^\d{5}(-\d{4})?$" id="beneZip"/>
+    </li>
+
+    <li>
+
+        <label for="repSubmitter" class="block-label"></span></label>
+        <input type="checkbox" name="submitterType" value="submittedByRep" id="repSubmitter" /><span class="disclosures-check">I am completing this form on behalf of the beneficiary specified above. </span>
+
+
+        <span id="repRole">
+            <p class="disclosures">I understand that I am required to provide proof of authority to represent the individual via notarized power of attorney for a living individual, or via Letters Testamentary or Letters of Administration from the court for a deceased individual.</p>
+            <label class="block-label">Legal Role of Representative</label>
+            <input type="text" name="legalRole" class="field-long" placeholder="Legal Role of Representative" />
+
+            <input required type='file' name='repProof' multiple>
+        </span>
+
+    </li>
+
+    <li>
+
+        <label for="certifyRecords" class="block-label"></span></label>
+        <input type="checkbox" name="reccordCertification" value="submittedByRep" id="certifyRecords" /><span class="disclosures-check">I am requesting that records produced in response to this request be certified, as they are to be admitted into evidence in a case proceeding. </span>
+
+
+        <span id="certDetails">
+            <p class="disclosures">I understand that my request for certification may not be approved, in circumstances including but not limited to cases in which the United States Governement or HHS is a party.</p>
+            <label for="caseJuris" class="block-label">Case Jurisdiction</label>
+            <input type="text" name="caseJurisdiction" id="caseJuris" class="field-long" placeholder="Case Jurisdiction" />
+
+            <label for="caseNumber" class="block-label">Case Number</label>
+            <input type="text" name="caseNum" class="field-long" id="caseNumber" placeholder="Case Number"/>
+
+            <label for="caseName" class="block-label">Case Name</label>
+            <input type="text" name="caseName" class="field-long" id="caseName" placeholder="Case Name"/>
+        </span>
+
+    </li>
+
+
+</ul>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Section B: Record Time Frame Definition</legend>
+<ul class="form-style-1" name = "section_b">
+    <li>
+        <label>Select the claim information to disclose for the individual identified in Section A. *</label>
+        <div>
+            <input required type="radio" id="recordChoiceAll" name="release_info" value="all_records"/>
+            <label for="recordChoice1">Release all records</label>
+
+            <input required type="radio" id="recordChoiceTF" name="release_info" value="timeframe_only"/>
+            <label for="recordChoice2">Timeframe of claim records</label>
+
+            <input required type="radio" id="recordChoiceSpecific" name="release_info" value="specific_event_provider"/>
+            <label for="recordChoiceSpecific">Records related to a specific event or healthcare provider</label>
+            
+            <span id="timeframeBlock">
+                <label><span class="block-label">Please indicate timeframe start and end:</span></label>
+                <label>Timeframe Start</label>
+                <input placeholder="Start Date" name="releaseStart" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="releaseStart"/>
+
+                <label>Timeframe End</label>
+                <input placeholder="End Date" name="releaseEnd" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="releaseEnd"/>
+            </span>
+
+            <span id="recordEventBlock">
+                <label for="recordChoice3" class="block-label">Please indicate the event or provider you would like records released for:</label>
+                <input type="text" name="expirationEvent" class="field-long" placeholder="Specific Event or Provider" id="recordDetails"/>
+            </span>
+
+        </div>
+
+    </li>
+    
+    <li>
+        <label class="block-label">Please indicate when this authorization release will expire. *</label>
+        <div>
+        <input required type="radio" id="expChoice1" name="expiration_type" value="oneTime"/>
+        <label for="expChoice1">One-time disclosure</label>
+        <input required type="radio" id="expChoice2" name="expiration_type" value="expByDate"/>
+        <label for="expChoice2">Through a speficied date</label>
+        <input required type="radio" id="expChoice3" name="expiration_type" value="expByEvent"/>
+        <label for="expChoice3">Until a speficied event</label>
+
+        <span id = expDateBlock>
+        <label for="exp_date" class="block-label">Please indicate future date when authorization will expire.</label>
+        <input placeholder= "Expriation Date" name="expDate" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id=expirationDate />
+        </span>
+
+        <span id=expEventBlock>
+        <label for="exp_event" class="block-label">Please indicate the event upon which authorization will expire.</label>
+        <input type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" id=exp_event/>
+        </span>
+
+        </div>
+    </li>
+
+    <li>
+        <label><span class="block-label">NY residents must also select:</span></label>
+        <input type="radio" id="NYrecordsAll" name="NYRecords" value="allNY"/>
+        <label for="NYrecordsAll">Release all records</label>
+        <input type="radio" id="NYrecordsPartial" name="NYRecords" value="partialNY"/>
+        <label for="NYrecordsPartial">Exclude information about alcohol and drug abuse, mental health treatment, and HIV</label>
+    </li>
+    
+</ul>
+</fieldset>
+
+
+<!-- *******************************************-->
+<!-----SECTION C: INFORMATION RELEASE CONTACT----->
+<!--******************************************* -->
+
+
+<fieldset>
+<legend>Section C: Information Release Contact</legend>
+<ul class="form-style-1" name = "section_c">
+    <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
+    
+    <input type="checkbox" name="beneRecipient" value="releaseToBene" id="beneRecip" /><label class="disclosures-check">Release claim records to beneficiary at mailing address above.</label>
+
+    <div id="recipInfo">
+        <li>
+            <label for="recipFirstName" class="block-label">Recipient First Name</label>
+            <input required type="text" name="recipient_first_name" class="field-long"  id="recipFirstName"/>
+        </li>
+
+        <li>
+            <label for="recipLastName" class="block-label">Recipient Last Name</label>
+            <input required type="text" name="recipient_last_name" class="field-long" id="recipLastName"/>
+        </li>
+
+        <div id="addlContactInfo">
+            <li>
+                <label for="recipPhone" class="block-label">Recipient Phone Number</label>
+                <input type="text" name="recipient_phone" class="field-long" placeholder="999-999-999" pattern="^(\d-)?\d{3}-\d{3}-\d{4}$" title="Phone number must be entered in xxx-xxx-xxxx format."id="recipPhone"/>
+            </li>
+            <li>
+                <label for="recipEmail" class="block-label">Recipient Email Address</label>
+                <input type="text" name="recipient_email" class="field-long" id="recipEmail"/>
+            </li>
+        </div>
+
+        <li>
+            <label for="recipAddress" class="block-label">Recipient Street Address</label>
+            <span><input required type="text" name="recipient_street_address" class="field-long" pattern ="^\d+\s[A-z]+\s[A-z]+(\s)*" id="recipAddress"/></span>
+
+            <label for="recipApt" class="block-label">Recipient Address Line 2</label>
+            <span><input placeholder= "Apt, Bldg, Suite No." type="text" name="recipient_apt_number" class="field-long" id="recipApt"/></span>
+
+
+            <label for="recipCity" class="block-label">Recipient City, State</label>
+            <input required  type="text" name="recipient_city"  pattern="[A-z]+(\s)*" id="recipCity"/><strong>   ,   </strong> 
+
+            <div class="autocomplete">
+<!--                <label for="recipState" class="block-label">Recipient State</label> -->
+                <input required type="text" name="recipient_state"  pattern="[A-Z]{2}" id="recipState"/>
+            </div> 
+
+            <label for="recipZip" class="block-label">Recipient Zip Code</label>
+            <input required type="text" name="recipient_zipcode" pattern="^\d{5}(-\d{4})?$" id="recipZip"/>
+        </li>
+
+    </div>
+
+        <input type="button" id="newRecip" value="Add Additional Recipient"/>
+   
+
+</ul>
+</fieldset>
+
+<!-- *******************************************-->
+<!-- -------SECTION D: PURPOSE OF REQUEST------ -->
+<!--******************************************* -->
+
+
+<fieldset>
+<legend>Section D: Purpose of Request</legend>
+<ul class="form-style-1" name = "section_d">
+<label class="block-label">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</label>
+    <li>
+        <div id="otherRequestType">
+            <input type="checkbox" name="indivRequest" value="individualRequest" id="inidvidual"/>
+            <label for="inidvidual" >At the request of the individual</label>
+            <input type="checkbox"  name="litiRequest" value="litigationRequest" id="litigation"/>
+            <label for="litigation">Litigation</label>
+        
+        <input type="checkbox" name="othRequest" value="otherRequest" id="otherReq" />
+        <label for="otherReq">Other</label>
+
+        <span id="reqType">
+        <label for="otherSpecific" class="block-label">Other Request Type</label>
+        <input type="text" name="reqTypeDetail" id="otherSpecifics" class="field-long" placeholder="Lther Request Type" />
+        </span>
+
+        </div>
+       
+    </li>
+    
+</ul>
+</fieldset>
+
+<!-- *******************************************-->
+<!-- ----SECTION E: AUTHORIZATION AGREEMENT---- -->
+<!--******************************************* -->
+
+<fieldset>
+<legend>Section E: Authorization Agreement</legend>
+<ul class="form-style-1" name = "section_e">
+    <li>
+    <p class="disclosures">I authorize Medicare to disclose claim records to the person(s) or organization(s) documented in Section C. I understand that these claim records may be re-disclosed by the recipient and may no longer be protected by law.</p>
+    
+    <p class="disclosures">I understand that I have the right to revoke this authorization at any time, in writing, except to the extent that Medicare has already acted based on my permission.</p>
+    
+    <p class="disclosures">I understand that signing this authorization is voluntary. Treatment, payment, enrollment in a health plan or eligibility for benefits will not be conditioned on my authorization of this disclosure.</p>
+    </li>
+
+
+
+
+    <p class="disclosures-check">
+    <input type="checkbox" name="checkbox" value="acceptHIPAA" id="agreeHIPAA" /> I have read and and agree to the above HIPAA clauses required to release the  Medicare information specified above.
+    </p>
+
+    <li>
+    <label><span class="block-label">Full Name of Beneficiary or Representative Authorized by Law</span></label>
+    <input required type="text" name="signedBy" class="field-long" placeholder="Beneficiary or Representative" />
+    </li>
+
+</ul>
+
+
+
+</fieldset>
+
+
+<input type="submit" name="submit" value="submit" onClick="acceptTerms();oneBoxMin();"/>
+
+
+</form>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div> 
+</div>
+
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
