@@ -151,7 +151,7 @@ abbr[title]{
     font-style: italic;
     line-height: 1;
     font-weight: normal;
-    margin: 0 0 0.75em 0;
+    margin: 0.5em 0 0.75em 0;
     font-size: 1em;
     display: block;
     font-family: inherit;
@@ -244,7 +244,7 @@ input[type="date"] {
 
 input[type=checkbox] {
   background-color: #f1f1f1;
-  margin: 0em 0.75em 0em 0em;
+  margin: 0em 0.25em 0em 0em;
   display:inline-block;
 }
 
@@ -332,6 +332,10 @@ input[type=button] {
   margin-bottom: 1.5em;
 }
 
+#otherReq, #litigation{
+  margin-left: 1em;
+}
+
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 
 #expChoice2:not(:checked) ~ #expDateBlock { display: none; }
@@ -361,13 +365,13 @@ sup{top:-0.5em}*/
 	border-style:none
 height:3em;}*/
 
-button,input,select,textarea{
+button,textarea{
   font:inherit;
   margin:0;}
 
 optgroup{font-weight:bold}
 button,input{overflow:visible}
-button,select{text-transform:capitalize;}
+button,select{text-transform:none;}
 button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}
 button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{border-style:none;padding:10px}
 button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring{outline:1px dotted ButtonText}
@@ -440,11 +444,19 @@ img{vertical-align:middle}a{color:inherit}
 .w3-ripple:active{opacity:0.5}.w3-ripple{transition:opacity 0s}
 /*.w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}*/
 /*.w3-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}*/
-/*.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
-.w3-dropdown-hover:hover .w3-dropdown-content{display:block}
-.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000}
+.w3-dropdown-click,.w3-dropdown-hover{position:relative;
+  display:inline-block;
+  cursor:pointer
+}
+.w3-dropdown-hover:hover .w3-dropdown-content{
+  display:block
+}
+.w3-dropdown-hover:first-child,.w3-dropdown-click:hover{
+  background-color:#ccc;
+  color:#000
+}
 .w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
-.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}*/
+.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
 .w3-check,.w3-radio{width:24px;height:24px;position:relative;top:6px}
 
 .w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
