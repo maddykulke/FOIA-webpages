@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel= "stylesheet" href="stylesheet.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="FoiaScript2.js"></script>
   <script src="AuthScript.js"></script>
+
 
 </head>
 
@@ -24,20 +26,23 @@ body {font-size:16px}
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:18em;" id="mySidebar"><br>
+  
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%">Close Menu</a>
+  
   <div class="w3-container">
     <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS</b></h3>
   </div>
+  
   <div class="w3-bar-block">
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
-  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
-    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Freedom of Infomation Act (FOIA)</a> 
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">File a CMS FOIA Request</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">How We Process Your Request</a> 
+    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Non-FOIA Records
     </a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FOIA Reading Room</a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Annual Reports</a>
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hospital Appeals Settlements</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">FOIA Reading Room</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Annual Reports</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Hospital Appeals Settlements</a>
   </div>
 </nav>
 
@@ -46,17 +51,24 @@ body {font-size:16px}
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
   <span>FOIA at CMS</span>
-  
+
 </header>
+
+
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
+</div>
+
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:22em;margin-right:2.7em">
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h2 class="w3-large center-div-large"><b>File a FOIA Request</b></h2>
+    <h2 class="w3-large center-div-large">File a FOIA Request</h2>
     <hr style="width:3em; border:0.3125em steelblue" class="w3-round">
   </div>
+</div>
+
+
 
 <div id= "form-container" class = "center-div-large">
 <form name="authform" autocomplete="off" method="POST" action="#">
@@ -67,7 +79,7 @@ body {font-size:16px}
 <ul class="form-style-1" name = "section_a">
     
     <li>
-        <label class="field-description">Please enter beneficiary name exactly as it appears on Medicare card.</label>
+        <p class="disclosures">Please enter beneficiary information associated with Medicare account exactly as it appears on the beneficiary's Medicare card.</p>
         
         <label class="block-label" for= "beneficiary_first_name" >First Name * </label>
         <input required type="text" id = "beneFirstName" name="beneficiary_first_name" pattern="^[a-zA-Z]([a-zA-Z- ])*" />
@@ -160,7 +172,7 @@ body {font-size:16px}
 <legend>Section B: Record Time Frame Definition</legend>
 <ul class="form-style-1" name = "section_b">
     <li>
-        <label>Select the claim information to disclose for the individual identified in Section A. *</label>
+        <p class="disclosures">Select the claim information to disclose for the individual identified in Section A. *</p>
         <div>
             <input required type="radio" id="recordChoiceAll" name="release_info" value="all_records"/>
             <label for="recordChoice1">Release all records</label>
@@ -193,23 +205,22 @@ body {font-size:16px}
     <li>
         <label class="block-label">Please indicate when this authorization release will expire. *</label>
         <div>
-        <input required type="radio" id="expChoice1" name="expiration_type" value="oneTime"/>
-        <label for="expChoice1">One-time disclosure</label>
-        <input required type="radio" id="expChoice2" name="expiration_type" value="expByDate"/>
-        <label for="expChoice2">Through a speficied date</label>
-        <input required type="radio" id="expChoice3" name="expiration_type" value="expByEvent"/>
-        <label for="expChoice3">Until a speficied event</label>
+            <input required type="radio" id="expChoice1" name="expiration_type" value="oneTime"/>
+            <label for="expChoice1">One-time disclosure</label>
+            <input required type="radio" id="expChoice2" name="expiration_type" value="expByDate"/>
+            <label for="expChoice2">Through a speficied date</label>
+            <input required type="radio" id="expChoice3" name="expiration_type" value="expByEvent"/>
+            <label for="expChoice3">Until a speficied event</label>
 
-        <span id = expDateBlock>
-        <label for="exp_date" class="field-description">Please indicate future date when authorization will expire.</label>
-        <input placeholder= "Expriation Date" name="expDate" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id=expirationDate />
-        </span>
+            <span id = expDateBlock>
+            <label for="exp_date" class="field-description">Please indicate future date when authorization will expire.</label>
+            <input placeholder= "Expriation Date" name="expDate" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id=expirationDate />
+            </span>
 
-        <span id=expEventBlock>
-        <label for="exp_event" class="field-description">Please indicate the event upon which authorization will expire.</label>
-        <input type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" id=exp_event/>
-        </span>
-
+            <span id=expEventBlock>
+            <label for="exp_event" class="field-description">Please indicate the event upon which authorization will expire.</label>
+            <input type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" id=exp_event/>
+            </span>
         </div>
     </li>
 
@@ -233,7 +244,7 @@ body {font-size:16px}
 <fieldset>
 <legend>Section C: Information Release Contact</legend>
 <ul class="form-style-1" name = "section_c">
-    <label class="block-label">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</label>
+    <p class="disclosures">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</p>
     
     <input type="checkbox" name="beneRecipient" value="releaseToBene" id="beneRecip" /><label class="disclosures-check">Release claim records to beneficiary at mailing address above.</label>
 
@@ -295,7 +306,7 @@ body {font-size:16px}
 <fieldset>
 <legend>Section D: Purpose of Request</legend>
 <ul class="form-style-1" name = "section_d">
-<label class="block-label">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</label>
+<p class="disclosures">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</p>
     <li>
         <div id="otherRequestType">
             <input type="checkbox" name="indivRequest" value="individualRequest" id="inidvidual"/>
@@ -308,7 +319,7 @@ body {font-size:16px}
 
             <span id="reqType">
             <label for="otherSpecific" class="block-label">Other Request Type</label>
-            <input type="text" name="reqTypeDetail" id="otherSpecifics" class="field-long" placeholder="Lther Request Type" />
+            <input type="text" name="reqTypeDetail" id="otherSpecifics" class="field-long" placeholder="Other Request Type" />
             </span>
 
         </div>
@@ -321,22 +332,27 @@ body {font-size:16px}
 
 <fieldset>
 <legend> Section E: Request Details </legend>
+    
     <ul class="form-style-1" name = "section_d">
+    <p class="disclosures">Please provide additional detail to help CMS process your request.</p>
 <!-- Digitized cover letter-->
     <li>
-        <label class="block-label" for="identifyRecords">Below, identify the records you are requesting as clearly and specifically as possible. </label>
-        <input type="text" required name="identifyRecords" class="field-long" id="identifyRecords" placeholder="Record Specifics" />
+        <label class="block-label" for="identifyRecords">Identify the records you are requesting as clearly and specifically as possible. </label>
+        <input type="text" required name="identifyRecords" class="field-long" id="identifyRecords" placeholder="Record Details" />
     </li>
     <li>
-        <p class="disclosures">Below, provide details on payment associated with this request, including the maximum amount that you are willing to pay for this request. If CMS estimates that fees will exceed this limit, we will inform you prior to providing the requested records. </p>
-        <label class="block-label" for="maxAmount"> Maximum Payment Amount: </label>
-        <input id= "maxAmount" type="number" name="maxPayment" class="field-long" placeholder="Maximum Payment" min="0.01" step="0.01" pattern="/^(\d{1,3})(,\d{1,3})*(\.\d{1,})?$/g"/>
+        
+        <label class="block-label" for="maxAmount"> Maximum Payment Amount </label>
+        <label class="field-description">Provide details on maximum payment payment you are willing to make in relation to this request. If CMS estimates that fees will exceed the specified maximum, you will be notified before records are released. </label>
+        <input id= "maxAmount" type="number" name="maxPayment" class="field-long" placeholder="Maximum Payment" min="0.01" step="0.01" pattern="/^(\d{1,3}\,)?(\d{3}\,)*(\d{1,3})*(\.\d{2})?$/g"/>
     </li>
     <li>
-        <p class="field-description">Check the box below if you are requesting a waiver or reduction of all fees for this request based on the Department's FOIA regulations at <a href="https://www.gpo.gov/fdsys/pkg/CFR-2011-title45-vol1/pdf/CFR-2011-title45-vol1-sec5-45.pdf" target="_blank">45 C.F.R. 5.45</a>. Note that it is at the discretion of the department to determine whether the requested records are likely to contribute significantly to public understanding of the operations or activities of the government, or that receipt of the requested records is not primarily in the commercial interest of the requester.</p>
-        <input type="checkbox" name="waiveFees" value="Fees" id="feeWaiver"> I request that fees be waved or reduced <br><br>
-         <label for="waiverDetails" class="block-label" placeholder="details">Specify the reason supporting the requested fee waiverbelow: </label><br>
-<!--             <span><input type="text" name="waiverDetails" class="field-long" id="waiverDetails"/></span> -->
+        <label class="block-label" > Fee Waiver </label>
+        <p class="field-description">Check the box below if you are requesting a waiver or reduction of all fees for this request based on the Department's FOIA regulations at <a href="https://www.gpo.gov/fdsys/pkg/CFR-2011-title45-vol1/pdf/CFR-2011-title45-vol1-sec5-45.pdf" target="_blank">45 C.F.R. 5.45</a>. </p>
+        <p class="field-description">Note that it is at the discretion of the Department to determine whether the requested records are likely to contribute significantly to public understanding of the operations or activities of the government, or that receipt of the requested records is not primarily in the commercial interest of the requester.</p>
+        <input type="checkbox" name="waiveFees" value="Fees" id="feeWaiver"><label for="feeWaiver">I request that fees be waived or reduced</label>
+         <label for="waiverDetails" class="field-description" placeholder="details">Specify the reason supporting the requested fee waiver below: </label>
+
             <select id="waiverDetails" class="w3-dropdown-hover">
                 <option disabled selected value> -- Select reason for fee waiver -- </option>
                 <option>(1) Release of requested records is in the public interest</option>
@@ -344,19 +360,22 @@ body {font-size:16px}
             </select>
     </li>
     <li>
-        <p>Check the box below if you are asking that your request receive expedited processing due to compelling need. </p>
-        <input type="checkbox" name="waiveFees" value="Fees"> I ask that my request be expedited <br><br>
-        <label for="expediteDetails" class="block-label"> Explain specific details concerning your compelling need below: </label><br>
-        <input type="text" name="expediteDetails" class="field-long" id="expediteDetails" placeholder="Reasons for Expiditing" />
+        <label class="block-label" > Expedited Processing </label>
+        <label class="field-description">Indicate whether you require expedited processing due to compelling need.</label>
+        <input type="checkbox" name="expediteRecords" value="expedite-Yes" id="expedited"> <label for="expedited">I ask that my request be expedited. </label>
+        <label for="expediteDetails" class="field-description"> Explain specific details concerning your compelling need below: </label>
+        <input type="text" name="expediteDetails" class="field-long" id="expediteReason" placeholder="Reason for Expiditing Records" />
     </li>
     <li>
-        <p class="disclosures">Check the box below if you are requesting the information you seek be provided in electronic format, and you would like to receive it on a personal computer disk [or a CD-ROM]. </p>  
-        <input type="checkbox" name="electronicFormat" id="electronicElection"value="Fees"> <label for="electronicElection">I request that information be provided in electronic format</label>
+        <label class="block-label" > Electronic Record Format </label>
+        <label class="field-description">Indicate whether you would like to request that records be provided in electronic format(personal computer disk or CD-ROM).</label>  
+        <input type="checkbox" name="electronicFormat" id="electronicElection"value="Fees"> <label for="electronicElection">I request that the resquested information be provided in electronic format.</label>
      </li>
-     <li>
+<!--      <li>
         <label for="phoneNumber" class="block-label">Provide us with a home/ office/ mobile phone number for further questions regarding your request:</label>
         <input type="text" name="phoneNumber" class="field-long" id="phoneNumber" placeholder="phone number" />
-    </li>
+    </li> -->
+    </ul>
 </fieldset>
 
 
@@ -367,24 +386,25 @@ body {font-size:16px}
 <!-- ----SECTION E: AUTHORIZATION AGREEMENT---- -->
 <!--******************************************* -->
 
-<fieldset>
+<fieldset name="set_f">
 <legend>Section F: Authorization Agreement</legend>
-<ul class="form-style-1" name = "section_e">
+<ul class="form-style-1" name = "section_f">
     <li>
-    <p class="disclosures">I authorize Medicare to disclose claim records to the person(s) or organization(s) documented in Section C. I understand that these claim records may be re-disclosed by the recipient and may no longer be protected by law.</p>
+        <p class="disclosures">I authorize Medicare to disclose claim records to the person(s) or organization(s) documented in Section C. I understand that these claim records may be re-disclosed by the recipient and may no longer be protected by law.</p>
     
-    <p class="disclosures">I understand that I have the right to revoke this authorization at any time, in writing, except to the extent that Medicare has already acted based on my permission.</p>
+        <p class="disclosures">I understand that I have the right to revoke this authorization at any time, in writing, except to the extent that Medicare has already acted based on my permission.</p>
     
-    <p class="disclosures">I understand that signing this authorization is voluntary. Treatment, payment, enrollment in a health plan or eligibility for benefits will not be conditioned on my authorization of this disclosure.</p>
+        <p class="disclosures">I understand that signing this authorization is voluntary. Treatment, payment, enrollment in a health plan or eligibility for benefits will not be conditioned on my authorization of this disclosure.</p>
     </li>
 
-    <p class="disclosures-check">
-    <input type="checkbox" name="checkbox" value="acceptHIPAA" id="agreeHIPAA" /> I have read and and agree to the above HIPAA clauses required to release the  Medicare information specified above.
-    </p>
+    <li>
+        <p class="disclosures-check">
+        <input type="checkbox" name="checkbox" value="acceptHIPAA" id="agreeHIPAA" /> I have read and and agree to the above HIPAA clauses required to release the  Medicare information specified above.</p>
+    </li>
 
     <li>
-    <label><span class="block-label">Full Name of Beneficiary or Representative Authorized by Law</span></label>
-    <input required type="text" name="signedBy" class="field-long" placeholder="Beneficiary or Representative" />
+        <label><span class="block-label">Full Name of Beneficiary or Representative Authorized by Law</span></label>
+        <input required type="text" name="signedBy" class="field-long" placeholder="Beneficiary or Representative" />
     </li>
 
 </ul>

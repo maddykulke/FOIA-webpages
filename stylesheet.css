@@ -6,7 +6,8 @@ html{
 
 *,*:before,*:after{
   box-sizing:inherit;
-  font: 1em "Open Sans",sans-serif; 
+  font-size: 1em;
+  font-family: "Open Sans",sans-serif; 
 }
 
 
@@ -20,12 +21,34 @@ html{
 .center-div-large
 {
      margin: 0 auto;
-     width: 80%; 
+     width: 80%
+}
+
+
+.hover-bold{
+  font-weight:normal;
+  text-decoration: none;
+}
+
+.hover-bold:hover{
+  font-weight:bold;
+  background-color: inherit; 
+  opacity: 0.75;
+  color: #fff!important;
+  background-color: #2196F3!important;
+  opacity: 0.5;
+}
+
+.w3-bar .w3-bar-item{
+  padding:0.5em 1em;
+  float:left;
+  width:auto;
+  border:none;
+  display:block;
+  outline:0;
 }
 
 /* hidden divs */ 
-
-
 div.hidden {
     display: none;
 }
@@ -33,9 +56,11 @@ div.hidden {
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{
 	-ms-text-size-adjust:100%;
-	-webkit-text-size-adjust:100%}
+	-webkit-text-size-adjust:100%;
+}
+
 body{
-	margin:0
+	margin:0;
 }
 
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{
@@ -43,7 +68,7 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
 }
 
 audio,canvas,progress,video{
-	display:inline-block
+	display:inline-block;
 }
 
 progress{
@@ -63,10 +88,11 @@ audio:not([controls]){
 a:active,a:hover{
 	outline-width:0; 
 }
+
 abbr[title]{
 	border-bottom:none;
 	text-decoration:underline;
-	text-decoration:underline dotted
+	text-decoration:underline dotted;
 }
 
 .w3-image{
@@ -85,7 +111,8 @@ abbr[title]{
 }
 
 .w3-large{
-	font-size:1.5em!important
+	font-size:1.5em!important;
+  font-weight: bold;
 }
 
 .w3-medium{
@@ -97,11 +124,13 @@ abbr[title]{
 	.w3-sidebar.w3-collapse{
 		display:none;
 	}
-	.w3-main{
+}
+
+.w3-main{
 		margin-left:0!important;
 		margin-right:0!important
 	}
-}
+
 
 .w3-serif{
 	font-family:"Open Sans",serif;
@@ -122,13 +151,26 @@ abbr[title]{
 	overflow:auto;
 }
 
+.w3-btn,.w3-button {
+  border:none;
+  display:inline-block;
+  padding:0.5em 1em;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  background-color: inherit;
+}
 
 
 
-
-/***********************************
-        FORM-SPECIFIC CSS
-***********************************/
+/***********************************************************
+                    FORM-SPECIFIC CSS
+************************************************************/
 
 
 .form-style-1 {
@@ -166,11 +208,18 @@ abbr[title]{
 
 fieldset {
   border-radius: 0.3em;
+  border:0.125em solid;
   display: inline-block;
-  align-content: right;
+/*  align-content: right;*/
+  margin: 0 0.125em;
 /*  max-width: 70%;*/
-  padding-left: 800px;
 }
+
+/*fieldset{
+  margin:0 2px;
+  
+}*/
+
 
 legend {
     color:#094C86;
@@ -290,6 +339,17 @@ input[type=button] {
   font-size: 0.8em;
 }
 
+button,select{
+  text-transform:none;
+  margin: 0.5em 0 0.5em 0;
+}
+
+select{
+  max-width: 40%;
+  text-align-last:center;
+}
+
+
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
@@ -350,37 +410,87 @@ input[type=button] {
 
 #recordChoiceSpecific:not(:checked) ~ #recordEventBlock { display: none; }
 
-/***********************************
-        END FORM-SPECIFIC CSS
-***********************************/
 
-/*dfn{font-style:italic}*/
-/*mark{background:#ff0;color:#000}*/
-/*small{font-size:80%}*/
-/*sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}*/
-/*sub{bottom:-0.25em}
-sup{top:-0.5em}*/
-/*figure{margin:1em 40px}*/
-/*img{
-	border-style:none
-height:3em;}*/
+/***********************************************************
+                  END FORM-SPECIFIC CSS
+************************************************************/
+
+
+
+
+
+
+/***********************************************************
+                          FAQ CSS
+************************************************************/
+
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.row:after,
+.clearfix:after {
+  clear: both;
+}
+
+.faq .panel-heading {
+  cursor: pointer;
+}
+.faq .faq-toggle.collapsed::before {
+  font-family: "Open Sans";
+  content: "";
+  -webkit-transition: 0.5s linear ease-out;
+          transition: 0.5s linear ease-out;
+  position: absolute;
+  left: 15px;
+}
+.faq .faq-toggle::before {
+  position: absolute;
+  left: 15px;
+  font-family: "Open Sans";
+  content: "";
+}
+.faq .panel-group .panel + .panel {
+  margin-top: 15px;
+}
+.faq .panel-default > .panel-heading {
+  color: #5d5d5d;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-radius: 0;
+  padding: 0;
+}
+.faq .panel-default > .panel-heading a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding: 15px 15px 15px 35px;
+  font-weight: 600;
+}
+
+/***********************************************************
+                    END FAQ CSS
+************************************************************/
+
+
 
 button,textarea{
   font:inherit;
   margin:0;}
 
 optgroup{font-weight:bold}
-button,input{overflow:visible}
-button,select{text-transform:none;}
+button,input{overflow:auto}
+
 button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}
 button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{border-style:none;padding:10px}
 button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring{outline:1px dotted ButtonText}
 
-fieldset{
-/*  border:1px solid #c0c0c0;*/
-  margin:0 2px;
-  padding:.35em .625em .75em
-}
+
 
 /*legend{color:inherit;
   display:table;max-width:100%;
@@ -433,7 +543,7 @@ img{vertical-align:middle}a{color:inherit}
 .w3-centered tr th,.w3-centered tr td{text-align:center}
 /*.w3-table td,.w3-table th,.w3-table-all td,.w3-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}*/
 /*.w3-table th:first-child,.w3-table td:first-child,.w3-table-all th:first-child,.w3-table-all td:first-child{padding-left:16px}*/
-.w3-btn,.w3-button {border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+
 .w3-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
 .w3-btn,.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
 .w3-disabled,.w3-btn:disabled,.w3-button:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}
@@ -466,7 +576,7 @@ img{vertical-align:middle}a{color:inherit}
 .w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
 .w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}
 .w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
-.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+
 .w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click{position:static;float:left}
 .w3-bar .w3-button{white-space:normal}
 .w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
@@ -645,7 +755,16 @@ input[type=radio] {
 
 
 
-
+/*dfn{font-style:italic}*/
+/*mark{background:#ff0;color:#000}*/
+/*small{font-size:80%}*/
+/*sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}*/
+/*sub{bottom:-0.25em}
+sup{top:-0.5em}*/
+/*figure{margin:1em 40px}*/
+/*img{
+  border-style:none
+height:3em;}*/
 
 
 
