@@ -11,6 +11,11 @@ html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
      width: 500px; 
 }
 
+.center-div-large
+{
+     margin: 0 auto;
+     width: 80%; 
+}
 
 /* hidden divs */ 
 
@@ -46,7 +51,6 @@ audio:not([controls]){
 
 a:active,a:hover{
 	outline-width:0; 
-	background-color:red; 
 }
 abbr[title]{
 	border-bottom:none;
