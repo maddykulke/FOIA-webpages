@@ -1,0 +1,99 @@
+<!DOCTYPE HTML5>
+<html lang = "en">
+<title>File a FOIA request</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel= "stylesheet" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="FoiaScript2.js"></script>
+  <script src="AuthScript.js"></script>
+
+</head>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
+    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
+    </a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FOIA Reading Room</a> 
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Annual Reports</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hospital Appeals Settlements</a>
+  </div>
+</nav>
+
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>FOIA at CMS</span>
+  
+</header>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:22em;margin-right:2.7em">
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h2 class="w3-large center-div-large"><b>File a FOIA Request</b></h2>
+    <hr style="width:3em; border:0.3125em steelblue" class="w3-round">
+  </div>
+
+<body>
+
+<article class="center-div-large">
+<h3>How We Process Your Request</h3>
+
+<p>When CMS receives your FOIA request, it is entered into the automated tracking system and assigned a control number. A FOIA analyst will review your request to understand the types(s) or records you wish to obtain and assign your request to the appropriate program office(s) to search for responsive records. You will receive an acknowledgement letter with a control number and instructions for checking the status of your request.
+
+<p>A FOIA analyst will conduct a line-by-line review of records responsive to your request and prepare a release determination for issuance by the CMS FOIA Officer or designee.
+
+<p>For more information, please see our Frequently Asked Questions download below.</p>
+</article>
+
+<section id="faq" class="section faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">FAQ</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> Who can participate?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                  <p>The ScopeAthon is open to the entire University of Chicago community as well as interested community members working anywhere from the public/non-profit sector to the private sector.</p>
+
+                                  <p>Participants will come from various backgrounds, including, but not limited to, computer science, political science and public policy, economics, geography, visual art, and civic innovation and leadership.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+
+
+</body>
+</html>
