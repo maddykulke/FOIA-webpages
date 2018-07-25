@@ -2,33 +2,58 @@
 
 $("#noCardBtn").click(function() {
   $("#noCard").show();
-  $("#check").hide();
+  $("#checkGreen").hide();
+  $("#EnrolledXmark").show()
   });
 $("#hasCardBtn").click(function() {
   $("#noCard").hide();
-  $("#check").show();
+  $("#checkGreen").show();
+  $("#EnrolledXmark").hide()
   });
+
+$("#hasIDBtn").click(function() {
+  $("#noID").hide();
+  $("#IDcheckGreen").show();
+  $("#IDXmark").hide();
+  });
+
+$("#noIDBtn").click(function() {
+  $("#noID").show();
+  $("#IDcheckGreen").hide();
+  $("#IDXmark").show();
+  });
+
 $("#hasAdvantageBtn").click(function() {
   $("#hasAdvantage").show();
-  $("#dest1").hide()
+  $("#medAdvCheck").hide()
+  // $("#dest1").hide()
+  $("#medAdvXmark").show()
   });
 $("#noAdvantageBtn").click(function() {
   $("#hasAdvantage").hide();
-  $("#dest1").show()
+  $("#medAdvCheck").show()
+  // $("#dest1").show()
+  $("#medAdvXmark").hide()
   });
+
 $("#hasMedicaidBtn").click(function() {
   $("#hasMedicaid").show();
-  $("#dest2").hide();
+  // $("#dest2").hide();
+  $("#medicaidCheck").hide()
+  $("#medicaidXmark").show()
   });
 $("#noMedicaidBtn").click(function() {
   $("#hasMedicaid").hide();
-  $("#dest2").show();
+  // $("#dest2").show();
+  $("#medicaidCheck").show()
+  $("#medicaidXmark").hide()
   });
 
 //duplicate div
 function dupDiv()
 {
     str=document.getElementById('check').innerHTML;
+    document.getElementById('IDcheckGreen').innerHTML;
     document.getElementById('dest1').innerHTML=str;
     document.getElementById('dest2').innerHTML=str;
 }

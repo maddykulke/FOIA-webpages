@@ -59,32 +59,68 @@ body {font-size:16px}
 
    <!-- page 1: What type of medicare beneficiary claims are you requesting? -->
 <div id = "typeOfClaim" class = "center-div">
-    <h3> Let's make sure you're in the right place. What type of medicare beneficiary claims are you requesting? </h3>
+    <h3> Let's make sure you're in the right place. What type of beneficiary claim records are you requesting? </h3>
     <br>
-    <h6> Is the beneficiary <b>enrolled in medicare? </b></h6>
+    <h6> Is the beneficiary <b>enrolled in Medicare? </b></h6>
  <button id="hasCardBtn" class="w3-btn">Yes</button><button id="noCardBtn" class="w3-btn">No</button>
  
 <!-- clip art from https://publicdomainvectors.org/en/free-clipart/Check-mark/59514.html-->
-    <div id= "check" class ="hidden">
-    <img id= "checkGreen" src="check.png" class='w3-image'>
-    </div>
+    <!-- indicators from flaticon.com -->
+<!--     <div id="check" class = "hidden"> -->
+    <img id= "checkGreen" src="tick.png" class='hidden-image' alt="checkmark: continue.">
+    <img id= "EnrolledXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+<!--     </div> -->
 
     <div id="noCard" class = "hidden">
-        <h5> <b>Stop</b></h5>
-        <p>If the beneficiary does not have a Medicare card they are not enrolled and therefore records are not maintained by CMS. <b>Contact the correct insurer</b>. </p>
+<!--         <h5> <b>Stop</b></h5> -->
+        <img id= "enrolledStop" src="stop_outline.png" class='w3-image' alt="Stop.">
+        <p>If the beneficiary is not enrolled in Medicare, records are not maintained by CMS. <b>Please contact the beneficiary's insurer</b>.</p>
     </div>
-    <h6> Does the beneficiary <b>Medicare Advantage?</b></h6>
-    <button id="hasAdvantageBtn" class="w3-btn">Yes</button><button id="noAdvantageBtn" class="w3-btn">No</button>
+
+
+    <h6> Do you have the beneficiary's <b>Medicare identification number</b>?</h6>
+    <button id="hasIDBtn" class="w3-btn">Yes</button>
+    <button id="noIDBtn" class="w3-btn">No</button>
+ 
+<!-- clip art from https://publicdomainvectors.org/en/free-clipart/Check-mark/59514.html-->
+<!--     <div id= "IDcheck" class ="hidden"> -->
+    <img id= "IDcheckGreen" src="tick.png" class='hidden-image' alt="checkmark: continue.">
+    <img id= "IDXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+<!--     </div> -->
+    
+
+    <div id="noID" class = "hidden">
+<!--         <h5> <b>Stop</b></h5> -->
+        <img id= "IDstop" src="stop_outline.png" class='w3-image' alt="Stop.">
+<!--         <img id= "IDstop" src="stop_double_outline.png" class='w3-image'> -->
+        <p>You will need the beneficiary's Medicare ID number to continue. <b>Please retrieve the beneficiary's Medicare identification number</b>. </p>
+    </div>
+
+    <h6> Do you want to request <b>Medicare Advantage</b> claim records?</h6>
+    <button id="hasAdvantageBtn" class="w3-btn">Yes</button>
+    <button id="noAdvantageBtn" class="w3-btn">No</button>
+
+    <img id= "medAdvCheck" src="tick.png" class='hidden-image' alt="checkmark: continue.">
+    <img id= "medAdvXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+
     <div id= "hasAdvantage" class = "hidden"> 
-        <h5> <b>Stop.</b></h5>
+<!--         <h5> <b>Stop.</b></h5> -->
+        <img id= "medAdvStop" src="stop_outline.png" class='w3-image' alt="Stop.">
         <p>CMS does not maintain Medicare Advantage claims records.
         You will need to submit your request directly to the specic private insurance company. (e.g. HMO, PPO, etc.)</p>
     </div>
-    <div id = "dest1" class ="hidden"></div>
-    <h6> Does the beneficiary have <b>Medicaid?</b></h6>
-    <button id="hasMedicaidBtn" class="w3-btn">Yes</button><button id="noMedicaidBtn" class="w3-btn">No</button>
+<!--     <div id = "dest1" class ="hidden"></div> -->
+    
+    <h6> Do you want to request <b>Medicaid</b> claim records?</h6>
+    <button id="hasMedicaidBtn" class="w3-btn">Yes</button>
+    <button id="noMedicaidBtn" class="w3-btn">No</button>
+
+    <img id= "medicaidCheck" src="tick.png" class='hidden-image' alt="checkmark: continue.">
+    <img id= "medicaidXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+
     <div id= "hasMedicaid" class = "hidden"> 
-        <h5> <b>Stop.</b></h5>
+<!--         <h5> <b>Stop.</b></h5> -->
+        <img id= "medicaidStop" src="stop_outline.png" class='w3-image' alt="Stop.">
         <p>CMS does not maintain Medicaid claims records. You will need to submit your request directly to the state agency. State contact information:
 </p>
     </div>
@@ -94,14 +130,14 @@ body {font-size:16px}
 <br>
 <br>
 <form action="pageOne.html">
-    <button class="w3-btn" id= "nextPage" type="submit" />Fill out a FOIA request for Medicare Claims -></button>
+    <button class="w3-btn" id= "nextPage" type="submit" />Fill out authorization for release of Medicare Claim information -></button>
 </form>
 
 
 <script src ="FoiaScript2.js"></script>
 
 <script>
-onload=dupDiv;
+// onload=dupDiv;
 </script>
 
 </body>

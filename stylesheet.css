@@ -20,14 +20,53 @@ div.hidden {
 }
 
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
-html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}
-audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
-audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+html{
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%}
+body{
+	margin:0
+}
+article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{
+	display:block
+}
+audio,canvas,progress,video{
+	display:inline-block
+}
+progress{
+	vertical-align:baseline
+}
+audio:not([controls]){
+	display:none;height:0
+	}
+[hidden],template{
+	display:none
+}
 
 
+a:active,a:hover{
+	outline-width:0; 
+	background-color:red; 
+}
+abbr[title]{
+	border-bottom:none;
+	text-decoration:underline;
+	text-decoration:underline dotted
+}
 
-a:active,a:hover{outline-width:0, background-color:red; }abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+.w3-image{
+	max-width:100%;
+	height:2em; 
+	display: inline;
+	border-style: none;
+}
+
+
+.hidden-image{
+	max-width:100%;
+	height:2em; 
+	display: none;
+	border-style: none;
+}
 
 /*dfn{font-style:italic}*/
 /*mark{background:#ff0;color:#000}*/
@@ -36,8 +75,11 @@ a:active,a:hover{outline-width:0, background-color:red; }abbr[title]{border-bott
 /*sub{bottom:-0.25em}
 sup{top:-0.5em}*/
 /*figure{margin:1em 40px}*/
-img{border-style:none
-height:50px;}
+/*img{
+	border-style:none
+height:3em;}*/
+
+
 svg:not(:root){overflow:hidden}
 code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
 hr{box-sizing:content-box;height:0;overflow:visible}
@@ -70,13 +112,13 @@ h5{font-size:18px}
 h6{font-size:16px}.w3-serif{font-family:"Open Sans",serif}
 h1,h2,h3,h4,h5,h6{font-family:"Open Sans","Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
-.w3-image{max-width:100%;height:50px; display: inline-block;}
+
 img{vertical-align:middle}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
 .w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}
 .w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}
-.w3-table-all tr:nth-child(odd){background-color:#fff}
-.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+/*.w3-table-all tr:nth-child(odd){background-color:#fff}
+.w3-table-all tr:nth-child(even){background-color:#f1f1f1}*/
 .w3-hoverable tbody tr:hover,.w3-ul.w3-hoverable li:hover{background-color:#ccc}
 .w3-centered tr th,.w3-centered tr td{text-align:center}
 .w3-table td,.w3-table th,.w3-table-all td,.w3-table-all th{padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
@@ -92,11 +134,11 @@ img{vertical-align:middle}a{color:inherit}
 .w3-ripple:active{opacity:0.5}.w3-ripple{transition:opacity 0s}
 .w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
 .w3-select{padding:9px 0;width:100%;border:none;border-bottom:1px solid #ccc}
-.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
+/*.w3-dropdown-click,.w3-dropdown-hover{position:relative;display:inline-block;cursor:pointer}
 .w3-dropdown-hover:hover .w3-dropdown-content{display:block}
 .w3-dropdown-hover:first-child,.w3-dropdown-click:hover{background-color:#ccc;color:#000}
 .w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
-.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
+.w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}*/
 .w3-check,.w3-radio{width:24px;height:24px;position:relative;top:6px}
 .w3-sidebar{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
 .w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
