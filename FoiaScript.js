@@ -32,17 +32,17 @@ function hideDiv(id){
 }
 
 
-$(document).ready(function() {
-    // $.getJSON("regions.json"), function(data) {
+// $(document).ready(function() {
+//     // $.getJSON("regions.json"), function(data) {
     
-    $.getJSON( "regions.json")
-    .done(function( data ) {
-    console.log( typeof data["regions"] );
-  })
-  .fail(function( jqxhr, textStatus, error ) {
-    var err = textStatus + ", " + error;
-    console.log( "Request Failed: " + err );
-    });
+//     $.getJSON( "regions.json")
+//     .done(function( data ) {
+//     console.log( typeof data["regions"] );
+//   })
+//   .fail(function( jqxhr, textStatus, error ) {
+//     var err = textStatus + ", " + error;
+//     console.log( "Request Failed: " + err );
+//     });
         // var regions, states = data.regions;
         // var states = data.states;
         // console.log(regions);
@@ -64,6 +64,6 @@ $(document).ready(function() {
         //     }
 
     // });
-});
+// });
 
 

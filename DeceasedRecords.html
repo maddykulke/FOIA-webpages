@@ -5,29 +5,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel= "stylesheet" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <script src="FoiaScript2.js"></script>
   <script src="AuthScript.js"></script>
+<!--   <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
 
   <title>File a FOIA request</title>
 </head>
 
-
+<!-- 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
 </style>
-
+ -->
 
 
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%">Close Menu</a>
   <div class="w3-container">
-    <h3 class="w3-padding-64"><b>Freedom of Information Act<br>(FOIA)</b></h3>
+    <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS</b></h3>
   </div>
   <div class="w3-bar-block">
     <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
@@ -41,20 +43,27 @@ body {font-size:16px}
   </div>
 </nav>
 
+<!-- Still in progress: attempting to load nav bar from nav.html so we don't have so much repeated html... -->
+<!-- <div id="nav-placeholder">
+
+</div>
+ -->
+
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
   <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-  <span>CMS.gov</span>
+  <span>FOIA at CMS</span>
   
 </header>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<div class="w3-main" style="margin-left:22em;margin-right:2.7em">
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <hr style="width:50px; border:5px steelblue" class="w3-round">
+    <h2 class="w3-large center-div"><b>File a FOIA Request</b></h2>
+    <hr style="width:3em; border:0.3125em steelblue" class="w3-round">
   </div>
 
 
@@ -70,7 +79,8 @@ body {font-size:16px}
     
     <li>
         <label><span class="field-description">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
-        <label class="block-label"><span for= "beneficiary_first_name" >First Name * </span></label>
+
+        <label for="beneFirstName" class="block-label">First Name * </label>
         <input required type="text" id = "beneFirstName" name="beneficiary_first_name" pattern="[a-zA-Z]+" />
     </li>
     
@@ -357,16 +367,10 @@ body {font-size:16px}
 
 
 </form>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div> 
-</div>
 
 
-// Script to open and close sidebar
+
+<!-- Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -375,9 +379,14 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
-}
+} -->
 
-</script>
+<!-- Still in progress: attempting to load nav bar from nav.html so we don't have so much repeated html... -->
+<!-- <script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script> -->
 
 
 </body>
