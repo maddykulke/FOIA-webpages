@@ -1,5 +1,6 @@
 # system storage
-.DS_Store/
+.DS_Store
+.DS_Store?
 
 # unused images
 check-mark.png
