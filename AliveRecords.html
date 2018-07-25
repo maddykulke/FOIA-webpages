@@ -54,7 +54,7 @@ body {font-size:16px}
 <div class="w3-main" style="margin-left:22em;margin-right:2.7em">
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h2 class="w3-large center-div"><b>File a FOIA Request</b></h2>
+    <h2 class="w3-large center-div-large"><b>File a FOIA Request</b></h2>
     <hr style="width:3em; border:0.3125em steelblue" class="w3-round">
   </div>
 
@@ -73,8 +73,8 @@ body {font-size:16px}
     </li>
     
     <li>
-        <label for="beneMiddleName" class="block-label">Middle Name * </label>
-        <input required type="text" pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" />
+        <label for="beneMiddleName" class="block-label">Middle Name </label>
+        <input type="text" pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" />
     </li>
 
     <li>
@@ -84,7 +84,7 @@ body {font-size:16px}
 
     <li>
          <label for="dob" class="block-label" class="block-label">Date of Birth * </label>
-         <input required name="dob" onfocus="(this.type='date')" id="birthdate" title="Please enter date of birth in mm/dd/yyyy format.">
+         <input required name="dob" type="text" placeholder="Beneficiary Birthdate" onfocus="(this.type='date')" id="birthdate" title="Please enter date of birth in mm/dd/yyyy format.">
 
     </li>
     
@@ -96,7 +96,7 @@ body {font-size:16px}
     
 
     <li>
-        <label><span class="field-description">Please enter beneficiary address information.</span></label>
+        <p class="disclosures">Please enter beneficiary address information.</p>
         <label for="beneStreetAddress" class="block-label">Street Address </label>
         <span><input type="text" name="street_address" class="field-long" pattern = "^\d+\s[A-z]+\s[A-z]+(\s)*" id="beneStreetAddress"/></span>
 
@@ -126,7 +126,7 @@ body {font-size:16px}
             <label class="block-label">Legal Role of Representative</label>
             <input type="text" name="legalRole" class="field-long" placeholder="Legal Role of Representative" />
 
-            <input required type='file' name='repProof' multiple>
+            <input type='file' name='repProof' multiple>
         </span>
 
     </li>
@@ -321,39 +321,45 @@ body {font-size:16px}
 
 
 <fieldset>
-<legend> Optional </legend>
+<legend> Section E: Request Details </legend>
 
 <!-- Digitized cover letter-->
-    <p>Below, identify the records you are requesting as clearly and specifically as possible. </p>
-    <span><input type="required text" name="identifyRecords" class="field-long" id="identifyRecords" placeholder="identify records" /></span>
+    <label class="block-label" for="identifyRecords">Below, identify the records you are requesting as clearly and specifically as possible. </label>
+    <input type="text" required name="identifyRecords" class="field-long" id="identifyRecords" placeholder="Record Specifics" />
+    
     <p>Below, enter the maximum amount that you are willing to pay for this request. If CMS estimates that fees will exceed this limit, we will inform you first. </p>
-    <label><span class="block-label"> Maximum amount I am willing to pay: </span></label>
-    <input is = "maxAmount" type="text" name="signedBy" class="field-long" placeholder="Maximum amount" />
+    <label class="block-label" for="maxAmount"> Maximum Payment Amount: </label>
+    <input id= "maxAmount" type="number" name="maxPayment" class="field-long" placeholder="Maximum Payment" min="0.01" step="0.01" pattern="/^(\d{1,3})(,\d{1,3})*(\.\d{1,})?$/g"/>
 
-    <p>Check the box below if you are requesting a waiver or reduction of all fees for this request the Department's FOIA regulations at <a href="https://www.gpo.gov/fdsys/pkg/CFR-2011-title45-vol1/pdf/CFR-2011-title45-vol1-sec5-45.pdf" target="_blank">45 C.F.R. 5.45</a> </p>
+    <p>Check the box below if you are requesting a waiver or reduction of all fees for this request based on the Department's FOIA regulations at <a href="https://www.gpo.gov/fdsys/pkg/CFR-2011-title45-vol1/pdf/CFR-2011-title45-vol1-sec5-45.pdf" target="_blank">45 C.F.R. 5.45</a>. () </p>
      <input type="checkbox" name="waiveFees" value="Fees"> I request that fees be waved or reduced <br><br>
      <label for="waiverDetails" class="block-label" placeholder="details">Include specific details below: </label><br>
             <span><input type="text" name="waiverDetails" class="field-long" id="waiverDetails"/></span>
+            <select>
+                <option>(1) It is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government</option>
+                <option>(2) It is not primarily in the commercial
+                interest of the requester</option>
+            </select>
     <p>Check the box below if you are asking that your request receive expedited processing due to compelling need. </p>
      <input type="checkbox" name="waiveFees" value="Fees"> I ask that my request be expedited <br><br>
-     <label for="expediteDetails" class="block-label">explain specific details concerning your compelling need below: </label><br>
-     <span><input type="text" name="expediteDetails" class="field-long" id="expediteDetails" placeholder="details" /></span>
-    <p>Check the box below if you are requesting the information you seek be provided in electronic format, and you would like to receive it on a personal computer disk [or a CD-ROM]. </p>  
-      <input type="checkbox" name="electronicFormat" value="Fees"> I request that information be provided in electronic format<br><br>
-     <label for="phoneNumber" class="block-label">Provide us with a home/ office/ mobile phone number for further questions regarding your request:</label><br>
+     <label for="expediteDetails" class="block-label"> Explain specific details concerning your compelling need below: </label><br>
+     <span><input type="text" name="expediteDetails" class="field-long" id="expediteDetails" placeholder="Reasons for Expiditing" /></span>
+    <p class="disclosures">Check the box below if you are requesting the information you seek be provided in electronic format, and you would like to receive it on a personal computer disk [or a CD-ROM]. </p>  
+      <input type="checkbox" name="electronicFormat" id="electronicElection"value="Fees"> <label for="electronicElection">I request that information be provided in electronic format</label>
+     <label for="phoneNumber" class="block-label">Provide us with a home/ office/ mobile phone number for further questions regarding your request:</label>
      <span><input type="text" name="phoneNumber" class="field-long" id="phoneNumber" placeholder="phone number" /></span>
-
-
-
-
-
 </fieldset>
+
+
+
+
+
 <!-- *******************************************-->
 <!-- ----SECTION E: AUTHORIZATION AGREEMENT---- -->
 <!--******************************************* -->
 
 <fieldset>
-<legend>Section E: Authorization Agreement</legend>
+<legend>Section F: Authorization Agreement</legend>
 <ul class="form-style-1" name = "section_e">
     <li>
     <p class="disclosures">I authorize Medicare to disclose claim records to the person(s) or organization(s) documented in Section C. I understand that these claim records may be re-disclosed by the recipient and may no longer be protected by law.</p>
@@ -382,12 +388,9 @@ body {font-size:16px}
 
 </form>
 </div>
-</li>
-</ol>
-</div>
-</div>
-</div> 
-</div>
+
+
+
 <script>
 
 // Script to open and close sidebar
@@ -400,6 +403,26 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
 }
+
+var maxToday = ["birthdate", "releaseStart"];
+var minTomm = ["expirationDate"];
+limitCurrentDates(maxToday);
+limitFuturedate(minTomm);
+dynamicAdd();
+
+sameRecip();
+
+var stateFields = ["beneState", "recipState"];
+for (var fieldname in stateFields) {
+    autocomplete(document.getElementById(stateFields[fieldname]));
+}
+
+
+var textFields = [beneFirstName, beneMiddleName, beneLastName]
+for (var i = 0; i < textFields.length; i++) { 
+    customMessage(textFields[i], "Text only, please");
+}
+
 
 </script>
 
