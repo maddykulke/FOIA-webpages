@@ -31,7 +31,7 @@ body {font-size:16px}
   </div>
   <div class="w3-bar-block">
     <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
-  <a href="index2.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
     <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
     <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
     </a> 
@@ -67,19 +67,20 @@ body {font-size:16px}
 <ul class="form-style-1" name = "section_a">
     
     <li>
-        <label><span class="field-description">Please enter beneficiary name exactly as it appears on Medicare card.</span></label>
+        <label class="field-description">Please enter beneficiary name exactly as it appears on Medicare card.</label>
+        
         <label class="block-label" for= "beneficiary_first_name" >First Name * </label>
-        <input required type="text" id = "beneFirstName" name="beneficiary_first_name" pattern="[a-zA-Z]+" />
+        <input required type="text" id = "beneFirstName" name="beneficiary_first_name" pattern="^[a-zA-Z]([a-zA-Z- ])*" />
     </li>
     
     <li>
         <label for="beneMiddleName" class="block-label">Middle Name </label>
-        <input type="text" required pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" />
+        <input type="text" required pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
     </li>
 
     <li>
         <label for="beneLastName" class="block-label">Last Name *  </label>
-        <input required type="text" pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" id="beneLastName"/>
+        <input required type="text" pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" id="beneLastName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
     </li>
 
     <li>
@@ -239,12 +240,12 @@ body {font-size:16px}
     <div id="recipInfo">
         <li>
             <label for="recipFirstName" class="block-label">Recipient First Name</label>
-            <input required type="text" name="recipient_first_name" class="field-long"  id="recipFirstName"/>
+            <input required type="text" name="recipient_first_name" class="field-long"  id="recipFirstName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
         </li>
 
         <li>
             <label for="recipLastName" class="block-label">Recipient Last Name</label>
-            <input required type="text" name="recipient_last_name" class="field-long" id="recipLastName"/>
+            <input required type="text" name="recipient_last_name" class="field-long" id="recipLastName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
         </li>
 
         <div id="addlContactInfo">
