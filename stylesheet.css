@@ -208,10 +208,10 @@ abbr[title]{
 
 fieldset {
   border-radius: 0.3em;
-  border:0.125em solid;
+  border:0.125em solid;/*
   display: inline-block;
-/*  align-content: right;*/
-  margin: 0 0.125em;
+*//*  align-content: right;*/
+/*  margin: 0 0.125em;*/
 /*  max-width: 70%;*/
 }
 

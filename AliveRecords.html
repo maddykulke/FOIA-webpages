@@ -1,7 +1,8 @@
 <!DOCTYPE HTML5>
 <html lang = "en">
-<title>File a FOIA request</title>
+
 <head>
+  <title>File a FOIA request</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel= "stylesheet" href="stylesheet.css">
@@ -39,7 +40,7 @@ body {font-size:16px}
     <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Freedom of Infomation Act (FOIA)</a> 
     <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">File a CMS FOIA Request</a> 
     <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">How We Process Your Request</a> 
-    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Non-FOIA Records
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">Non-FOIA Records
 
     </a> 
     <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button hover-bold">FOIA Reading Room</a> 
@@ -75,7 +76,7 @@ body {font-size:16px}
 <div id= "form-container" class = "center-div-large">
 <form name="authform" autocomplete="off" method="POST" action="#">
 
-<fieldset>
+<fieldset name="set_a">
 <legend>Section A: Beneficiary Information</legend>
 
 <ul class="form-style-1" name = "section_a">
@@ -89,16 +90,16 @@ body {font-size:16px}
     
     <li>
         <label for="beneMiddleName" class="block-label">Middle Name </label>
-        <input type="text" pattern="[a-zA-Z]+"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
+        <input type="text"  name="beneficiary_middle_name" class="field-long" id="beneMiddleName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
     </li>
 
     <li>
         <label for="beneLastName" class="block-label">Last Name *  </label>
-        <input required type="text" pattern="[a-zA-Z]+" name="beneficiary_last_name" class="field-long" id="beneLastName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
+        <input required type="text" name="beneficiary_last_name" class="field-long" id="beneLastName" pattern="^[a-zA-Z]([a-zA-Z- ])*"/>
     </li>
 
     <li>
-         <label for="dob" class="block-label" class="block-label">Date of Birth * </label>
+         <label for="dob" class="block-label" >Date of Birth * </label>
          <input required name="dob" type="text" placeholder="Beneficiary Birthdate" onfocus="(this.type='date')" id="birthdate" title="Please enter date of birth in mm/dd/yyyy format.">
 
     </li>
@@ -132,7 +133,7 @@ body {font-size:16px}
 
     <li>
 
-        <label for="repSubmitter" class="block-label"></span></label>
+        <label for="repSubmitter" class="block-label"></label>
         <input type="checkbox" name="submitterType" value="submittedByRep" id="repSubmitter" /><span class="disclosures-check">I am completing this form on behalf of the beneficiary specified above. </span>
 
 
@@ -141,14 +142,14 @@ body {font-size:16px}
             <label class="block-label">Legal Role of Representative</label>
             <input type="text" name="legalRole" class="field-long" placeholder="Legal Role of Representative" />
 
-            <input type='file' name='repProof' multiple>
+            <input type="file" name="repProof" multiple>
         </span>
 
     </li>
 
     <li>
 
-        <label for="certifyRecords" class="block-label"></span></label>
+        <label for="certifyRecords" class="block-label"></label>
         <input type="checkbox" name="reccordCertification" value="submittedByRep" id="certifyRecords" /><span class="disclosures-check">I am requesting that records produced in response to this request be certified, as they are to be admitted into evidence in a case proceeding. </span>
 
 
@@ -170,7 +171,7 @@ body {font-size:16px}
 </ul>
 </fieldset>
 
-<fieldset>
+<fieldset nme="set_b">
 <legend>Section B: Record Time Frame Definition</legend>
 <ul class="form-style-1" name = "section_b">
     <li>
@@ -188,7 +189,6 @@ body {font-size:16px}
             <span id="timeframeBlock">
                 <label class="field-description">Please indicate timeframe start and end:</label>
                 <label for="releaseStart">Timeframe Start</label>
-                <input name="dob" placeholder="Start Date" onfocus="(this.type='date')"
                 <input placeholder="Start Date" name="releaseStart" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id="releaseStart"/>
                 <br>
                 <label for="releaseEnd">Timeframe End  </label>
@@ -214,14 +214,13 @@ body {font-size:16px}
             <input required type="radio" id="expChoice3" name="expiration_type" value="expByEvent"/>
             <label for="expChoice3">Until a speficied event</label>
 
-            <span id = expDateBlock>
+            <span id="expDateBlock">
             <label for="exp_date" class="field-description">Please indicate future date when authorization will expire.</label>
-            <input placeholder= "Expriation Date" name="expDate" data-inputmask="'alias': '^\d{2}\/\d{2}\/\d{4}'" onfocus="(this.type='date')" id=expirationDate />
             </span>
 
-            <span id=expEventBlock>
+            <span id="expEventBlock">
             <label for="exp_event" class="field-description">Please indicate the event upon which authorization will expire.</label>
-            <input type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" id=exp_event/>
+            <input type="text" name="expirationEvent" class="field-long" placeholder="Authorization Expiration Event" id="exp_event"/>
             </span>
         </div>
     </li>
@@ -239,11 +238,11 @@ body {font-size:16px}
 
 
 <!-- *******************************************-->
-<!-----SECTION C: INFORMATION RELEASE CONTACT----->
+<!--   SECTION C: INFORMATION RELEASE CONTACT   -->
 <!--******************************************* -->
 
 
-<fieldset>
+<fieldset name="set_c">
 <legend>Section C: Information Release Contact</legend>
 <ul class="form-style-1" name = "section_c">
     <p class="disclosures">Identify the name, address and contact information of the person and/or organization to whom you want Medicare to disclose the claim records. Medicare will only release claim records to those listed.</p>
@@ -264,7 +263,7 @@ body {font-size:16px}
         <div id="addlContactInfo">
             <li>
                 <label for="recipPhone" class="block-label">Recipient Phone Number</label>
-                <input type="text" name="recipient_phone" class="field-long" placeholder="999-999-999" pattern="^(\d-)?\d{3}-\d{3}-\d{4}$" title="Phone number must be entered in xxx-xxx-xxxx format."id="recipPhone"/>
+                <input type="text" name="recipient_phone" class="field-long" placeholder="999-999-999" pattern="^(\d-\)?\d{3}-\d{3}-\d{4}$" title="Phone number must be entered in xxx-xxx-xxxx format." id="recipPhone"/>
             </li>
             <li>
                 <label for="recipEmail" class="block-label">Recipient Email Address</label>
@@ -301,11 +300,11 @@ body {font-size:16px}
 </fieldset>
 
 <!-- *******************************************-->
-<!-- -------SECTION D: PURPOSE OF REQUEST------ -->
+<!--        SECTION D: PURPOSE OF REQUEST       -->
 <!--******************************************* -->
 
 
-<fieldset>
+<fieldset name="set_d">
 <legend>Section D: Purpose of Request</legend>
 <ul class="form-style-1" name = "section_d">
 <p class="disclosures">This section helps Medicare understand the reason or intent for use for this record request. Please check all that apply.</p>
@@ -332,51 +331,50 @@ body {font-size:16px}
 </fieldset>
 
 
-<fieldset>
+<fieldset name="set_e">
 <legend> Section E: Request Details </legend>
     
     <ul class="form-style-1" name = "section_d">
-    <p class="disclosures">Please provide additional detail to help CMS process your request.</p>
-<!-- Digitized cover letter-->
-    <li>
-        <label class="block-label" for="identifyRecords">Identify the records you are requesting as clearly and specifically as possible. </label>
-        <input type="text" required name="identifyRecords" class="field-long" id="identifyRecords" placeholder="Record Details" />
-    </li>
-    <li>
-        
-        <label class="block-label" for="maxAmount"> Maximum Payment Amount </label>
-        <label class="field-description">Provide details on maximum payment payment you are willing to make in relation to this request. If CMS estimates that fees will exceed the specified maximum, you will be notified before records are released. </label>
-        <input id= "maxAmount" type="number" name="maxPayment" class="field-long" placeholder="Maximum Payment" min="0.01" step="0.01" pattern="/^(\d{1,3}\,)?(\d{3}\,)*(\d{1,3})*(\.\d{2})?$/g"/>
-    </li>
-    <li>
-        <label class="block-label" > Fee Waiver </label>
-        <p class="field-description">Check the box below if you are requesting a waiver or reduction of all fees for this request based on the Department's FOIA regulations at <a href="https://www.gpo.gov/fdsys/pkg/CFR-2011-title45-vol1/pdf/CFR-2011-title45-vol1-sec5-45.pdf" target="_blank">45 C.F.R. 5.45</a>. </p>
-        <p class="field-description">Note that it is at the discretion of the Department to determine whether the requested records are likely to contribute significantly to public understanding of the operations or activities of the government, or that receipt of the requested records is not primarily in the commercial interest of the requester.</p>
-        <input type="checkbox" name="waiveFees" value="Fees" id="feeWaiver"><label for="feeWaiver">I request that fees be waived or reduced</label>
-         <label for="waiverDetails" class="field-description" placeholder="details">Specify the reason supporting the requested fee waiver below: </label>
+        <p class="disclosures">Please provide additional detail to help CMS process your request.</p>
+        <li>
+            <label class="block-label" for="identifyRecords">Identify the records you are requesting as clearly and specifically as possible. </label>
+            <input type="text" required name="identifyRecords" class="field-long" id="identifyRecords" placeholder="Record Details" />
+        </li>
+        <li>
+            
+            <label class="block-label" for="maxAmount"> Maximum Payment Amount </label>
+            <label class="field-description">Provide details on maximum payment payment you are willing to make in relation to this request. If CMS estimates that fees will exceed the specified maximum, you will be notified before records are released. </label>
+            <input id= "maxAmount" type="number" name="maxPayment" class="field-long" placeholder="Maximum Payment" min="0.01" step="0.01" pattern="/^(\d{1,3}\,)?(\d{3}\,)*(\d{1,3})*(\.\d{2})?$/g"/>
+        </li>
+        <li>
+            <label class="block-label" > Fee Waiver </label>
+            <p class="field-description">Check the box below if you are requesting a waiver or reduction of all fees for this request based on the Department's FOIA regulations at <a href="https://www.gpo.gov/fdsys/pkg/CFR-2011-title45-vol1/pdf/CFR-2011-title45-vol1-sec5-45.pdf" target="_blank">45 C.F.R. 5.45</a>. </p>
+            <p class="field-description">Note that it is at the discretion of the Department to determine whether the requested records are likely to contribute significantly to public understanding of the operations or activities of the government, or that receipt of the requested records is not primarily in the commercial interest of the requester.</p>
+            <input type="checkbox" name="waiveFees" value="Fees" id="feeWaiver"><label for="feeWaiver">I request that fees be waived or reduced</label>
+             <label for="waiverDetails" class="field-description" placeholder="details">Specify the reason supporting the requested fee waiver below: </label>
 
-            <select id="waiverDetails" class="w3-dropdown-hover">
-                <option disabled selected value> -- Select reason for fee waiver -- </option>
-                <option>(1) Release of requested records is in the public interest</option>
-                <option>(2) Release of requested records are not primarily in the commercial interest of the requester</option>
-            </select>
-    </li>
-    <li>
-        <label class="block-label" > Expedited Processing </label>
-        <label class="field-description">Indicate whether you require expedited processing due to compelling need.</label>
-        <input type="checkbox" name="expediteRecords" value="expedite-Yes" id="expedited"> <label for="expedited">I ask that my request be expedited. </label>
-        <label for="expediteDetails" class="field-description"> Explain specific details concerning your compelling need below: </label>
-        <input type="text" name="expediteDetails" class="field-long" id="expediteReason" placeholder="Reason for Expiditing Records" />
-    </li>
-    <li>
-        <label class="block-label" > Electronic Record Format </label>
-        <label class="field-description">Indicate whether you would like to request that records be provided in electronic format(personal computer disk or CD-ROM).</label>  
-        <input type="checkbox" name="electronicFormat" id="electronicElection"value="Fees"> <label for="electronicElection">I request that the resquested information be provided in electronic format.</label>
-     </li>
-<!--      <li>
-        <label for="phoneNumber" class="block-label">Provide us with a home/ office/ mobile phone number for further questions regarding your request:</label>
-        <input type="text" name="phoneNumber" class="field-long" id="phoneNumber" placeholder="phone number" />
-    </li> -->
+                <select id="waiverDetails" class="w3-dropdown-hover">
+                    <option disabled selected value> -- Select reason for fee waiver -- </option>
+                    <option>(1) Release of requested records is in the public interest</option>
+                    <option>(2) Release of requested records are not primarily in the commercial interest of the requester</option>
+                </select>
+        </li>
+        <li>
+            <label class="block-label" > Expedited Processing </label>
+            <label class="field-description">Indicate whether you require expedited processing due to compelling need.</label>
+            <input type="checkbox" name="expediteRecords" value="expedite-Yes" id="expedited"> <label for="expedited">I ask that my request be expedited. </label>
+            <label for="expediteDetails" class="field-description"> Explain specific details concerning your compelling need below: </label>
+            <input type="text" name="expediteDetails" class="field-long" id="expediteReason" placeholder="Reason for Expiditing Records" />
+        </li>
+        <li>
+            <label class="block-label" > Electronic Record Format </label>
+            <label class="field-description">Indicate whether you would like to request that records be provided in electronic format(personal computer disk or CD-ROM).</label>  
+            <input type="checkbox" name="electronicFormat" id="electronicElection" value="Fees"> <label for="electronicElection">I request that the resquested information be provided in electronic format.</label>
+         </li>
+    <!--      <li>
+            <label for="phoneNumber" class="block-label">Provide us with a home/ office/ mobile phone number for further questions regarding your request:</label>
+            <input type="text" name="phoneNumber" class="field-long" id="phoneNumber" placeholder="phone number" />
+        </li> -->
     </ul>
 </fieldset>
 
@@ -385,7 +383,7 @@ body {font-size:16px}
 
 
 <!-- *******************************************-->
-<!-- ----SECTION E: AUTHORIZATION AGREEMENT---- -->
+<!--     SECTION E: AUTHORIZATION AGREEMENT     -->
 <!--******************************************* -->
 
 <fieldset name="set_f">
@@ -414,7 +412,7 @@ body {font-size:16px}
 
 
 
-<button type="w3-btn submit" name="submit" value="submit" onClick="acceptTerms();oneBoxMin();"/>Submit</button>
+<button type="w3-btn submit" name="submit" value="submit" onclick="acceptTerms();oneBoxMin();">Submit</button>
 
 
 </form>
