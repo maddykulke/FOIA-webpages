@@ -1,33 +1,32 @@
-* { box-sizing: border-box; 
-  font: 1em "Open Sans",; 
-  background-color: #D5DCE6;
-
+* {
+  box-sizing: border-box;
+  font: 1em "Open Sans", sans-serif;
+  background-color: #d5dce6;
 }
 
 .form-style-1 {
-    text-align: left;
-    color: #09508B;
-    list-style-type: none;
-    border-radius: 1.5em;
-    padding: 1%;
-    font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
+  text-align: left;
+  color: #09508b;
+  list-style-type: none;
+  border-radius: 1.5em;
+  padding: 1%;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
 }
-
 
 .section-enclosure {
   width: 80%;
 }
 
 .field-description {
-    text-align: left;
-    color: #6C6464;
-    font-style: italic;
-    line-height: 1;
-    font-weight: normal;
-    margin: 0 0 0.75em 0;
-    font-size: 1em;
-    display: block;
-    font-family: inherit;
+  text-align: left;
+  color: #6c6464;
+  font-style: italic;
+  line-height: 1;
+  font-weight: normal;
+  margin: 0 0 0.75em 0;
+  font-size: 1em;
+  display: block;
+  font-family: inherit;
 }
 
 h1 {
@@ -37,24 +36,23 @@ h1 {
 }
 
 a {
-  color: #094C86;
+  color: #094c86;
   font-family: inherit;
-
 }
 
-/*a:visited {
-  color: #6C6464;
-}*/
+/* a:visited {
+color: #6c6464;
+} */
 
 fieldset {
   border-radius: 0.3em;
 }
 
 legend {
-    color:#094C86;
-    font-weight: bold;
-    font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
-    text-transform: uppercase;
+  color: #094c86;
+  font-weight: bold;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
+  text-transform: uppercase;
 }
 
 input {
@@ -62,32 +60,31 @@ input {
   background-color: #f1f1f1;
   padding: 0.675em;
   font-size: 1em;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 1em;
   position: relative;
 }
 
-
 .inline-block-label {
-    display: inline-block;
-    line-height: 1.5;
-    font-weight: bold;
-    color:#6C6464;
-    margin: 0 0 0.5em 0;
-    font-family: inherit;
+  display: inline-block;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #6c6464;
+  margin: 0 0 0.5em 0;
+  font-family: inherit;
 }
 
 .block-label {
-    display: block;
-    line-height: 1.5;
-    font-weight: bold;
-    color:#6C6464;
-    margin: 0 0 0.5em 0;
-    font-family: inherit;
+  display: block;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #6c6464;
+  margin: 0 0 0.5em 0;
+  font-family: inherit;
 }
 
 div.hidden {
-    display: none;
+  display: none;
 }
 
 .disclosures {
@@ -96,44 +93,43 @@ div.hidden {
 
 .disclosures-check {
   font-weight: bold;
-  color:#6C6464;
-  margin: 1em 0 1em 0; 
+  color: #6c6464;
+  margin: 1em 0 1em 0;
 }
 
-/*.required input {
-   padding-right: 25px;
-   background-image: url(...);
-   background-position: right top;
-}*/
+/* .required input {
+ padding-right: 25px;
+ background-image: url(...);
+ background-position: right top;
+} */
 
 input[type=text] {
   background-color: #f1f1f1;
   width: 50%;
-  border-radius: .15em
+  border-radius: 0.15em;
 }
 
 input[type="date"] {
-    background-color: #f1f1f1;
-    width: 35%;
-    border-radius: .15em;
-    color: #6C6464;
+  background-color: #f1f1f1;
+  width: 35%;
+  border-radius: 0.15em;
+  color: #6c6464;
 }
-
 
 input[type=checkbox] {
   background-color: #f1f1f1;
-  margin-bottom: 0em;
-  display:inline-block;
+  margin-bottom: 0;
+  display: inline-block;
 }
 
 input[type=file] {
-  background-color: #D5DCE6;
-  margin-bottom: 0em;
-  display:inline-block;
+  background-color: #d5dce6;
+  margin-bottom: 0;
+  display: inline-block;
 }
 
-.stacked-radio{
-  display:block;
+.stacked-radio {
+  display: block;
 }
 
 input[type=submit] {
@@ -141,7 +137,6 @@ input[type=submit] {
   color: #fff;
   margin: 1em 0 1em 1em;
   text-transform: capitalize;
-
 }
 
 input:invalid {
@@ -153,26 +148,26 @@ input:focus:invalid {
 }
 
 label {
-/*    display: inline-block;*/
-    line-height: 2;
-    font-weight: bold;
-    color:#6C6464;
-    margin-bottom: 0.5em;
-    font-family:inherit;
+  /*    display: inline-block; */
+  line-height: 2;
+  font-weight: bold;
+  color: #6c6464;
+  margin-bottom: 0.5em;
+  font-family: inherit;
 }
 
 input[type=button] {
-  background-color: #09508B;
-  color: #ffffff;
+  background-color: #09508b;
+  color: #fff;
   border-radius: 0.3em;
   display: block;
-  margin: 1em 0 1em 0 ;
+  margin: 1em 0 1em 0;
   font-family: inherit;
   font-size: 0.8em;
 }
 
 .autocomplete {
-  /*the container must be positioned relative:*/
+  /* the container must be positioned relative: */
   position: relative;
   display: inline-block;
 }
@@ -183,7 +178,8 @@ input[type=button] {
   border-bottom: none;
   border-top: none;
   z-index: 99;
- /* position the autocomplete items to be the same width as the container:*/
+
+  /* position the autocomplete items to be the same width as the container: */
   top: 100%;
   left: 0;
   right: 0;
@@ -192,24 +188,26 @@ input[type=button] {
 .autocomplete-items div {
   padding: 1em;
   cursor: pointer;
-  background-color: #fff; 
-  border-bottom: 0.1em solid #d4d4d4; 
+  background-color: #fff;
+  border-bottom: 0.1em solid #d4d4d4;
 }
+
 .autocomplete-items div:hover {
-/*  when hovering an item:*/
-  background-color: #e9e9e9; 
+  /* when hovering an item: */
+  background-color: #e9e9e9;
 }
+
 .autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important; 
-  color: #ffffff; 
+  /* when navigating through the items using the arrow keys: */
+  background-color: DodgerBlue !important;
+  color: #fff;
 }
 
 #notBene {
   margin-top: 2em;
 }
 
-#beneRecip{
+#beneRecip {
   margin-bottom: 1.5em;
 }
 
@@ -226,5 +224,3 @@ input[type=button] {
 #otherReq:not(:checked) ~ #reqType { display: none; }
 
 #recordChoiceSpecific:not(:checked) ~ #recordEventBlock { display: none; }
-
-

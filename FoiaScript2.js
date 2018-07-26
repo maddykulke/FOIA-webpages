@@ -49,6 +49,16 @@ $("#noMedicaidBtn").click(function() {
   $("#medicaidXmark").hide()
   });
 
+
+$(function() {
+var startDate = new Date( $('#TimeframeStart').val() );
+var endDate = new Date( $('#TimeframeEnd').val() );
+if (endDate < startDate) {
+    alert("Timeframe end date must be on or after start date.");
+  }
+});
+
+
 //duplicate div
 function dupDiv()
 {
@@ -69,6 +79,6 @@ function w3_close() {
     document.getElementById("myOverlay").style.display = "none";
 }
 
-$(function() {
-    $("#recaptcha_response_field").attr('required','required');
-});
+
+
+

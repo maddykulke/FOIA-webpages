@@ -5,12 +5,12 @@
 function autocomplete(inp) {
 /** Adapted from w3 schools autocomplete example
 https://www.w3schools.com/howto/howto_js_autocomplete.asp
-**/ 
+**/
   var states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC',
-   'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 
-   'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 
-   'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 
-   'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 
+   'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY',
+   'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT',
+   'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH',
+   'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX',
    'UT', 'VT', 'WV', 'WY'];
 
   /*the autocomplete function takes two arguments,
@@ -109,7 +109,7 @@ https://www.w3schools.com/howto/howto_js_autocomplete.asp
       x[i].parentNode.removeChild(x[i]);
       }
     }
-  } 
+  }
 }
 
 
@@ -134,13 +134,16 @@ function limitCurrentDates(dateArray) {
     }
 }
 
-
-
-function limitFuturedate(dateArray) {
+function limitFuturedate(dateArray, minDate = None) {
   // Adapted from https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
-    var today = new Date().toISOString().split("T")[0];
-    for (var i = 0, dateLen = dateArray.length; i < dateLen; i++) {
-      document.getElementById(dateArray[i]).setAttribute("min", today);
+  // date format: "2018-07-26"
+    if minDate:
+      for (var i = 0, dateLen = dateArray.length; i < dateLen; i++) {
+        document.getElementById(dateArray[i]).setAttribute("min", minDate);
+    else:
+      var today = new Date().toISOString().split("T")[0];
+      for (var i = 0, dateLen = dateArray.length; i < dateLen; i++) {
+        document.getElementById(dateArray[i]).setAttribute("min", today);
     }
 }
 
@@ -171,10 +174,10 @@ function oneBoxMin(){
 
 
 function acceptTerms(){
-  if(document.getElementById('agreeHIPAA').checked) { 
-    // return true; 
+  if(document.getElementById('agreeHIPAA').checked) {
+    // return true;
 
-  } else { 
+  } else {
     alert('Please indicate that you have read and agree to the authorization terms.')
   }
 
@@ -184,24 +187,24 @@ function acceptTerms(){
 
 
 function dynamicAdd(){
-    // Attribution: Dynamically adding duplicate (unique ID) form Div elements using javascript on 
+    // Attribution: Dynamically adding duplicate (unique ID) form Div elements using javascript on
     // jsfiddle.net -  https://jsfiddle.net/phusick/Rceua/
     var button = document.getElementById("newRecip");
-    
+
     button.addEventListener("click", function() {
         var sourceNode = document.getElementById("recipInfo");
         var node = duplicateNode(sourceNode, ["id", "name", "placeholder"]);
-        
+
         sourceNode.parentNode.appendChild(node);
     }, false);
 
-    
+
     var counter = 1;
     function duplicateNode(/*DOMNode*/sourceNode, /*Array*/attributesToBump) {
         counter++;
         var out = sourceNode.cloneNode(true);
-        if (out.hasAttribute("id")) { 
-          out["id"] = bump(out["id"]); 
+        if (out.hasAttribute("id")) {
+          out["id"] = bump(out["id"]);
         }
 
         var nodes = out.getElementsByTagName("*");
@@ -222,7 +225,7 @@ function dynamicAdd(){
             for (var j = 0, len2 = attributesToBump.length; j < len2; j++) {
                 var attribute = attributesToBump[j];
                 if (node.hasAttribute(attribute)) {
-                  
+
                   if (attribute == "placeholder") {
                     node[attribute] = bump(node[attribute], " ");
                   } else {
@@ -231,21 +234,21 @@ function dynamicAdd(){
                 }
             }
         }
-        
+
         function bump(/*String*/str, separator = "") {
             return str + separator + counter;
         }
-      
+
         var rem = document.createElement("input");
         rem.type = "button";
         rem.id = "removeButton" + (counter - 1);
         rem.name = "removeRecip" + counter;
         rem.value = "Remove Recipient";
-        
+
         rem.addEventListener("click", function(){
           this.parentNode.remove();
         }, false);
-        
+
         out.appendChild(rem);
 
         return out;
@@ -261,17 +264,17 @@ function sameRecip() {
   var fillTrigger = document.getElementById("beneRecip");
 
   fillTrigger.addEventListener("click", function(){
-    var beneInfo = ["beneFirstName", "beneLastName", "beneStreetAddress", 
+    var beneInfo = ["beneFirstName", "beneLastName", "beneStreetAddress",
     "beneAddress2", "beneCity", "beneState", "beneZip"];
 
-    var recipInfo = ["recipFirstName", "recipLastName", "recipAddress", "recipApt", 
+    var recipInfo = ["recipFirstName", "recipLastName", "recipAddress", "recipApt",
     "recipCity", "recipState", "recipZip"];
 
     if(fillTrigger.checked == true) {
 
       for (var i = 0; i < beneInfo.length; i++) {
         document.getElementById(recipInfo[i]).value = document.getElementById(beneInfo[i]).value;
-      } 
+      }
     } else {
         for (var i = 0; i < recipInfo.length; i++) {
           document.getElementById(recipInfo[i]).value = "";
@@ -290,27 +293,3 @@ function collectStates(div) {
       }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
