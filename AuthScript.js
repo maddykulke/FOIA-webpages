@@ -134,16 +134,18 @@ function limitCurrentDates(dateArray) {
     }
 }
 
-function limitFuturedate(dateArray, minDate = None) {
+function limitFuturedate(dateArray, minDate=null) {
   // Adapted from https://stackoverflow.com/questions/32378590/set-date-input-fields-max-date-to-today
   // date format: "2018-07-26"
-    if minDate:
+    if (minDate) {
       for (var i = 0, dateLen = dateArray.length; i < dateLen; i++) {
         document.getElementById(dateArray[i]).setAttribute("min", minDate);
-    else:
+      }
+    } else {
       var today = new Date().toISOString().split("T")[0];
       for (var i = 0, dateLen = dateArray.length; i < dateLen; i++) {
         document.getElementById(dateArray[i]).setAttribute("min", today);
+      }
     }
 }
 
@@ -175,10 +177,10 @@ function oneBoxMin(){
 
 function acceptTerms(){
   if(document.getElementById('agreeHIPAA').checked) {
-    // return true;
-
+    return true;
   } else {
     alert('Please indicate that you have read and agree to the authorization terms.')
+    return false;
   }
 
 }

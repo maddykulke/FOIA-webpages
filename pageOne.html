@@ -1,88 +1,79 @@
+<!DOCTYPE HTML5>
 <!-- modified from: https://www.w3schools.com/css/css_rwd_templates.asp -->
-
-
-
-<!DOCTYPE html>
-<html>
+<html lang = "en">
 
 <head>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="AuthScript.js"></script>
-<script src="FoiaScript.js"></script>
-<title>File a FOIA request</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="stylesheet.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <title>File a Medicare FOIA request</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel= "stylesheet" href="test2.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="FoiaScript2.js"></script>
 </head>
 
 
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-topleft" style="width:100%">Close Menu</a>
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%">Close Menu</a>
   <div class="w3-container">
-    <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS</b></h3>
+    <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS: Medicare</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Freedom of Infomation Act (FOIA)</a> 
-  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
-    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
-    </a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FOIA Reading Room</a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Annual Reports</a>
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hospital Appeals Settlements</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Freedom of Infomation Act (FOIA)</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">File a Medicare FOIA Request</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">How We Process Your Request</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Non-FOIA Records</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">FOIA Reading Room</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Annual Reports</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Hospital Appeals Settlements</a>
   </div>
 </nav>
-
-
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-light-blue w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-light-blue w3-margin-right" onclick="w3_open()">☰</a>
-  <span>FOIA at CMS</span>
-  
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+  <span>FOIA at CMS: Medicare</span>
+
 </header>
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-
+<div class="w3-overlay w3-hide-large" onclick="w3_close()"  title="close side menu" id="myOverlay"></div>
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:22em;margin-right:2.7em">
+<div class="w3-main">
   <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h2 class="w3-large center-div"><b>File a FOIA Request</b></h2>
-    <hr style="width:3em; border:0.3125em steelblue" class="w3-round">
-  </div>
+  <!-- <div class="w3-container" id="showcase">
+    <h2 class="w3-large center-div"><b>File a Medicare FOIA Request</b></h2>
+  </div> -->
 
-  <div id = "instructions" class = "center-div">
-    <h3>I am making a FOIA request for...</h3>
+  <div  class = "center-div" id="showcase">
+      <!-- Header -->
+    <div><h3><b>File a Medicare FOIA Request</b></h3></div>
+    <h3>I am making a FOIA request for:</h3>
 
-    <button class = "w3-btn"  id="myOwnRecordsButton" onclick=  "showDiv('myOwnRecords'),hideDiv('notOwnRecords')">My own medical records</button>
+    <button class = "w3-btn"  id="myOwnRecordsButton">My own medical records</button>
 
-    <button id="notOwnRecordsButton" class= "w3-btn" onclick= "showDiv('notOwnRecords'), hideDiv('myOwnRecords')">Someone else's records</button>
+    <button id="notOwnRecordsButton" class= "w3-btn" >Someone else's records</button>
 
-    <div id= "myOwnRecords"class="hidden"> 
-      <button id= "myOwnRecords" class= "w3-btn hidden" onclick="window.location.href='http://bluebutton.cms.gov/'">Link to BlueButton2.0</button>
+    <div id= "myOwnRecords" class="hidden">
+      <button id= "OwnRecords" class= "w3-btn hidden" onclick="window.location.href='http://bluebutton.cms.gov/'">Link to BlueButton2.0</button>
     </div>
 
-    <div id="notOwnRecords" class= "hidden"> 
-      <h4><b>Are you filing a request for the records of a deceased beneficiary?</b></h4>
+    <div id="notOwnRecords" class= "hidden">
+      <h3>Are you filing a request for the records of a deceased beneficiary?</h3>
 
-      <button id="isDeceasedButton" class= "w3-btn" onclick= "showDiv('deceasedRecords'), hideDiv('aliveRecords')">Yes, beneficiary is deceased</button>
+      <button id="isDeceasedButton" class= "w3-btn" >Yes, beneficiary is deceased</button>
 
-      <button id="isAliveButton" class = "w3-btn" onclick= "showDiv('aliveRecords'),hideDiv('deceasedRecords')">No, beneficiary is alive</button>
+      <button id="isAliveButton" class = "w3-btn" >No, beneficiary is alive</button>
     </div>
 
     <div id= "deceasedRecords" class = "hidden">
-      <button class="w3-btn hidden" onclick="window.location.href='AliveRecords.html'"> 
+      <button id="deceasedRecordsBtn" class="w3-btn hidden" onclick="window.location.href='AliveRecords.html'">
        Fill out a FOIA request for a deceased beneficiary</button>
     </div>
 
     <div id= "aliveRecords" class = "hidden">
-      <button id="aliveRecords" class= "w3-btn hidden" onclick="window.location.href='AliveRecords.html'"> Fill out a FOIA request for a living beneficiary </button>
+      <button id="aliveRecordsBtn" class= "w3-btn hidden" onclick="window.location.href='AliveRecords.html'"> Fill out a FOIA request for a living beneficiary </button>
     </div>
   </div>
 </div>
@@ -94,7 +85,7 @@ function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";

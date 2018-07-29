@@ -1,100 +1,87 @@
+<!DOCTYPE HTML5>
 <!-- modified from: https://www.w3schools.com/css/css_rwd_templates.asp -->
-
-
-
-<!DOCTYPE html>
-<html>
+<html lang = "en">
 
 <head>
+  <title>File a Meidcare FOIA request</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel= "stylesheet" href="test2.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="FoiaScript2.js"></script>
 </head>
 
-<title>File a FOIA request</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-<link rel="stylesheet" href="stylesheet.css">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-<!-- <style>
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-.w3-half img:hover{opacity:1}
-</style> -->
 <body>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-medium w3-padding" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%">Close Menu</a>
   <div class="w3-container">
-    <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS</b></h3>
+    <h3 class="sidebar-padding"><b>Freedom of Information Act (FOIA) at CMS: Medicare</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-
-    white">Freedom of Infomation Act (FOIA)</a> 
-  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">File a CMS FOIA Request</a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">How We Process Your Request</a> 
-    <a href=https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Non-FOIA Records
-    </a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FOIA Reading Room</a> 
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Annual Reports</a>
-    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hospital Appeals Settlements</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/index.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Freedom of Infomation Act (FOIA)</a>
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">File a Medicare FOIA Request</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/process.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">How We Process Your Request</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/nonfoia.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Non-FOIA Records</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/rdgroom.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">FOIA Reading Room</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/annualreports.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Annual Reports</a>
+    <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/FOIA/Hospital-Appeals-Settlements.html" onclick="w3_close()" class="w3-bar-item w3-btn hover-bold">Hospital Appeals Settlements</a>
   </div>
 </nav>
-
-
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
-  <span>FOIA at CMS</span>
-  
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+  <span>FOIA at CMS: Medicare</span>
+
 </header>
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()"  title="close side menu" id="myOverlay"></div>
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:22em;margin-right:2.7em">
+<div class="w3-main">
   <!-- Header -->
-  <div class="w3-container" style="margin-top:80px" id="showcase">
-    <h2 class="w3-large center-div"><b>File a FOIA Request</b></h2>
-    <hr style="width:3em; border:0.3125em steelblue" class="w3-round">
-  </div>
-
-  
+  <!-- <div class="w3-container" >
+    <h2 class="w3-large center-div"><b>File a Medicare FOIA Request</b></h2>
+  </div> -->
 
    <!-- page 1: What type of medicare beneficiary claims are you requesting? -->
-<div id = "typeOfClaim" class = "center-div">
-    <h3> Let's make sure you're in the right place. What type of beneficiary claim records are you requesting? </h3>
- <br> 
-    <h6> Is the beneficiary <b>enrolled in Medicare? </b></h6>
- <button id="hasCardBtn" class="w3-btn">Yes</button><button id="noCardBtn" class="w3-btn">No</button>
- 
-<!-- clip art from https://publicdomainvectors.org/en/free-clipart/Check-mark/59514.html-->
-    <!-- indicators from flaticon.com -->
-<!--     <div id="check" class = "hidden"> -->
-    <img id= "checkGreen" src="tick.png" class='hidden-image' alt="checkmark: continue.">
-    <img id= "EnrolledXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
-<!--     </div> -->
+  <div id="showcase" class = "center-div">
+    <!-- Header -->
+  <div><h3><b>File a Medicare FOIA Request</b></h3></div>
 
-    <div id="noCard" class = "hidden">
-<!--         <h5> <b>Stop</b></h5> -->
-        <img id= "enrolledStop" src="stop_outline.png" class='w3-image' alt="Stop.">
-        <p>If the beneficiary is not enrolled in Medicare, records are not maintained by CMS. <b>Please contact the beneficiary's insurer</b>.</p>
-    </div>
+      <h3> Let's make sure you're in the right place. What type of beneficiary claim records are you requesting? </h3>
+   <br>
+      <h6> Is the beneficiary <b>enrolled in Medicare? </b></h6>
+   <button id="hasCardBtn" class="w3-btn">Yes</button><button id="noCardBtn" class="w3-btn">No</button>
+
+      <!-- indicators from flaticon.com -->
+    <img id= "checkGreen" src="tick.png" class="hidden-image" alt="checkmark: continue."/>
+    <img id= "EnrolledXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
+
+
+      <div id="noCard" class = "hidden">
+  <!--         <h5> <b>Stop</b></h5> -->
+          <img id= "enrolledStop" src="stop_outline.png" class="w3-image" alt="Stop.">
+          <p>If the beneficiary is not enrolled in Medicare, records are not maintained by CMS. <b>Please contact the beneficiary's insurer</b>.</p>
+      </div>
 
 
     <h6> Do you have the beneficiary's <b>Medicare identification number</b>?</h6>
     <button id="hasIDBtn" class="w3-btn">Yes</button>
     <button id="noIDBtn" class="w3-btn">No</button>
- 
+
 <!-- clip art from https://publicdomainvectors.org/en/free-clipart/Check-mark/59514.html-->
 <!--     <div id= "IDcheck" class ="hidden"> -->
-    <img id= "IDcheckGreen" src="tick.png" class='hidden-image' alt="checkmark: continue.">
-    <img id= "IDXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+    <img id= "IDcheckGreen" src="tick.png" class="hidden-image" alt="checkmark: continue.">
+    <img id= "IDXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
 <!--     </div> -->
-    
+
 
     <div id="noID" class = "hidden">
 <!--         <h5> <b>Stop</b></h5> -->
-        <img id= "IDstop" src="stop_outline.png" class='w3-image' alt="Stop.">
+        <img id= "IDstop" src="stop_outline.png" class="w3-image" alt="Stop.">
 <!--         <img id= "IDstop" src="stop_double_outline.png" class='w3-image'> -->
         <p>You will need the beneficiary's Medicare ID number to continue. <b>Please retrieve the beneficiary's Medicare identification number</b>. </p>
     </div>
@@ -103,41 +90,42 @@
     <button id="hasAdvantageBtn" class="w3-btn">Yes</button>
     <button id="noAdvantageBtn" class="w3-btn">No</button>
 
-    <img id= "medAdvCheck" src="tick.png" class='hidden-image' alt="checkmark: continue.">
-    <img id= "medAdvXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+    <img id= "medAdvCheck" src="tick.png" class="hidden-image" alt="checkmark: continue.">
+    <img id= "medAdvXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
 
-    <div id= "hasAdvantage" class = "hidden"> 
+    <div id= "hasAdvantage" class = "hidden">
 <!--         <h5> <b>Stop.</b></h5> -->
-        <img id= "medAdvStop" src="stop_outline.png" class='w3-image' alt="Stop.">
+        <img id= "medAdvStop" src="stop_outline.png" class="w3-image" alt="Stop.">
         <p>CMS does not maintain Medicare Advantage claims records.
         <b>You will need to submit your request directly to the beneficiary's specic private insurance company (e.g. HMO, PPO, etc.)</b>.</p>
     </div>
 <!--     <div id = "dest1" class ="hidden"></div> -->
-    
+
     <h6> Are you requesting <b>Medicaid</b> claim records?</h6>
     <button id="hasMedicaidBtn" class="w3-btn">Yes</button>
     <button id="noMedicaidBtn" class="w3-btn">No</button>
 
-    <img id= "medicaidCheck" src="tick.png" class='hidden-image' alt="checkmark: continue.">
-    <img id= "medicaidXmark" src="xmark.png" class='hidden-image' alt="x-mark: see mesage below for futher instructions.">
+    <img id= "medicaidCheck" src="tick.png" class="hidden-image" alt="checkmark: continue.">
+    <img id= "medicaidXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
 
-    <div id= "hasMedicaid" class = "hidden"> 
+    <div id= "hasMedicaid" class = "hidden">
 <!--         <h5> <b>Stop.</b></h5> -->
-        <img id= "medicaidStop" src="stop_outline.png" class='w3-image' alt="Stop.">
-        <p>CMS does not maintain Medicaid claims records. <b>You will need to submit your request directly to the beneficiary's state agency</b>.</p> 
-        <p>State contact information:</p>
+        <img id= "medicaidStop" src="stop_outline.png" class="w3-image" alt="Stop.">
+        <p>CMS does not maintain Medicaid claims records. <b>You will need to submit your request directly to the beneficiary's state agency</b>.</p>
+        <a href="https://www.medicaid.gov/state-overviews/index.html" id="medicaid-link">Explore Medicaid in your State</a>
 
     </div>
-    <div id = "dest2" class ="hidden" ></div>
 
-<br>
+    <br>
+    <div id="form-div">
+    <form action="pageOne.html">
 
-<form action="pageOne.html">
-
-    <button class="w3-btn" id= "nextPage" type="submit" /><h4><b>Fill out authorization for release of Medicare claim information → </b></h4></button>
-
-</form>
+        <button class="w3-btn" id= "nextPage" type="submit" ><h5><b>Complete release authorization for Medicare claim records → </b></h5></button>
+    </form>
+  </div>
+  </div>
 </div>
+
 
 <script src ="FoiaScript2.js"></script>
 

@@ -1,23 +1,45 @@
 /* W3.CSS 4.10 February 2018 by Jan Egil and Borge Refsnes */
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper > * {
+  flex: 1 100%;
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  /* We invert order of first sidebar and main
+   * And tell the main element to take twice as much width as the other two sidebars
+   */
+  .main { flex: 2 0px; }
+  .aside { order: 1; }
+  .center-div-large { order: 2; }
+}
+
 html  {
   box-sizing: border-box;
 }
 
 *,
 *::before,
-*::after  {
+*::after {
   box-sizing: inherit;
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
 }
 
 /* centering divs */
-.center-div  {
+.center-div {
   margin: 0 auto;
   width: 500px;
 }
 
-.center-div-large  {
+.center-div-large {
   margin: 0 auto;
   width: 80%;
 }
@@ -40,14 +62,14 @@ html  {
 .w3-bar .w3-bar-item {
   padding: 0.5em 1em;
   float: left;
-  width: 0uto;
+  width: auto;
   border: none;
   display: block;
   outline: 0;
 }
 
 /* hidden divs */
-div.hidden  {
+div.hidden {
   display: none;
 }
 
@@ -89,8 +111,8 @@ a:active, a:hover { outline-width: 0; }
 
 abbr[title] {
   border-bottom: none;
-  text-decoration:underline;
-  text-decoration:underline dotted;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 .w3-image {
@@ -165,7 +187,7 @@ abbr[title] {
 }
 
 .w3-button:hover {
-  color: #000!important;
+  /* color: #000!important; */
   background-color: #2196F3!important
 }
 
@@ -200,19 +222,13 @@ abbr[title] {
   font-family: inherit;
 }
 
-/*h1  {
-font-size: 1.5em;
-font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
-text-transform: uppercase;
-}*/
-
-
-fieldset  {
+fieldset {
   border-radius: 0.3em;
   border: 0.1em solid;
   display: block;
-  margin: 0 0.125em;
-  max-width: 70%;
+  margin: 0 0 1.5em 0;
+  max-width: 80%;
+  min-width: 0;
 }
 
 
@@ -579,10 +595,10 @@ h1, h2, h3, h4, h5, h6 {
   .w3-bar-block.w3-center .w3-bar-item {text-align: center}.w3-block {display: block;width: 100%}
 
   .w3-responsive {display: block;overflow-x:auto}
-  
+
   .w3-container::after, .w3-container::before, .w3-panel::after, .w3-panel::before, .w3-row::after, .w3-row::before, .w3-row-padding::after, .w3-row-padding::before,
   .w3-cell-row::before, .w3-cell-row::after, .w3-clear::after, .w3-clear::before, .w3-bar::before, .w3-bar::after { content:""; display:table; clear:both }
-  
+
   .w3-col, .w3-half, .w3-third, .w3-twothird, .w3-threequarter, .w3-quarter {float: left;width: 100%}
   .w3-col.s1 {width: 8.33333%}.w3-col.s2 {width: 16.66666%}.w3-col.s3 {width: 24.99999%}.w3-col.s4 {width: 33.33333%}
   .w3-col.s5 {width: 41.66666%}.w3-col.s6 {width: 49.99999%}.w3-col.s7 {width: 58.33333%}.w3-col.s8 {width: 66.66666%}
@@ -606,7 +622,7 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: 992px) and (min-width: 601px) {.w3-hide-medium {display: none!important}}
 
   .w3-top, .w3-bottom { position: fixed;width: 100%;z-index: 1}
-  .w3-top { top: 0} 
+  .w3-top { top: 0}
   .w3-bottom { bottom: 0}
   .w3-overlay {position: fixed;display: none;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;background-color: rgba(0, 0, 0, 0.5);z-index: 2}
   .w3-display-topleft {position:absolute;left: 0;top: 0}.w3-display-topright {position:absolute;right: 0;top: 0}
