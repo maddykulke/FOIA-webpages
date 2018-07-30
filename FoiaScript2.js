@@ -49,23 +49,12 @@ jQuery(document).ready(function() {
 
   $("#myOwnRecordsButton").click(function() {
       $("#myOwnRecords").show();
-      $("#notOwnRecords").hide();
+      $("#form-container").hide();
   });
 
   $("#notOwnRecordsButton").click(function() {
       $("#myOwnRecords").hide();
-      $("#notOwnRecords").show();
-  });
-
-  $("#isAliveButton").click(function() {
-      $("#aliveRecords").show();
-      $("#deceasedRecords").hide();
-  });
-
-
-  $("#isDeceasedButton").click(function() {
-      $("#aliveRecords").hide();
-      $("#deceasedRecords").show();
+      $("#form-container").show();
   });
 
 
@@ -136,10 +125,10 @@ jQuery(document).ready(function() {
       $("#expedited").change(function() {
           if ( $("#expedited").is(":checked") ) {
             $("#expediteBlock").show();
-            $("#expediteReason").prop('required',true);
+            $("#expediteDetails").prop('required',true);
           } else {
             $("#expediteBlock").hide();
-            $("#expediteReason").prop('required',false);
+            $("#expediteDetails").prop('required',false);
           }
         }).change();
 
