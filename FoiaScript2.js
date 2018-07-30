@@ -136,10 +136,10 @@ jQuery(document).ready(function() {
       $("#expedited").change(function() {
           if ( $("#expedited").is(":checked") ) {
             $("#expediteBlock").show();
-            $("#expediteDetails").prop('required',true);
+            $("#expediteReason").prop('required',true);
           } else {
             $("#expediteBlock").hide();
-            $("#expediteDetails").prop('required',false);
+            $("#expediteReason").prop('required',false);
           }
         }).change();
 
