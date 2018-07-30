@@ -58,10 +58,10 @@ jQuery(document).ready(function() {
   });
 
 
-  $('#TimeframeEnd').click(function() {
-    var startDate = new Date( $('#TimeframeStart').val() );
+  $('#releaseEnd').click(function() {
+    var startDate = new Date( $('#releaseStart').val() );
     if (startDate) {
-      var endDate = new Date( $('#TimeframeEnd').val() );
+      var endDate = new Date( $('#releaseEnd').val() );
       if (endDate < startDate) {
         alert("Timeframe end date must be on or after start date.");
       }
@@ -70,7 +70,7 @@ jQuery(document).ready(function() {
 
   $('input:radio[name="release_info"]').change(
     function(){
-        if ($(this).val() == 'timeframe_only') {
+        if ($(this).val() == "timeframe_only") {
             // $("#timeframeBlock").show();
             $("#releaseStart").prop('required',true);
             $("#releaseEnd").prop('required',true);
@@ -84,7 +84,7 @@ jQuery(document).ready(function() {
 
     $('input:radio[name="expiration_type"]').change(
       function(){
-        if ($(this).val() == 'expByEvent') {
+        if ($(this).val() == "expByEvent") {
             // $("#expDateBlock").hide();
             // $("#expEventBlock").show();
             $("#expirationDate").prop('required',false);
@@ -125,13 +125,48 @@ jQuery(document).ready(function() {
       $("#expedited").change(function() {
           if ( $("#expedited").is(":checked") ) {
             $("#expediteBlock").show();
-            $("#expediteDetails").prop('required',true);
+            $("#expediteReason").prop('required',true);
           } else {
             $("#expediteBlock").hide();
-            $("#expediteDetails").prop('required',false);
+            $("#expediteReason").prop('required',false);
           }
         }).change();
 
+        $("#repSubmitter").change(function() {
+            if ( $("#repSubmitter").is(":checked") ) {
+              $("#repRole").show();
+              $("#legal-role").prop('required',true);
+              $("#roleProof").prop('required',true);
+            } else {
+              $("#repRole").hide();
+              $("#legal-role").prop('required',false);
+              $("#roleProof").prop('required',false);
+            }
+          }).change();
+
+          $("#certifyRecords").change(function() {
+              if ( $("#certifyRecords").is(":checked") ) {
+                $("#certDetails").show();
+                $("#caseJuris").prop('required',true);
+                $("#caseNumber").prop('required',true);
+                $("#caseName").prop('required',true);
+              } else {
+                $("#certDetails").hide();
+                $("#caseJuris").prop('required',false);
+                $("#caseNumber").prop('required',false);
+                $("#caseName").prop('required',false);
+              }
+            }).change();
+
+            $("#otherReq").change(function() {
+                if ( $("#otherReq").is(":checked") ) {
+                  $("#reqType").show();
+                  $("#otherSpecifics").prop('required',true);
+                } else {
+                  $("#reqType").hide();
+                  $("#otherSpecifics").prop('required',false);
+                }
+              }).change();
 });
 
 //duplicate div

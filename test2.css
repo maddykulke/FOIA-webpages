@@ -1,14 +1,12 @@
-/*/*/*/* W3.CSS 4.10 February 2018 by Jan Egil and Borge Refsnes */
+/* Portions of CSS adapted from W3.CSS 4.10 February 2018 by Jan Egil and Borge Refsnes */
 html{
   box-sizing:border-box
 }
-
 
 *,*:before,*:after{
   box-sizing:inherit;
   font-family: "Open Sans",sans-serif;
 }
-
 
 /* centering divs*/
 .center-div
@@ -25,13 +23,6 @@ html{
 }
 
 #showcase { margin-top:5em; }
-
-/* hidden divs */
-
-
-div.hidden {
-    display: none;
-}
 
 #mySidebar {
   z-index:3;
@@ -51,92 +42,108 @@ div.hidden {
 
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{
-	-ms-text-size-adjust:100%;
-	-webkit-text-size-adjust:100%}
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%}
 body{
 	margin:0
 }
 
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{
-	display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
 }
 
-audio,canvas,progress,video{
-	display:inline-block
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
 }
 
-progress{
-	vertical-align:baseline;
+progress {
+  vertical-align: baseline;
 }
 
-audio:not([controls]){
-	display:none;
-  height:0;
+audio:not([controls]) {
+  display: none;
+  height: 0;
 }
 
-[hidden],template{
-	display:none
+[hidden],
+template {
+  display: none;
 }
 
-
-a:active,a:hover{
-	outline-width:0;
-}
-abbr[title]{
-	border-bottom:none;
-	text-decoration:underline;
-	text-decoration:underline dotted
+a:active,
+a:hover {
+  outline-width: 0;
 }
 
-.w3-image{
-	max-width:100%;
-	height:2em;
-	display: inline;
-	border-style: none;
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
-
-.hidden-image{
-	max-width:100%;
-	height:2em;
-	display: none;
-	border-style: none;
+.w3-image {
+  max-width: 100%;
+  height: 2em;
+  display: inline;
+  border-style: none;
 }
 
-.w3-large{
-	font-size:1.5em!important
+.hidden-image {
+  max-width: 100%;
+  height: 2em;
+  display: none;
+  border-style: none;
 }
 
-.w3-medium{
-	font-size:1.2em!important;
-	font-weight: bold;
+.w3-large {
+  font-size: 1.5em !important;
 }
 
-@media (max-width:62em){
-	.w3-sidebar.w3-collapse{
-		display:none;
-	}
-	.w3-main{
-		margin-left:0!important;
-		margin-right:0!important;
+.w3-medium {
+  font-size: 1.2em !important;
+  font-weight: bold;
+}
+
+@media (max-width: 62em) {
+  .w3-sidebar.w3-collapse {
+    display: none;
+  }
+
+  .w3-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
     /* margin-left:22em;
     margin-right:2.7em; */
-	}
+  }
 }
 
-
-.sidebar-padding{
-	padding-top:1em!important;
-	padding-bottom:1em!important;
+.sidebar-padding {
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
 }
 
-.w3-sidebar{
-	height:100%;
-	width:12em;
-	background-color:#fff;
-	position:fixed!important;
-	z-index:1;
-	overflow:auto;
+.w3-sidebar {
+  height: 100%;
+  width: 12em;
+  background-color: #fff;
+  position: fixed !important;
+  z-index: 1;
+  overflow: auto;
 }
 
 button,input,select,textarea{
@@ -176,36 +183,35 @@ hr{box-sizing:content-box;height:0;overflow:visible}
 
 /* End extract */
 
-
-/***********************************
+/* **********************************
         FORM-SPECIFIC CSS
-***********************************/
+********************************** */
 
 
 .form-style-1 {
-    text-align: left;
-    /* color: #09508B; */
-    list-style-type: none;
-    border-radius: 1.5em;
-    padding: 1%;
-    font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
-}
+  text-align: left;
 
+  /* color: #09508B; */
+  list-style-type: none;
+  border-radius: 1.5em;
+  padding: 1%;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
+}
 
 .section-enclosure {
   width: 80%;
 }
 
 .field-description {
-    text-align: left;
-    color: #6C6464;
-    font-style: italic;
-    line-height: 1;
-    font-weight: normal;
-    margin: 0.5em 0 0.75em 0;
-    font-size: 1em;
-    display: inline-block;
-    font-family: inherit;
+  text-align: left;
+  color: #6c6464;
+  font-style: italic;
+  line-height: 1;
+  font-weight: normal;
+  margin: 0.5em 0 0.75em 0;
+  font-size: 1em;
+  display: inline-block;
+  font-family: inherit;
 }
 
 
@@ -219,10 +225,10 @@ fieldset {
 }
 
 legend {
-    /* color: #09508B; */
-    font-weight: bold;
-    font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
-    text-transform: uppercase;
+  /* color: #09508B; */
+  font-weight: bold;
+  font-family: "Open Sans", "Helvetica Neue", "Lucida Sans Unicode", sans-serif;
+  text-transform: uppercase;
 }
 
 input {
@@ -230,32 +236,39 @@ input {
   background-color: #f1f1f1;
   padding: 0.675em;
   font-size: 1em;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 0.5em;
   position: relative;
 }
 
+input:invalid {
+  box-shadow: 0 0 0.1em 0.1em red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
 
 .inline-block-label {
-    display: inline-block;
-    line-height: 1.5;
-    font-weight: bold;
-    color:#6C6464;
-    margin: 0 0 0.5em 0;
-    font-family: inherit;
+  display: inline-block;
+  line-height: 1.5;
+  font-weight: bold;
+  color:#6c6464;
+  margin: 0 0 0.5em 0;
+  font-family: inherit;
 }
 
 .block-label {
-    display: block;
-    line-height: 1.5;
-    font-weight: bold;
-    color:#6C6464;
-    margin: 0.5em 0 0.5em 0;
-    font-family: inherit;
+  display: block;
+  line-height: 1.5;
+  font-weight: bold;
+  color:#6c6464;
+  margin: 0.5em 0 0.5em 0;
+  font-family: inherit;
 }
 
 div.hidden {
-    display: none;
+  display: none;
 }
 
 .disclosures {
@@ -264,7 +277,7 @@ div.hidden {
 
 .disclosures-check {
   font-weight: bold;
-  color:#6C6464;
+  color: #6c6464;
   margin: 1em 0 1em 0;
 }
 
@@ -277,53 +290,56 @@ div.hidden {
 input[type=text] {
   background-color: #f1f1f1;
   width: 50%;
-  border-radius: .15em;
+  border-radius: 0.15em;
 }
 
 textarea {
   background-color: #f1f1f1;
   width: 80%;
-  border-radius: .15em;
+  border-radius: 0.15em;
   overflow: auto;
-  border-color: transparent;
+  border: 0.2em solid transparent;
+  padding: 0.675em;
+  font-size: 1em;
+  font-family: inherit;
+  margin-bottom: 0.5em;
+  position: relative;
 }
 
+textarea:invalid {
+  box-shadow: 0 0 0.1em 0.1em red;
+}
+
+textarea:focus:invalid {
+  outline: none;
+}
 
 input[type="date"] {
-    background-color: #f1f1f1;
-    width: 35%;
-    border-radius: .15em;
-    color: #6C6464;
+  background-color: #f1f1f1;
+  width: 35%;
+  border-radius: 0.15em;
+  color: #6c6464;
 }
-
 
 input[type=checkbox] {
   background-color: #f1f1f1;
-  margin: 0 0.75em 0 0;
+  margin: 0 0.5em 0 0;
   display: inline-block;
 }
 
 input[type=file] {
   background-color: #fff;
-  margin-bottom: 0em;
-  display:inline-block;
+  margin-bottom: 0;
+  display: inline-block;
 }
 
-.stacked-radio{
-  display:block;
+.stacked-radio {
+  display: block;
 }
 
 input[type=submit] {
   margin: 1em 0 1em 1em;
   text-transform: capitalize;
-}
-
-input:invalid {
-  box-shadow: 0 0 0.1em 0.1em red;
-}
-
-input:focus:invalid {
-  outline: none;
 }
 
 label {
@@ -384,17 +400,19 @@ input[type=button] {
 
 #beneRecip { margin-bottom: 1.5em; }
 
+#litigation, #otherReq { margin-left: 1em; }
+
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 
 #expDateRadio:not(:checked) ~ #expDateBlock { display: none; }
 
 #expEventRadio:not(:checked) ~ #expEventBlock { display: none; }
-
+/*
 #repSubmitter:not(:checked) ~ #repRole { display: none; }
 
-#certifyRecords:not(:checked) ~ #certDetails { display: none; }
+#certifyRecords:not(:checked) ~ #certDetails { display: none; } */
 
-#otherReq:not(:checked) ~ #reqType { display: none; }
+/* #otherReq:not(:checked) ~ #reqType { display: none; } */
 
 
 /***********************************
