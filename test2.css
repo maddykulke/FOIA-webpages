@@ -161,7 +161,7 @@ button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}
 button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{border-style:none;padding:10px}
 button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring{outline:1px dotted ButtonText}
 
-textarea{overflow:auto}
+
 
 
 svg:not(:root){overflow:hidden}
@@ -202,7 +202,7 @@ hr{box-sizing:content-box;height:0;overflow:visible}
     font-style: italic;
     line-height: 1;
     font-weight: normal;
-    margin: 0 0 0.75em 0;
+    margin: 0.5em 0 0.75em 0;
     font-size: 1em;
     display: inline-block;
     font-family: inherit;
@@ -214,6 +214,7 @@ fieldset {
   display: inline;
   margin: 0 0 1em 0;
   padding: 0 .625em .625em .75em;
+  width: 100%;
   max-width: none!important;
 }
 
@@ -279,6 +280,15 @@ input[type=text] {
   border-radius: .15em;
 }
 
+textarea {
+  background-color: #f1f1f1;
+  width: 80%;
+  border-radius: .15em;
+  overflow: auto;
+  border-color: transparent;
+}
+
+
 input[type="date"] {
     background-color: #f1f1f1;
     width: 35%;
@@ -289,12 +299,12 @@ input[type="date"] {
 
 input[type=checkbox] {
   background-color: #f1f1f1;
-  margin: 0em 0.75em 0em 0em;
-  display:inline-block;
+  margin: 0 0.75em 0 0;
+  display: inline-block;
 }
 
 input[type=file] {
-  background-color: #ffffff;
+  background-color: #fff;
   margin-bottom: 0em;
   display:inline-block;
 }
@@ -317,12 +327,12 @@ input:focus:invalid {
 }
 
 label {
-/*    display: inline-block;*/
-    line-height: 2;
-    font-weight: bold;
-    color:#6C6464;
-    margin-bottom: 0.5em;
-    font-family:inherit;
+/*    display: inline-block; */
+  line-height: 2;
+  font-weight: bold;
+  color:#6c6464;
+  margin-bottom: 0.5em;
+  font-family:inherit;
 }
 
 input[type=button] {
@@ -347,7 +357,8 @@ input[type=button] {
   border-bottom: none;
   border-top: none;
   z-index: 99;
- /* position the autocomplete items to be the same width as the container:*/
+
+ /* position the autocomplete items to be the same width as the container: */
   top: 100%;
   left: 0;
   right: 0;
@@ -369,13 +380,9 @@ input[type=button] {
   color: #ffffff;
 }
 
-#notBene {
-  margin-top: 2em;
-}
+#notBene { margin-top: 2em; }
 
-#beneRecip{
-  margin-bottom: 1.5em;
-}
+#beneRecip { margin-bottom: 1.5em; }
 
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 

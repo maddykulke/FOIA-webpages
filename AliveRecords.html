@@ -333,16 +333,17 @@
         </li>
         <li>
             <label class="block-label" > Expedited Processing </label>
-            <label class="field-description">Indicate whether you require expedited processing due to compelling need.</label>
+            <p class="field-description">Indicate whether you require expedited processing due to compelling need.</p>
+            <br>
             <input type="checkbox" name="expediteRecords" value="expedite-Yes" id="expedited"> <label for="expedited">I request that the requested records be expedited. </label>
             <span id="expediteBlock">
-              <label for="expediteDetails" class="field-description"> Explain specific details concerning your compelling need below: </label>
-              <input type="text" name="expediteDetails" class="field-long" id="expediteReason" placeholder="Reason for Expiditing Records" />
+              <label for="expediteDetails" class="field-description"> Please describe your compelling need below: </label>
+              <textarea  name="expediteDetails" col=60 rows=5 id="expediteReason" placeholder="Reason for Expiditing Records"> </textarea>
             </span>
       </li>
         <li>
             <label class="block-label" > Electronic Record Format </label>
-            <label class="field-description">Indicate whether you would like to request that records be provided in electronic format(personal computer disk or CD-ROM).</label>
+            <label class="field-description">Indicate whether you would like to request that records be provided in electronic format (personal computer disk or CD-ROM).</label>
             <input type="checkbox" name="electronicFormat" id="electronicElection" value="Fees"> <label for="electronicElection">I request that records be provided in electronic format.</label>
          </li>
     <!--      <li>

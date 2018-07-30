@@ -5,3 +5,11 @@
 # unused images
 check-mark.png
 stop.png
+
+# local server files
+.metadata_never_index
+Default/
+Local State
+
+# testing files
+test.html
