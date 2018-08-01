@@ -1,4 +1,7 @@
 //button functionality
+
+
+
 jQuery(document).ready(function() {
   $("#noCardBtn").click(function() {
     $("#noCard").show();
@@ -47,6 +50,30 @@ jQuery(document).ready(function() {
     $("#medicaidXmark").hide();
     });
 
+    $("#SocialBtn").click(function() {
+      $("#socialBlock").show();
+      $("#socialCheck").hide();
+      $("#socialXmark").show();
+      });
+
+    $("#noSocialBtn").click(function() {
+      $("#socialBlock").hide();
+      $("#socialCheck").show();
+      $("#socialXmark").hide();
+      });
+
+    $("#mspBtn").click(function() {
+      $("#mspBlock").show();
+      $("#mspCheck").hide();
+      $("#mspXmark").show();
+      });
+
+    $("#noMSPBtn").click(function() {
+      $("#mspBlock").hide();
+      $("#mspCheck").show();
+      $("#mspXmark").hide();
+      });
+
   $("#myOwnRecordsButton").click(function() {
       $("#myOwnRecords").show();
       $("#form-container").hide();
@@ -56,6 +83,7 @@ jQuery(document).ready(function() {
       $("#myOwnRecords").hide();
       $("#form-container").show();
   });
+
 
 
   $('#releaseEnd').click(function() {
@@ -156,17 +184,35 @@ jQuery(document).ready(function() {
                 $("#caseNumber").prop('required',false);
                 $("#caseName").prop('required',false);
               }
-            }).change();
+          }).change();
 
-            $("#otherReq").change(function() {
-                if ( $("#otherReq").is(":checked") ) {
-                  $("#reqType").show();
-                  $("#otherSpecifics").prop('required',true);
-                } else {
-                  $("#reqType").hide();
-                  $("#otherSpecifics").prop('required',false);
-                }
-              }).change();
+          $("#otherReq").change(function() {
+              if ( $("#otherReq").is(":checked") ) {
+                $("#reqType").show();
+                $("#otherSpecifics").prop('required',true);
+              } else {
+                $("#reqType").hide();
+                $("#otherSpecifics").prop('required',false);
+              }
+          }).change();
+
+          function validate() {
+          var $result = $("#result");
+          var email = $("#email").val();
+          $result.text("");
+
+          if (validateEmail(email)) {
+            $result.text(email + " is valid :)");
+            $result.css("color", "green");
+          } else {
+            $result.text(email + " is not valid :(");
+            $result.css("color", "red");
+          }
+          return false;
+          }
+
+          $("#validate").bind("click", validate);
+
 });
 
 //duplicate div

@@ -51,7 +51,8 @@
     <!-- Header -->
   <div><h3><b>File a Medicare FOIA Request</b></h3></div>
 
-      <h3> Let's make sure you're in the right place. What type of beneficiary claim records are you requesting? </h3>
+      <h3> Let's make sure you're in the right place. What type of beneficiary
+        claim records are you requesting? </h3>
    <br>
       <h6> Is the beneficiary <b>enrolled in Medicare? </b></h6>
    <button id="hasCardBtn" class="w3-btn">Yes</button><button id="noCardBtn" class="w3-btn">No</button>
@@ -64,7 +65,8 @@
       <div id="noCard" class = "hidden">
   <!--         <h5> <b>Stop</b></h5> -->
           <img id= "enrolledStop" src="stop_outline.png" class="w3-image" alt="Stop.">
-          <p>If the beneficiary is not enrolled in Medicare, records are not maintained by CMS. <b>Please contact the beneficiary's insurer</b>.</p>
+          <p>If the beneficiary is not enrolled in Medicare, records are not maintained
+            by CMS. <b>Please contact the beneficiary's insurer</b>.</p>
       </div>
 
 
@@ -83,7 +85,8 @@
 <!--         <h5> <b>Stop</b></h5> -->
         <img id= "IDstop" src="stop_outline.png" class="w3-image" alt="Stop.">
 <!--         <img id= "IDstop" src="stop_double_outline.png" class='w3-image'> -->
-        <p>You will need the beneficiary's Medicare ID number to continue. <b>Please retrieve the beneficiary's Medicare identification number</b>. </p>
+        <p>You will need the beneficiary's Medicare ID number to continue. <b>Please
+          retrieve the beneficiary's Medicare identification number</b>. </p>
     </div>
 
     <h6> Are you requesting <b>Medicare Advantage</b> claim records?</h6>
@@ -97,7 +100,8 @@
 <!--         <h5> <b>Stop.</b></h5> -->
         <img id= "medAdvStop" src="stop_outline.png" class="w3-image" alt="Stop.">
         <p>CMS does not maintain Medicare Advantage claims records.
-        <b>You will need to submit your request directly to the beneficiary's specic private insurance company (e.g. HMO, PPO, etc.)</b>.</p>
+        <b>Please submit your request directly to the beneficiary's specic private
+          insurance company (e.g. HMO, PPO, etc.)</b>.</p>
     </div>
 <!--     <div id = "dest1" class ="hidden"></div> -->
 
@@ -111,10 +115,44 @@
     <div id= "hasMedicaid" class = "hidden">
 <!--         <h5> <b>Stop.</b></h5> -->
         <img id= "medicaidStop" src="stop_outline.png" class="w3-image" alt="Stop.">
-        <p>CMS does not maintain Medicaid claims records. <b>You will need to submit your request directly to the beneficiary's state agency</b>.</p>
-        <a href="https://www.medicaid.gov/state-overviews/index.html" id="medicaid-link">Explore Medicaid in your State</a>
+        <p>CMS does not maintain Medicaid claims records. <b>Please submit your request
+          directly to the beneficiary's state agency</b>.</p>
+        <a href="https://www.medicaid.gov/state-overviews/index.html" id="medicaid-link">Explore
+           Medicaid in your State</a>
 
     </div>
+
+    <h6> Are you requesting <b>Social Security Administration</b> documents?</h6>
+    <button id="SocialBtn" class="w3-btn">Yes</button>
+    <button id="noSocialBtn" class="w3-btn">No</button>
+
+    <img id= "socialCheck" src="tick.png" class="hidden-image" alt="checkmark: continue.">
+    <img id= "socialXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
+
+    <div id= "socialBlock" class = "hidden">
+<!--         <h5> <b>Stop.</b></h5> -->
+        <img id= "socialStop" src="stop_outline.png" class="w3-image" alt="Stop.">
+        <p>CMS does not maintain Social Security Administration documents. <b>Please submit your
+          request directly to the</b>
+           <a href="https://www.ssa.gov/foia/request.html" id="socail-link">Social
+             Security Adminstration</a>.</p>
+    </div>
+
+    <h6> Are you requesting <b>MSP lien</b> information?</h6>
+    <button id="mspBtn" class="w3-btn">Yes</button>
+    <button id="noMSPBtn" class="w3-btn">No</button>
+
+    <img id= "mspCheck" src="tick.png" class="hidden-image" alt="checkmark: continue.">
+    <img id= "mspXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
+
+    <div id= "mspBlock" class = "hidden">
+<!--         <h5> <b>Stop.</b></h5> -->
+        <img id= "mspStop" src="stop_outline.png" class="w3-image" alt="Stop.">
+        <p>CMS does not maintain MSP documentation.</p>
+        <p><b>Please contact the</b> <a href="https://www.cms.gov/Medicare/Coordination-of-Benefits-and-Recovery/Coordination-of-Benefits-and-Recovery-Overview/Contacts/Contacts-page.html" id="mspLink">Benefits
+          Coordination and Recover Center (BCRC)</a> <b>directly</b>.</p>
+    </div>
+
 
     <br>
     <div id="form-div">
