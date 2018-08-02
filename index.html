@@ -89,6 +89,19 @@
           retrieve the beneficiary's Medicare identification number</b>. </p>
     </div>
 
+    <h6> Are you requesting beneficiary <b>medical records</b>?</h6>
+    <button id="medBtn" class="w3-btn">Yes</button>
+    <button id="noMedBtn" class="w3-btn">No</button>
+
+    <img id= "medCheck" src="tick.png" class="hidden-image" alt="checkmark: continue.">
+    <img id= "medXmark" src="xmark.png" class="hidden-image" alt="x-mark: see mesage below for futher instructions.">
+
+    <div id= "medBlock" class = "hidden">
+<!--         <h5> <b>Stop.</b></h5> -->
+        <img id= "medStop" src="stop_outline.png" class="w3-image" alt="Stop.">
+        <p>CMS maintains claim information only. <b>Please contact the beneficiary’s providers directly for medical records.</b>.</p>
+    </div>
+
     <h6> Are you requesting <b>Medicare Advantage</b> claim records?</h6>
     <button id="hasAdvantageBtn" class="w3-btn">Yes</button>
     <button id="noAdvantageBtn" class="w3-btn">No</button>
@@ -116,11 +129,12 @@
 <!--         <h5> <b>Stop.</b></h5> -->
         <img id= "medicaidStop" src="stop_outline.png" class="w3-image" alt="Stop.">
         <p>CMS does not maintain Medicaid claims records. <b>Please submit your request
-          directly to the beneficiary's state agency</b>.</p>
-        <a href="https://www.medicaid.gov/state-overviews/index.html" id="medicaid-link">Explore
-           Medicaid in your State</a>
+          directly to the beneficiary's state agency</b>. <a href="https://www.medicaid.gov/state-overviews/index.html" id="medicaid-link">Explore
+             Medicaid in your state</a>.</p>
+
 
     </div>
+
 
     <h6> Are you requesting <b>Social Security Administration</b> documents?</h6>
     <button id="SocialBtn" class="w3-btn">Yes</button>
@@ -133,8 +147,7 @@
 <!--         <h5> <b>Stop.</b></h5> -->
         <img id= "socialStop" src="stop_outline.png" class="w3-image" alt="Stop.">
         <p>CMS does not maintain Social Security Administration documents. <b>Please submit your
-          request directly to the</b>
-           <a href="https://www.ssa.gov/foia/request.html" id="socail-link">Social
+          request directly to the</b> <a href="https://www.ssa.gov/foia/request.html" id="socail-link">Social
              Security Adminstration</a>.</p>
     </div>
 

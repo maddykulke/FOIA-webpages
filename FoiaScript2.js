@@ -27,6 +27,18 @@ jQuery(document).ready(function() {
     $("#IDXmark").show();
     });
 
+    $("#medBtn").click(function() {
+      $("#medBlock").show();
+      $("#medCheck").hide();
+      $("#medXmark").show();
+      });
+
+    $("#noMedBtn").click(function() {
+      $("#medBlock").hide();
+      $("#medCheck").show();
+      $("#medXmark").hide();
+      });
+
   $("#hasAdvantageBtn").click(function() {
     $("#hasAdvantage").show();
     $("#medAdvCheck").hide();
