@@ -228,9 +228,9 @@ jQuery(document).ready(function() {
 });
 
 
-$.getJSON("regions.json", function(json) {
-	console.log(json); // show the JSON file content into console
-});
+// $.getJSON("regions.json", function(json) {
+// 	console.log(json); // show the JSON file content into console
+// });
 
 
 // $(document).ready(function() {
@@ -254,16 +254,16 @@ $.getJSON("regions.json", function(json) {
 //
 //             if ( $('#stateDropdown:not(:has(option))') ){
 //
-              $("#stateDropdown").click(function(){
-                  $.each(states, function(key, value){
-                      $("#stateDropdown").append($("<option></option>").attr(
-                          "value", key).text(key));
-                       });
-                  });
-            }
+//               $("#stateDropdown").click(function(){
+//                   $.each(states, function(key, value){
+//                       $("#stateDropdown").append($("<option></option>").attr(
+//                           "value", key).text(key));
+//                        });
+//                   });
+//             }
 
-    });
-});
+//     });
+// });
 
 
 
