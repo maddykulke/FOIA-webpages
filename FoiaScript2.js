@@ -227,14 +227,46 @@ jQuery(document).ready(function() {
 
 });
 
-//duplicate div
-// function dupDiv()
-// {
-//     str=document.getElementById('check').innerHTML;
-//     document.getElementById('IDcheckGreen').innerHTML;
-//     document.getElementById('dest1').innerHTML=str;
-//     document.getElementById('dest2').innerHTML=str;
-// }
+
+$.getJSON("regions.json", function(json) {
+	console.log(json); // show the JSON file content into console
+});
+
+
+// $(document).ready(function() {
+//     // $.getJSON("regions.json"), function(data) {
+//
+//     $.getJSON( "regions.json").done(function( data ) {
+//     console.log( typeof data["regions"] );
+//   }).fail(function( jqxhr, textStatus, error ) {
+//       var err = textStatus + ", " + error;
+//       console.log( "Request Failed: " + err );
+//     });
+//         var regions, states = data.regions;
+//         var states = data.states;
+//         console.log("regions");
+//         console.log("states");
+//         var userRegion = states[input];
+//         var regionAddress = regions[userRegion]["Address"];
+//         var regionPhone = regions[userRegion]["Phone"];
+//         var regionFax = regions[userRegion]["Fax"];
+//         var regionEmail = regions[userRegion]["Email"];
+//
+//             if ( $('#stateDropdown:not(:has(option))') ){
+//
+              $("#stateDropdown").click(function(){
+                  $.each(states, function(key, value){
+                      $("#stateDropdown").append($("<option></option>").attr(
+                          "value", key).text(key));
+                       });
+                  });
+            }
+
+    });
+});
+
+
+
 
 // Script to open and close sidebar
 function w3_open() {
