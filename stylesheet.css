@@ -400,7 +400,12 @@ input[type=button] {
 
 #beneRecip { margin-bottom: 1.5em; }
 
-#litigation, #otherReq { margin-left: 1em; }
+#litigation, #otherReq, #checkGreen, #EnrolledXmark, 
+#IDcheckGreen, #IDXmark, #medAdvCheck, #medAdvXmark,
+#medicaidCheck, #medicaidXmark, #socialCheck, #socialXmark,
+#mspCheck, #mspXmark { margin-left: 1em; }
+
+
 
 #recordChoiceTF:not(:checked) ~ #timeframeBlock { display: none; }
 
